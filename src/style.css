@@ -328,3 +328,20 @@ footer .contatto a { color: var(--band-ink); text-decoration-color: var(--band-s
 .btn-archivio:hover { background: var(--gold); color: var(--paper); }
 .filo-head .btn-archivio { justify-self: start; grid-column: 2; margin-top: -0.5rem; }
 @media (max-width: 760px) { .filo-head .btn-archivio { grid-column: auto; margin-top: 0; } }
+
+/* Hero su telefono: foto a sinistra, nome e qualifiche a destra */
+@media (max-width: 760px) {
+  .hero { padding-block: 2rem 2.25rem; }
+  .hero-top {
+    grid-template-columns: 6.75rem minmax(0, 1fr);
+    grid-template-areas: "foto nome" "foto qual" "lede lede";
+    column-gap: 1.15rem; row-gap: 0;
+    align-items: center;
+  }
+  .hero-text { display: contents; }
+  .ritratto { grid-area: foto; order: 0; width: 100%; align-self: center; }
+  .ritratto img { box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--rule); }
+  .hero-text h1 { grid-area: nome; align-self: end; margin: 0; font-size: clamp(2.3rem, 10.5vw, 2.9rem); line-height: 1; }
+  .hero-text .label { grid-area: qual; align-self: start; margin-top: 0.55rem; font-size: 0.66rem; letter-spacing: 0.08em; line-height: 1.5; }
+  .hero-text .lede { grid-area: lede; margin-top: 1.6rem; font-size: 1.28rem; }
+}
