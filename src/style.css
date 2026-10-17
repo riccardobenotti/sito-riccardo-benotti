@@ -326,3 +326,5 @@ footer .contatto a { color: var(--band-ink); text-decoration-color: var(--band-s
 @media (max-width: 640px) { .voce-mese { grid-template-columns: minmax(0, 1fr); } .voce-mese .th { max-width: 22rem; margin-bottom: 0.6rem; } }
 .btn-archivio { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; padding: 0.55rem 1.1rem; border: 1.5px solid var(--gold); border-radius: 999px; color: var(--gold); font-weight: 700; font-size: 0.98rem; text-decoration: none; }
 .btn-archivio:hover { background: var(--gold); color: var(--paper); }
+.filo-head .btn-archivio { justify-self: start; grid-column: 2; margin-top: -0.5rem; }
+@media (max-width: 760px) { .filo-head .btn-archivio { grid-column: auto; margin-top: 0; } }
