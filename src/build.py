@@ -31,6 +31,16 @@ def data_en(iso):
     return f'{d} {MONTHS[m-1]} {y}'
 
 
+ROME = __import__('zoneinfo').ZoneInfo('Europe/Rome')
+
+
+def taglia(t, n):
+    t = re.sub(r'\s+', ' ', t).strip()
+    if len(t) <= n:
+        return t
+    return t[:n].rsplit(' ', 1)[0].rstrip(',;:.–—') + '…'
+
+
 def typo(s):
     s = s.replace("'", '’').replace('"', '§')
     out, o = '', True
@@ -47,9 +57,13 @@ def puntata(p):
     titolo = html.escape(typo(unicodedata.normalize('NFC', unb(p['titolo']))), quote=False)
     paras = [EMO.sub('', typo(x)).strip() for x in p['testo'].split('\n') if x.strip()]
     paras_html = [f'<p>{tohtml(x)}</p>' for x in paras]
-    plain = re.sub(r'<[^>]+>', '', paras_html[0]) if paras_html else ''
-    return {**p, 'titolo_html': titolo, 'paras': paras_html, 'sommario': plain,
-            'url': f'/filo/{p["data"]}/',
+    plain = html.unescape(re.sub(r'<[^>]+>', '', paras_html[0])) if paras_html else ''
+    titolo_txt = html.unescape(titolo)
+    pub = datetime.datetime.fromtimestamp((int(p['urn']) >> 22) / 1000, ROME) if p.get('urn') else None
+    return {**p, 'titolo_html': titolo, 'titolo_txt': titolo_txt, 'paras': paras_html, 'sommario': plain,
+            'descrizione': taglia(plain, 158), 'pubblicato': pub.isoformat(timespec='seconds') if pub else p['data'],
+            'parole': len(re.sub(r'<[^>]+>', ' ', ' '.join(paras_html)).split()),
+            'url': f'/filo/{p.get("slug") or p["data"]}/',
             'linkedin': f'https://www.linkedin.com/feed/update/urn:li:activity:{p["urn"]}/'}
 
 
@@ -69,9 +83,9 @@ def figura(p, cls='foto', lazy=True):
     if not p.get('foto'):
         return ''
     from PIL import Image
-    w, h = Image.open(PUB / 'img' / p['foto']).size
-    alt = html.escape(p.get('alt') or p['sommario'][:120])
-    return (f'<figure class="{cls}"><img src="/img/{p["foto"]}" width="{w}" height="{h}" alt="{alt}"'
+    w, h = Image.open(PUB / 'img' / 'filo' / p['foto']).size
+    alt = html.escape(p.get('alt') or ('Foto della puntata del ' + data_it(p['data']) + ': ' + p['titolo_txt'])[:180])
+    return (f'<figure class="{cls}"><img src="/img/filo/{p["foto"]}" width="{w}" height="{h}" alt="{alt}"'
             + (' loading="lazy"' if lazy else '') + '></figure>')
 
 
@@ -126,6 +140,7 @@ def head(lang, title, desc, path, alt=None, og_type='website', jsonld=None, extr
 <link rel="preload" href="/fonts/newsreader-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css?v={CSS_VER}">
+<link rel="alternate" type="application/rss+xml" title="Leone, il filo del giorno" href="{SITE}/filo/feed.xml">
 {ld}{extra}</head>
 <body>
 '''
@@ -142,7 +157,7 @@ def nav(lang, home, switch):
                 ('research', 'Research'), ('filo', 'Daily column'), ('contact', 'Contact')]
         base, aria, sw_lab, sw_title = '/en/', 'Sections', 'IT', 'Versione italiana'
         pre = '' if home else '/en/'
-    li = ''.join(f'\n      <li><a class="link" href="{pre}#{a}">{t}</a></li>' for a, t in voci)
+    li = ''.join(f'\n      <li><a class="link" href="{"/filo/" if (a == "filo" and not home and lang == "it") else pre + "#" + a}">{t}</a></li>' for a, t in voci)
     hl = 'en' if lang == 'it' else 'it'
     li += f'\n      <li><a class="lang" href="{switch}" hreflang="{hl}" lang="{hl}" title="{sw_title}">{sw_lab}</a></li>'
     return f'''<nav class="nav" aria-label="{aria}">
@@ -242,7 +257,7 @@ def main():
     CSS_VER = hashlib.md5(css.encode()).hexdigest()[:8]
 
     puntate = [puntata(p) for p in sorted(json.loads((ROOT / 'data' / 'filo.json').read_text()),
-                                          key=lambda x: x['data'], reverse=True)]
+                                          key=lambda x: (x['data'], x.get('slug', '')), reverse=True)]
     oggi = datetime.date.today().isoformat()
     urls = []
 
@@ -266,66 +281,7 @@ def main():
     page += nav('en', True, '/') + body + footer('en') + COPY_JS + '</body>\n</html>\n'
     write('/en/', page); urls.append(('/en/', oggi))
 
-    # Archivio filo
-    righe = ''.join(f'\n      <li><time class="mono" datetime="{p["data"]}">{data_it(p["data"])}</time><a href="{p["url"]}">{p["titolo_html"]}</a></li>' for p in puntate)
-    body = f'''<div class="wrap">
-  <main class="pagina">
-    <a class="torna" href="/#filo">← Torna alla home</a>
-    <span class="label gold">Rubrica quotidiana</span>
-    <h1>Leone, <em>il filo del giorno</em>: tutte le puntate</h1>
-    <p>Ogni giorno una lettura delle notizie e degli appuntamenti di Leone XIV, tenuti insieme da un solo filo. La rubrica esce anche su <a href="{LINKEDIN}">LinkedIn</a>.</p>
-    <ol class="archivio">{righe}
-    </ol>
-  </main>
-</div>
-'''
-    page = head('it', 'Leone, il filo del giorno – Archivio | Riccardo Benotti',
-                'Tutte le puntate di «Leone, il filo del giorno», la rubrica quotidiana di Riccardo Benotti sulle notizie e gli appuntamenti di Leone XIV.',
-                '/filo/', jsonld={"@context": "https://schema.org", "@type": "CollectionPage", "name": "Leone, il filo del giorno",
-                                  "url": SITE + "/filo/", "author": {"@id": SITE + "/#riccardo-benotti"}, "inLanguage": "it"})
-    page += nav('it', False, '/en/') + body + footer('it') + '</body>\n</html>\n'
-    write('/filo/', page); urls.append(('/filo/', puntate[0]['data']))
-
-    # Pagine puntate
-    for i, p in enumerate(puntate):
-        prec = puntate[i + 1] if i + 1 < len(puntate) else None
-        succ = puntate[i - 1] if i > 0 else None
-        vic = '<nav class="vicine">'
-        vic += f'<a href="{prec["url"]}"><span class="label">← Puntata precedente</span>{prec["titolo_html"]}</a>' if prec else '<span></span>'
-        vic += f'<a href="{succ["url"]}" style="text-align:right"><span class="label">Puntata successiva →</span>{succ["titolo_html"]}</a>' if succ else '<span></span>'
-        vic += '</nav>'
-        fig = figura(p, cls='foto-grande', lazy=False)
-        if fig and p.get('credito'):
-            fig = fig.replace('</figure>', f'<figcaption>Foto {html.escape(p["credito"])}</figcaption></figure>')
-        body = f'''<div class="wrap">
-  <main class="pagina">
-    <a class="torna" href="/filo/">← Tutte le puntate</a>
-    <article>
-      <span class="label gold">Leone, il filo del giorno · <time datetime="{p["data"]}">{data_it(p["data"])}</time></span>
-      <h1>{p["titolo_html"]}</h1>
-      {fig}
-      <div class="testo">{"".join(p["paras"])}</div>
-      {fonti_html(p)}
-      <div class="meta puntata-meta"><a href="{p["linkedin"]}">La puntata su LinkedIn</a></div>
-    </article>
-    {vic}
-  </main>
-</div>
-'''
-        art = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": unicodedata.normalize('NFC', unb(p['titolo']))[:110],
-               "datePublished": p['data'], "inLanguage": "it", "url": SITE + p['url'],
-               "author": {"@type": "Person", "@id": SITE + "/#riccardo-benotti", "name": "Riccardo Benotti", "url": SITE + "/"},
-               "isPartOf": {"@type": "CreativeWorkSeries", "name": "Leone, il filo del giorno", "url": SITE + "/filo/"}}
-        if p.get('foto'):
-            art["image"] = SITE + '/img/' + p['foto']
-        titolo_pag = re.sub(r'<[^>]+>', '', html.unescape(p['titolo_html']))
-        page = head('it', f'{titolo_pag} | Leone, il filo del giorno', p['sommario'][:300], p['url'],
-                    og_type='article', jsonld=art)
-        if p.get('foto'):
-            page = page.replace(f'{SITE}/img/og.jpg', f'{SITE}/img/{p["foto"]}').replace(
-                '<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n', '')
-        page += nav('it', False, '/en/') + body + footer('it') + '</body>\n</html>\n'
-        write(p['url'], page); urls.append((p['url'], p['data']))
+    urls += archivio(puntate)
 
     # 404
     body = '''<div class="wrap"><main class="pagina"><span class="label gold">Errore 404</span>
@@ -337,9 +293,11 @@ def main():
     write('/404.html', page + nav('it', False, '/en/') + body + footer('it') + '</body>\n</html>\n')
 
     # sitemap e robots
-    sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-    for u, d in urls:
+    sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
+    for u, d, *img in urls:
         sm += f'  <url><loc>{SITE + u}</loc><lastmod>{d}</lastmod>'
+        if img and img[0]:
+            sm += f'<image:image><image:loc>{SITE}/img/{img[0]}</image:loc></image:image>'
         if u in ('/', '/en/'):
             sm += f'<xhtml:link rel="alternate" hreflang="it" href="{SITE}/"/><xhtml:link rel="alternate" hreflang="en" href="{SITE}/en/"/>'
         sm += '</url>\n'
@@ -347,6 +305,9 @@ def main():
     write('/sitemap.xml', sm)
     write('/robots.txt', f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
     print(f'OK: {len(puntate)} puntate, {len(urls)} pagine in sitemap')
+
+
+exec((SRC / 'archivio.py').read_text())
 
 
 if __name__ == '__main__':

@@ -297,3 +297,30 @@ footer .contatto a { color: var(--band-ink); text-decoration-color: var(--band-s
 .filo-en time { display: block; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
 .filo-en a { font-family: var(--display); font-size: 1.2rem; text-decoration: none; }
 .filo-en a:hover { text-decoration: underline; }
+
+/* Archivio del filo */
+.pagina.larga { max-width: 60rem; }
+.briciole { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 1.6rem; overflow-wrap: anywhere; }
+.briciole a { color: var(--gold); text-decoration: none; }
+.briciole a:hover { text-decoration: underline; }
+.pagina .intro { font-size: 1.12rem; color: var(--ink-soft); max-width: 62ch; }
+.mesi { margin: 1.6rem 0; padding: 1rem 1.2rem; background: var(--paper-alt); border-radius: 4px; }
+.mesi ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin: 0.4rem 0 0; padding: 0; }
+.mesi a { font-weight: 600; text-transform: capitalize; }
+.mesi .n { color: var(--ink-soft); font-size: 0.85rem; }
+.ultima-p { margin: 0 0 2rem; }
+.ultima-p .label { display: block; }
+.mese h2 { font-family: var(--display); font-weight: 500; font-size: 1.6rem; margin: 1.6rem 0 0; }
+.mese h2 a { text-decoration: none; }
+.lista-mese { list-style: none; margin: 1.6rem 0 0; padding: 0; }
+.voce-mese { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 0 1.4rem; padding: 1.3rem 0; border-bottom: 1px solid var(--rule); }
+.voce-mese:not(:has(.th)) { grid-template-columns: minmax(0, 1fr); }
+.voce-mese .th img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 3px; display: block; }
+.voce-mese h2 { font-family: var(--display); font-weight: 500; font-size: 1.35rem; line-height: 1.25; margin: 0.25rem 0 0.4rem; text-wrap: balance; }
+.voce-mese h2 a { text-decoration: none; }
+.voce-mese h2 a:hover { text-decoration: underline; }
+.voce-mese p { margin: 0; color: var(--ink-soft); font-size: 1rem; }
+.voce-mese time, .archivio time { font-weight: 700; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+.firma-art { margin: -0.6rem 0 1.4rem; color: var(--ink-soft); }
+.puntata-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; }
+@media (max-width: 640px) { .voce-mese { grid-template-columns: minmax(0, 1fr); } .voce-mese .th { max-width: 22rem; margin-bottom: 0.6rem; } }
