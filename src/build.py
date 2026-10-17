@@ -190,17 +190,25 @@ def nav(lang, home, switch):
 def person_ld():
     return {
         "@type": "Person", "@id": SITE + "/#riccardo-benotti", "name": "Riccardo Benotti",
-        "url": SITE + "/", "image": SITE + "/img/riccardo-benotti-foto.jpg",
+        "givenName": "Riccardo", "familyName": "Benotti",
+        "url": SITE + "/", "mainEntityOfPage": SITE + "/",
+        "image": {"@type": "ImageObject", "url": SITE + "/img/riccardo-benotti-foto.jpg", "caption": "Riccardo Benotti"},
+        "birthDate": "1982-12-28",
+        "birthPlace": {"@type": "Place", "name": "Roma", "sameAs": "https://www.wikidata.org/wiki/Q220"},
+        "hasOccupation": {"@type": "Occupation", "name": "Giornalista", "sameAs": "https://www.wikidata.org/wiki/Q1930187"},
         "jobTitle": "Caposervizio",
         "description": "Giornalista professionista e autore italiano, caposervizio dell'agenzia SIR – Servizio Informazione Religiosa, accreditato presso la Sala Stampa della Santa Sede.",
-        "worksFor": {"@type": "NewsMediaOrganization", "name": "SIR – Servizio Informazione Religiosa", "url": "https://www.agensir.it"},
+        "worksFor": {"@type": "NewsMediaOrganization", "name": "SIR – Servizio Informazione Religiosa", "url": "https://www.agensir.it",
+                     "sameAs": "https://www.wikidata.org/wiki/Q12050678"},
         "memberOf": {"@type": "Organization", "name": "Commissione Film CEI", "url": "https://www.commissionefilmcei.it/"},
         "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "Dottorato di ricerca",
                           "educationalLevel": "Dottorato di ricerca in Scienze della comunicazione sociale", "dateCreated": "2025",
-                          "recognizedBy": {"@type": "CollegeOrUniversity", "name": "Università Pontificia Salesiana"}},
-        "alumniOf": {"@type": "CollegeOrUniversity", "name": "Università Pontificia Salesiana"},
+                          "recognizedBy": {"@id": SITE + "/#ups"}},
+        "alumniOf": {"@type": "CollegeOrUniversity", "@id": SITE + "/#ups", "name": "Università Pontificia Salesiana",
+                     "url": "https://www.unisal.it", "sameAs": "https://www.wikidata.org/wiki/Q543289"},
         "homeLocation": {"@type": "Place", "name": "Roma"},
         "nationality": {"@type": "Country", "name": "Italia"},
+        "knowsLanguage": ["it", "en"],
         "knowsAbout": ["Santa Sede", "Chiesa cattolica", "Giornalismo", "Intelligenza artificiale", "Comunicazione ecclesiale", "Vita religiosa"],
         "identifier": {"@type": "PropertyValue", "propertyID": "ORCID", "value": "0009-0000-5747-2592"},
         "sameAs": ["https://orcid.org/0009-0000-5747-2592", LINKEDIN,
@@ -210,23 +218,28 @@ def person_ld():
 
 
 BOOKS = [
-    ("Covid-19: preti in prima linea. Storie stra-ordinarie di chi ha dato la vita e di chi non si è arreso", "San Paolo", "2021", "9788892223813", 464),
-    ("Viaggio nella vita religiosa. Interviste e incontri", "Libreria Editrice Vaticana", "2016", "9788820997304", 232),
-    ("Viaggio nel New Journalism americano", "Aracne", "2009", "9788854822931", 143),
+    ("Covid-19: preti in prima linea. Storie stra-ordinarie di chi ha dato la vita e di chi non si è arreso", "San Paolo", "2021", "9788892223813", 464, "Q141757041"),
+    ("Viaggio nella vita religiosa. Interviste e incontri", "Libreria Editrice Vaticana", "2016", "9788820997304", 232, "Q141757042"),
+    ("Viaggio nel New Journalism americano", "Aracne", "2009", "9788854822931", 143, "Q141757043"),
 ]
 
 
 def ld_home():
-    g = [person_ld(), {"@type": "WebSite", "@id": SITE + "/#sito", "url": SITE + "/", "name": "Riccardo Benotti",
+    import datetime
+    oggi = datetime.date.today().isoformat()
+    g = [{"@type": "ProfilePage", "@id": SITE + "/#profilo", "url": SITE + "/", "name": "Riccardo Benotti",
+          "mainEntity": {"@id": SITE + "/#riccardo-benotti"}, "isPartOf": {"@id": SITE + "/#sito"},
+          "dateCreated": "2026-10-17", "dateModified": oggi, "inLanguage": "it"},
+         person_ld(), {"@type": "WebSite", "@id": SITE + "/#sito", "url": SITE + "/", "name": "Riccardo Benotti",
                        "inLanguage": ["it", "en"], "publisher": {"@id": SITE + "/#riccardo-benotti"}}]
-    for n, pub, y, isbn, pp in BOOKS:
+    for n, pub, y, isbn, pp, q in BOOKS:
         g.append({"@type": "Book", "name": n, "author": {"@id": SITE + "/#riccardo-benotti"},
                   "publisher": {"@type": "Organization", "name": pub}, "datePublished": y, "isbn": isbn,
-                  "numberOfPages": pp, "inLanguage": "it"})
+                  "numberOfPages": pp, "inLanguage": "it", "sameAs": "https://www.wikidata.org/wiki/" + q})
     g.append({"@type": "Thesis", "name": "Intelligenza artificiale e giornalismo. Un'indagine sui pro e contro di una possibile implementazione di sistemi IA nelle redazioni cattoliche della CEI e della Santa Sede",
               "author": {"@id": SITE + "/#riccardo-benotti"}, "datePublished": "2025", "inLanguage": "it",
               "inSupportOf": "Dottorato di ricerca in Scienze della comunicazione sociale",
-              "sourceOrganization": {"@type": "CollegeOrUniversity", "name": "Università Pontificia Salesiana"}})
+              "sourceOrganization": {"@id": SITE + "/#ups"}, "sameAs": "https://www.wikidata.org/wiki/Q141757044"})
     return {"@context": "https://schema.org", "@graph": g}
 
 
