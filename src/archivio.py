@@ -167,7 +167,8 @@ def archivio(puntate):
                "sameAs": p['linkedin']}
         if p.get('foto'):
             art["image"] = {"@type": "ImageObject", "url": SITE + '/img/filo/' + p['foto'],
-                            **({"creditText": p['credito']} if p.get('credito') else {})}
+                            **({"creditText": p['credito'], "copyrightNotice": "© " + p['credito'],
+                                "creator": {"@type": "Organization", "name": p['credito']}} if p.get('credito') else {})}
         extra = (f'<meta property="article:published_time" content="{p["pubblicato"]}">\n'
                  f'<meta property="article:author" content="{SITE}/">\n<meta property="article:section" content="{SERIE}">\n')
         if prec:
