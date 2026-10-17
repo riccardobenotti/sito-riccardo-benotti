@@ -122,6 +122,7 @@ def head(lang, title, desc, path, alt=None, og_type='website', jsonld=None, extr
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="msvalidate.01" content="30EC3B24ACA589BA91D97B8485001137">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{url}">
