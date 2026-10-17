@@ -226,10 +226,11 @@ BOOKS = [
 
 def ld_home():
     import datetime
-    oggi = datetime.date.today().isoformat()
+    from zoneinfo import ZoneInfo
+    oggi = datetime.datetime.now(ZoneInfo("Europe/Rome")).replace(microsecond=0).isoformat()
     g = [{"@type": "ProfilePage", "@id": SITE + "/#profilo", "url": SITE + "/", "name": "Riccardo Benotti",
           "mainEntity": {"@id": SITE + "/#riccardo-benotti"}, "isPartOf": {"@id": SITE + "/#sito"},
-          "dateCreated": "2026-10-17", "dateModified": oggi, "inLanguage": "it"},
+          "dateCreated": "2026-10-17T19:00:00+02:00", "dateModified": oggi, "inLanguage": "it"},
          person_ld(), {"@type": "WebSite", "@id": SITE + "/#sito", "url": SITE + "/", "name": "Riccardo Benotti",
                        "inLanguage": ["it", "en"], "publisher": {"@id": SITE + "/#riccardo-benotti"}}]
     for n, pub, y, isbn, pp, q in BOOKS:
