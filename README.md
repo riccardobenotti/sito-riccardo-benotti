@@ -1,6 +1,6 @@
 # riccardobenotti.it
 
-Sito personale di Riccardo Benotti. Statico, pubblicato da Netlify dalla cartella `public/`.
+Sito personale di Riccardo Benotti. Statico, pubblicato con GitHub Pages dalla cartella `public/` (workflow `.github/workflows/pages.yml`).
 
 - `data/filo.json`: le puntate di «Leone, il filo del giorno» (testo come su LinkedIn, grassetti Unicode compresi), con foto, credito e fonti.
 - `data/config.json`: indirizzo del sito ed email pubblica.
@@ -14,4 +14,4 @@ Per aggiornare: modificare i dati, poi `python3 src/make_en.py && python3 src/bu
 
 1. Aggiungere in cima a `data/filo.json` una voce con `data`, `slug` (di norma uguale alla data), `urn` (numero dell'attività LinkedIn), `titolo` e `testo` così come su LinkedIn, `credito`, `foto` (file in `public/img/filo/`, webp ~640 px) e `fonti` (lista di [titolo, url]).
 2. `python3 src/build.py` rigenera home, archivio, pagina mensile, pagina della puntata, feed RSS e sitemap.
-3. Commit e push: Netlify pubblica in automatico.
+3. Commit e push: GitHub Pages pubblica in automatico.
