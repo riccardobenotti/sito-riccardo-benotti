@@ -345,3 +345,10 @@ footer .contatto a { color: var(--band-ink); text-decoration-color: var(--band-s
   .hero-text .label { grid-area: qual; align-self: start; margin-top: 0.55rem; font-size: 0.66rem; letter-spacing: 0.08em; line-height: 1.5; }
   .hero-text .lede { grid-area: lede; margin-top: 1.6rem; font-size: 1.28rem; }
 }
+
+/* Telefono: pulsante lingua sempre visibile accanto al nome */
+@media (max-width: 760px) {
+  .nav .wrap { position: relative; }
+  .nav li:has(> .lang) { position: absolute; top: 0.75rem; right: max(16px, env(safe-area-inset-right)); }
+  .nav .lang { display: inline-block; padding: 0.2rem 0.55rem; }
+}
