@@ -265,9 +265,16 @@ document.querySelectorAll('[data-copia]').forEach(function (b) {
   b.addEventListener('click', function () {
     var t = document.getElementById(b.getAttribute('data-copia')).innerText;
     var done = function () { var o = b.textContent; b.textContent = b.getAttribute('data-ok'); setTimeout(function () { b.textContent = o; }, 1800); };
-    if (navigator.clipboard) { navigator.clipboard.writeText(t).then(done, function () {}); }
+    var ko = function () {
+      var el = document.getElementById(b.getAttribute('data-copia'));
+      try { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {}
+      var o = b.textContent; b.textContent = b.getAttribute('data-ko'); setTimeout(function () { b.textContent = o; }, 4000);
+    };
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(t).then(done, ko); } else { ko(); }
   });
 });
+var menu = document.querySelector('.nav ul');
+if (menu) { var f = function () { menu.closest('.nav').classList.toggle('fine', menu.scrollLeft + menu.clientWidth >= menu.scrollWidth - 4); }; menu.addEventListener('scroll', f, {passive: true}); f(); }
 </script>
 '''
 
@@ -297,7 +304,7 @@ def main():
     page = head('it', 'Riccardo Benotti – Giornalista e autore',
                 'Riccardo Benotti, giornalista professionista e autore, caposervizio del SIR – Servizio Informazione Religiosa. Chiesa, Santa Sede, comunicazione e intelligenza artificiale.',
                 '/', alt=[('it', '/'), ('en', '/en/'), ('x-default', '/')], og_type='profile', jsonld=ld_home())
-    page += nav('it', True, '/en/') + body + footer('it') + COPY_JS + '</body>\n</html>\n'
+    page += nav('it', True, '/en/') + '<main id="contenuto">' + body + '</main>' + footer('it') + COPY_JS + '</body>\n</html>\n'
     write('/', page); urls.append(('/', oggi))
 
     # Home EN
@@ -309,7 +316,7 @@ def main():
     page = head('en', 'Riccardo Benotti – Journalist and author',
                 'Riccardo Benotti is an Italian journalist and author, senior editor at SIR, the news agency of the Italian Bishops’ Conference. The Pope, the Holy See, the Church, and AI in journalism.',
                 '/en/', alt=[('it', '/'), ('en', '/en/'), ('x-default', '/')], og_type='profile', jsonld=ld)
-    page += nav('en', True, '/') + body + footer('en') + COPY_JS + '</body>\n</html>\n'
+    page += nav('en', True, '/') + '<main id="contenuto">' + body + '</main>' + footer('en') + COPY_JS + '</body>\n</html>\n'
     write('/en/', page); urls.append(('/en/', oggi))
 
     urls += archivio(puntate)

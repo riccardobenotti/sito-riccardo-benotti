@@ -172,7 +172,7 @@ h2.big { font-family: var(--display); font-weight: 500; font-size: clamp(1.9rem,
 .libro .dati { margin-top: 0.7rem; display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; font-size: 0.92rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
 .libro .dati a { color: var(--gold); font-weight: 600; }
 .arrivo { margin-bottom: 2.5rem; background: var(--paper-alt); border-color: transparent; padding: 1.5rem 1.6rem; border: 1px solid var(--rule); border-radius: 6px; display: grid; gap: 1.2rem; }
-.arrivo .item h4 { font-family: var(--display); font-weight: 400; font-style: italic; font-size: 1.45rem; margin: 0.25rem 0 0.2rem; line-height: 1.2; }
+.arrivo .item h3 { font-family: var(--display); font-weight: 400; font-style: italic; font-size: 1.45rem; margin: 0.25rem 0 0.2rem; line-height: 1.2; }
 .arrivo .item p { margin: 0; color: var(--ink-soft); font-size: 1rem; }
 .arrivo .item + .item { border-top: 1px solid var(--rule); padding-top: 1.2rem; }
 
@@ -351,4 +351,15 @@ footer .contatto a { color: var(--band-ink); text-decoration-color: var(--band-s
   .nav .wrap { position: relative; }
   .nav li:has(> .lang) { position: absolute; top: 0.75rem; right: max(16px, env(safe-area-inset-right)); }
   .nav .lang { display: inline-block; padding: 0.2rem 0.55rem; }
+}
+
+/* Accessibilità: focus visibile sul fondo scuro del footer */
+footer a:focus-visible, footer button:focus-visible { outline-color: var(--band-soft); }
+button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+/* Telefono: sfumatura a destra del menu per far capire che scorre */
+@media (max-width: 760px) {
+  .nav ul { padding-right: 1.5rem; }
+  .nav .wrap::after { content: ""; position: absolute; right: 0; bottom: 0.4rem; width: 2.75rem; height: 1.9rem; pointer-events: none;
+    background: linear-gradient(to right, color-mix(in srgb, var(--paper) 0%, transparent), var(--paper) 80%); transition: opacity .2s; }
+  .nav.fine .wrap::after { opacity: 0; }
 }

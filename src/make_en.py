@@ -17,9 +17,9 @@ FILO_EN = '''
       <h2 class="label">Daily column</h2>
       <div class="prose">
         <h2 class="big">Leone, <em>il filo del giorno</em></h2>
-        <p>Every day Riccardo writes a short reading of Pope Leo XIV’s news and engagements, held together by a single thread: the <i>filo del giorno</i>. The column is published in Italian on this site and on <a href="https://www.linkedin.com/in/riccardo-benotti-0a0534362">LinkedIn</a>. Latest instalments:</p>
+        <p>Every day Riccardo writes a daily account of Pope Leo XIV’s news and engagements, held together by a single thread: the <i>filo del giorno</i>. The column is published in Italian on this site and on <a href="https://www.linkedin.com/in/riccardo-benotti-0a0534362">LinkedIn</a>. Latest instalments:</p>
         <ol class="filo-en">{{FILO_EN}}</ol>
-        <p><a href="/filo/" hreflang="it" lang="it">Archivio delle puntate</a> (in Italian)</p>
+        <p><a href="/filo/" hreflang="it">Full archive</a> (in Italian)</p>
       </div>
     </div>
   </section>
@@ -50,7 +50,7 @@ PAIRS = [
     ('<p>Riccardo Benotti è giornalista professionista e autore. Dal 2006 lavora al SIR, il Servizio Informazione Religiosa, dove oggi è caposervizio. Segue il Papa, la Santa Sede e la vita della Chiesa in Italia e nel mondo ed è accreditato presso la Sala Stampa della Santa Sede.</p>',
      '<p>Riccardo Benotti is an Italian professional journalist and author. He has worked since 2006 at SIR, the Servizio Informazione Religiosa, where he is now a senior editor. He covers the Pope, the Holy See and the life of the Church in Italy and around the world, and is accredited to the Holy See Press Office.</p>'),
     ('<p>Si è laureato in Scienze della comunicazione sociale, con specializzazione in giornalismo, all’Università Pontificia Salesiana, dove nel 2025 ha conseguito il dottorato di ricerca. Studia il rapporto tra comunicazione, cultura e società, con attenzione a come l’intelligenza artificiale trasforma il lavoro delle redazioni.</p>',
-     '<p>He studied Social Communication, specialising in journalism, at the Pontifical Salesian University in Rome, where he earned his doctorate in 2025. His research looks at communication, culture and society, with a focus on how artificial intelligence is reshaping the work of newsrooms.</p>'),
+     '<p>He holds a degree in Social Communication, specialising in journalism, from the Pontifical Salesian University in Rome, where he also earned his doctorate in 2025. His research looks at communication, culture and society, with a focus on how artificial intelligence is reshaping the work of newsrooms.</p>'),
     ('<p>È membro della Commissione Film Cei dal 2020, oggi per il mandato 2024–2029, e collabora con il Gruppo interdisciplinare di osservazione e studio sulla disabilità del Servizio nazionale Cei per la pastorale delle persone con disabilità. Scrive per il <i>Messaggero di sant’Antonio</i>. Interviene in corsi e incontri sulla comunicazione digitale, sul piano editoriale e sull’intelligenza artificiale.</p>',
      '<p>He has sat on the Film Commission of the Italian Bishops’ Conference since 2020, now for the 2024–2029 term, and contributes to the Conference’s interdisciplinary study group on disability. He writes for the <i>Messaggero di sant’Antonio</i> and teaches courses and workshops on digital communication, editorial planning and artificial intelligence.</p>'),
     ('<h3>Il Papa e la Santa Sede</h3>', '<h3>The Pope and the Holy See</h3>'),
@@ -83,17 +83,19 @@ PAIRS = [
     ('<h2 class="label">Scritti e interventi</h2>', '<h2 class="label">Writing and talks</h2>'),
     ('<h3 class="label gold sub-h">Articoli scelti</h3>', '<h3 class="label gold sub-h">Selected articles</h3>'),
     ('Sei testi per conoscere la scrittura: racconto, commento, critica dei media, intervista. Tutti gli articoli firmati per il SIR sono nella <a href="https://www.agensir.it/author/r-benotti/">pagina autore di agensir.it</a>.',
-     'Six pieces that show the range of his writing: personal narrative, commentary, media criticism and interviews, all in Italian. Everything he has written for SIR is on his <a href="https://www.agensir.it/author/r-benotti/">agensir.it author page</a>.'),
+     'Six pieces that show the range of his writing: personal narrative, commentary, media criticism and interviews. All are in Italian except the first, which SIR also published in English. His signed SIR articles are collected on his <a href="https://www.agensir.it/author/r-benotti/">agensir.it author page</a>.'),
+    ('<h4><a href="https://www.agensir.it/chiesa/2026/09/22/intelligenza-artificiale-e-big-tech-mons-cantu-vescovi-usa-non-diamo-il-nostro-avallo-alle-aziende/">Intelligenza artificiale e big tech. Mons. Cantú (vescovi Usa): “Non diamo il nostro avallo alle aziende”</a></h4>',
+     '<h4><a href="https://www.agensir.it/chiesa/2026/09/22/artificial-intelligence-and-big-tech-bishop-cantu-u-s-bishops-we-do-not-endorse-companies/" hreflang="en">Artificial intelligence and big tech. Bishop Cantú (U.S. bishops): “We do not endorse companies”</a></h4>'),
     ('SIR · Intervista', 'SIR · Interview'), ('SIR · Commento', 'SIR · Commentary'), ('SIR · Critica dei media', 'SIR · Media criticism'),
     ('SIR · Approfondimento', 'SIR · Feature'), ('Avvenire · Racconto personale', 'Avvenire · Personal essay'), ('Vocazioni · Reportage', 'Vocazioni · Reportage'),
     ('<p>Il vescovo di San José, nella Silicon Valley, guida la task force dei vescovi statunitensi sull’intelligenza artificiale: dialogo con le aziende, tutele per gli utenti, le stesse regole dentro la Chiesa.</p>',
      '<p>The Bishop of San José, in Silicon Valley, leads the US bishops’ task force on artificial intelligence: dialogue with companies, safeguards for users, the same rules inside the Church.</p>'),
     ('<p>Da una poesia scritta in carcere, una riflessione sulla dignità della persona e sul senso della pena.</p>', '<p>A poem written in prison prompts a reflection on human dignity and the meaning of punishment.</p>'),
-    ('<p><i>Temptation Island</i> letto attraverso il montaggio e il giudizio che costruisce nello spettatore.</p>', '<p>Italy’s <i>Temptation Island</i> read through its editing and the judgement it builds in the viewer.</p>'),
+    ('<p><i>Temptation Island</i> letto attraverso il montaggio e il giudizio che costruisce nello spettatore.</p>', '<p>An analysis of how the editing of Italy’s <i>Temptation Island</i> shapes the viewer’s judgement.</p>'),
     ('<p>Che cosa accade quando l’incontro digitale con la fede resta senza radici in una comunità.</p>', '<p>What happens when an encounter with faith that begins online never takes root in a community.</p>'),
     ('<p>Tor Vergata, 2000–2025: la Gmg vissuta da giovane e il ritorno venticinque anni dopo, da cronista.</p>', '<p>Tor Vergata, 2000–2025: World Youth Day as a young man, and the return twenty-five years later as a reporter.</p>'),
     ('<p>Una parrocchia raccontata dentro una celebrazione, con le voci di don Luigi D’Errico e di mons. Lojudice. <i>Vocazioni</i>, n. 3, maggio–giugno.</p>',
-     '<p>A parish described from inside a celebration, with the voices of Fr Luigi D’Errico and Bishop Lojudice. <i>Vocazioni</i>, no. 3, May–June.</p>'),
+     '<p>A report from a parish Mass, with the voices of Fr Luigi D’Errico and Bishop Lojudice. <i>Vocazioni</i>, no. 3, May–June.</p>'),
     ('<h3 class="label gold sub-h">Saggi e contributi in rivista</h3>', '<h3 class="label gold sub-h">Essays and journal contributions</h3>'),
     ('Alcuni tra i contributi in volume e in rivista. Gli articoli scientifici sono nella sezione <a href="#research">Ricerca</a>.', 'A selection of book chapters and journal pieces. Peer-reviewed articles are listed under <a href="#research">Research</a>.'),
     ('<span class="label tipo">Saggio in volume</span>', '<span class="label tipo">Book chapter</span>'),
@@ -101,7 +103,7 @@ PAIRS = [
     ('Scholé, Brescia 2026, pp. 169 ss.', 'Scholé, Brescia 2026, pp. 169 ff.'),
     ('<span class="label tipo">Articolo in rivista</span>', '<span class="label tipo">Journal article</span>'),
     ('anno 7, n. 1, pp. 123–129.', 'vol. 7, no. 1, pp. 123–129.'),
-    ('<p><i>Vocazioni</i>, aprile 2017.</p>', '<p><i>Vocazioni</i>, April 2017.</p>'),
+    ('<p><i>Vocazioni</i>, n. 2, marzo–aprile 2017.</p>', '<p><i>Vocazioni</i>, no. 2, March–April 2017.</p>'),
     ('<h3 class="label gold sub-h">Relazioni e corsi</h3>', '<h3 class="label gold sub-h">Talks and courses</h3>'),
     ('Alcuni tra gli interventi a convegni, corsi e incontri di formazione.', 'A selection of conference papers, courses and training sessions.'),
     ('Relazione · video preregistrato', 'Paper · pre-recorded video'),
@@ -152,7 +154,7 @@ PAIRS = [
     ('Una biografia breve da usare per presentazioni e locandine, e una fotografia in alta risoluzione.', 'A short biography for introductions and programmes, and a high-resolution photograph.'),
     ('id="bio-breve"><p>Riccardo Benotti è giornalista professionista e caposervizio del SIR – Servizio Informazione Religiosa, l’agenzia della Conferenza episcopale italiana, dove lavora dal 2006. È accreditato presso la Sala Stampa della Santa Sede. Dottore di ricerca in Scienze della comunicazione sociale all’Università Pontificia Salesiana, studia come l’intelligenza artificiale trasforma il giornalismo. Ha pubblicato <i>Covid-19: preti in prima linea</i> (San Paolo, 2021) e <i>Viaggio nella vita religiosa</i> (Libreria Editrice Vaticana, 2016). È membro della Commissione Film Cei.</p>',
      'id="bio-breve"><p>Riccardo Benotti is an Italian journalist and senior editor at SIR – Servizio Informazione Religiosa, the news agency of the Italian Bishops’ Conference, where he has worked since 2006. He is accredited to the Holy See Press Office. He holds a PhD in Social Communication from the Pontifical Salesian University in Rome and studies how artificial intelligence is transforming journalism. His books include <i>Covid-19: preti in prima linea</i> (San Paolo, 2021) and <i>Viaggio nella vita religiosa</i> (Libreria Editrice Vaticana, 2016). He is a member of the Film Commission of the Italian Bishops’ Conference.</p>'),
-    ('data-ok="Copiata">Copia la biografia</button>', 'data-ok="Copied">Copy the biography</button>'),
+    ('data-ok="Copiata" data-ko="Copia non riuscita: il testo è selezionato, copialo tu">Copia la biografia</button>', 'data-ok="Copied" data-ko="Copy failed: the text is selected, copy it manually">Copy the biography</button>'),
     ('Scarica la foto (JPG, 1254 × 1254)', 'Download the photo (JPG, 1254 × 1254)'),
 ]
 FOOT = [
