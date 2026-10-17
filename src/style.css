@@ -333,15 +333,15 @@ footer .contatto a { color: var(--band-ink); text-decoration-color: var(--band-s
 @media (max-width: 760px) {
   .hero { padding-block: 2rem 2.25rem; }
   .hero-top {
-    grid-template-columns: 6.75rem minmax(0, 1fr);
+    grid-template-columns: clamp(8rem, 36vw, 9.5rem) minmax(0, 1fr);
     grid-template-areas: "foto nome" "foto qual" "lede lede";
-    column-gap: 1.15rem; row-gap: 0;
+    column-gap: 1.1rem; row-gap: 0;
     align-items: center;
   }
   .hero-text { display: contents; }
   .ritratto { grid-area: foto; order: 0; width: 100%; align-self: center; }
   .ritratto img { box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--rule); }
-  .hero-text h1 { grid-area: nome; align-self: end; margin: 0; font-size: clamp(2.3rem, 10.5vw, 2.9rem); line-height: 1; }
+  .hero-text h1 { grid-area: nome; align-self: end; margin: 0; font-size: clamp(2.1rem, 9.6vw, 2.7rem); line-height: 1; }
   .hero-text .label { grid-area: qual; align-self: start; margin-top: 0.55rem; font-size: 0.66rem; letter-spacing: 0.08em; line-height: 1.5; }
   .hero-text .lede { grid-area: lede; margin-top: 1.6rem; font-size: 1.28rem; }
 }
