@@ -202,7 +202,7 @@ def person_ld():
                      "sameAs": "https://www.wikidata.org/wiki/Q12050678"},
         "memberOf": {"@type": "Organization", "name": "Commissione Film CEI", "url": "https://www.commissionefilmcei.it/"},
         "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "Dottorato di ricerca",
-                          "educationalLevel": "Dottorato di ricerca in Scienze della comunicazione sociale", "dateCreated": "2025",
+                          "educationalLevel": "Dottorato di ricerca in Scienze della comunicazione sociale", "dateCreated": "2025-12-17",
                           "recognizedBy": {"@id": SITE + "/#ups"}},
         "alumniOf": {"@type": "CollegeOrUniversity", "@id": SITE + "/#ups", "name": "Università Pontificia Salesiana",
                      "url": "https://www.unisal.it", "sameAs": "https://www.wikidata.org/wiki/Q543289"},
@@ -238,7 +238,8 @@ def ld_home():
                   "publisher": {"@type": "Organization", "name": pub}, "datePublished": y, "isbn": isbn,
                   "numberOfPages": pp, "inLanguage": "it", "sameAs": "https://www.wikidata.org/wiki/" + q})
     g.append({"@type": "Thesis", "name": "Intelligenza artificiale e giornalismo. Un'indagine sui pro e contro di una possibile implementazione di sistemi IA nelle redazioni cattoliche della CEI e della Santa Sede",
-              "author": {"@id": SITE + "/#riccardo-benotti"}, "datePublished": "2025", "inLanguage": "it",
+              "author": {"@id": SITE + "/#riccardo-benotti"}, "datePublished": "2025-12-17", "inLanguage": "it",
+              "contributor": {"@type": "Person", "name": "Fabio Pasqualetti", "roleName": "Relatore"},
               "inSupportOf": "Dottorato di ricerca in Scienze della comunicazione sociale",
               "sourceOrganization": {"@id": SITE + "/#ups"}, "sameAs": "https://www.wikidata.org/wiki/Q141757044"})
     return {"@context": "https://schema.org", "@graph": g}
