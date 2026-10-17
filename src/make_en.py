@@ -160,6 +160,7 @@ FOOT = [
     ('<span class="label">Altrove</span>', '<span class="label">Elsewhere</span>'),
     ('<span>Gli articoli firmati</span>', '<span>Signed articles</span>'),
     ('<span>Il filo del giorno e altri post</span>', '<span>The daily column and other posts</span>'),
+    ('<span>Archivio di tutte le puntate</span>', '<span>Archive of the daily column (in Italian)</span>'),
     ('<span>Pubblicazioni scientifiche</span>', '<span>Academic publications</span>'),
     ('<span>Pagina autore</span>', '<span>Author page</span>'),
     ('Commissione Film Cei</a><span>I membri</span>', 'CEI Film Commission</a><span>Members</span>'),

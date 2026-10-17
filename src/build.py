@@ -262,7 +262,7 @@ def main():
     urls = []
 
     # Home IT
-    body = (SRC / 'body_it.html').read_text().replace('{{FILO}}', home_items(puntate)).replace('{{CONTATTO}}', contatto('it'))
+    body = (SRC / 'body_it.html').read_text().replace('{{FILO}}', home_items(puntate)).replace('{{CONTATTO}}', contatto('it')).replace('{{N_PUNTATE}}', str(len(puntate)))
     page = head('it', 'Riccardo Benotti – Giornalista e autore',
                 'Riccardo Benotti, giornalista professionista e autore, caposervizio del SIR – Servizio Informazione Religiosa. Chiesa, Santa Sede, comunicazione e intelligenza artificiale.',
                 '/', alt=[('it', '/'), ('en', '/en/'), ('x-default', '/')], og_type='profile', jsonld=ld_home())
