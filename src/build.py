@@ -79,6 +79,18 @@ def meta_html(p):
     return f'<div class="meta">{foto}<a href="{p["linkedin"]}">Leggi su LinkedIn</a></div>'
 
 
+def fuoco(p):
+    """Punto di ritaglio per le anteprime 3:2. Campo "fuoco" in filo.json (es. "50% 20%");
+    per le foto verticali, se manca, si tiene la parte alta, dove di solito c'è il volto."""
+    if not p.get('foto'):
+        return ''
+    if p.get('fuoco'):
+        return f' style="object-position:{p["fuoco"]}"'
+    from PIL import Image
+    w, h = Image.open(PUB / 'img' / 'filo' / p['foto']).size
+    return ' style="object-position:50% 22%"' if h > w * 0.8 else ''
+
+
 def figura(p, cls='foto', lazy=True):
     if not p.get('foto'):
         return ''
@@ -86,7 +98,7 @@ def figura(p, cls='foto', lazy=True):
     w, h = Image.open(PUB / 'img' / 'filo' / p['foto']).size
     alt = html.escape(p.get('alt') or ('Foto della puntata del ' + data_it(p['data']) + ': ' + p['titolo_txt'])[:180])
     return (f'<figure class="{cls}"><img src="/img/filo/{p["foto"]}" width="{w}" height="{h}" alt="{alt}"'
-            + (' loading="lazy"' if lazy else '') + '></figure>')
+            + fuoco(p) + (' loading="lazy"' if lazy else '') + '></figure>')
 
 
 def home_items(puntate):
