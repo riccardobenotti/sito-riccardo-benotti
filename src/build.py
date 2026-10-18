@@ -159,7 +159,8 @@ def head(lang, title, desc, path, alt=None, og_type='website', jsonld=None, extr
 <link rel="preload" href="/fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css?v={CSS_VER}">
 <link rel="alternate" type="application/rss+xml" title="Leone, il filo del giorno" href="{SITE}/filo/feed.xml">
-{ld}{extra}</head>
+{ld}{extra}<script data-goatcounter="https://riccardobenotti.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
 <body>
 '''
 
