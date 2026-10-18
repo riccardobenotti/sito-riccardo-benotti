@@ -213,7 +213,7 @@ def person_ld():
         "knowsLanguage": ["it", "en"],
         "knowsAbout": ["Santa Sede", "Chiesa cattolica", "Giornalismo", "Intelligenza artificiale", "Comunicazione ecclesiale", "Vita religiosa"],
         "identifier": {"@type": "PropertyValue", "propertyID": "ORCID", "value": "0009-0000-5747-2592"},
-        "sameAs": ["https://orcid.org/0009-0000-5747-2592", LINKEDIN,
+        "sameAs": ["https://orcid.org/0009-0000-5747-2592", "https://scholar.google.com/citations?user=HPVbAx0AAAAJ", LINKEDIN,
                    "https://www.edizionisanpaolo.it/autore/riccardo-benotti.aspx",
                    "https://www.agensir.it/author/r-benotti/"] + CFG.get('sameAs_extra', []),
     }

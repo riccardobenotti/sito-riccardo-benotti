@@ -192,6 +192,7 @@ FOOT = [
     ('<span>Il filo del giorno e altri post</span>', '<span>The daily column and other posts</span>'),
     ('<span>Archivio di tutte le puntate</span>', '<span>Archive of the daily column (in Italian)</span>'),
     ('<span>Pubblicazioni scientifiche</span>', '<span>Academic publications</span>'),
+    ('<span>Profilo accademico</span>', '<span>Academic profile</span>'),
     ('<span>Pagina autore</span>', '<span>Author page</span>'),
     ('Commissione Film Cei</a><span>I membri</span>', 'CEI Film Commission</a><span>Members</span>'),
     ('Ufficio comunicazioni sociali Cei</a><span>La nomina nella Commissione, 2020</span>', 'CEI Office for Social Communications</a><span>Appointment to the Commission, 2020</span>'),
