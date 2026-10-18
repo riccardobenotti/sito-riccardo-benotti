@@ -342,7 +342,18 @@ def main():
         sm += '</url>\n'
     sm += '</urlset>\n'
     write('/sitemap.xml', sm)
-    write('/robots.txt', f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
+    bots = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User',
+            'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot', 'Applebot-Extended',
+            'Bingbot', 'Googlebot', 'DuckAssistBot', 'MistralAI-User', 'CCBot']
+    robots = ''.join(f'User-agent: {b}\nAllow: /\n\n' for b in bots)
+    write('/robots.txt', robots + f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
+    # scheda per assistenti IA (llms.txt)
+    ultima = puntate[0]['data'] if puntate else ''
+    write('/llms.txt', (SRC / 'llms.txt').read_text().replace('{{N_PUNTATE}}', str(len(puntate)))
+          .replace('{{ULTIMA}}', data_it(ultima) if ultima else ''))
+    # chiave IndexNow (Bing e altri motori)
+    k = (ROOT / 'data' / 'indexnow.key').read_text().strip()
+    write(f'/{k}.txt', k)
     print(f'OK: {len(puntate)} puntate, {len(urls)} pagine in sitemap')
 
 

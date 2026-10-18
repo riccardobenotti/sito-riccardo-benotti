@@ -24,3 +24,5 @@ jobs:
           path: public
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Segnala le pagine nuove a IndexNow
+        run: sleep 20 && python3 tools/indexnow.py
