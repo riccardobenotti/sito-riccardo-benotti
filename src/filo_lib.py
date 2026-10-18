@@ -31,6 +31,8 @@ def tohtml(s):
             j = i
             while j < n and (_style(s[j]) == st or (s[j] in _GLUE and any(_style(c) == st for c in s[j:j + 3]))):
                 j += 1
+            while j < n and unicodedata.combining(s[j]):  # accento finale (più, attività) dentro il grassetto
+                j += 1
             seg = html.escape(unb(s[i:j]).strip(), quote=False)
             tag = {'b': ('<b>', '</b>'), 'i': ('<i>', '</i>'), 'bi': ('<b><i>', '</i></b>')}[st]
             res += tag[0] + seg + tag[1] + (' ' if s[i:j].endswith(' ') else '')
