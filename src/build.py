@@ -202,7 +202,7 @@ def person_ld():
                      "sameAs": "https://www.wikidata.org/wiki/Q12050678"},
         "memberOf": {"@type": "Organization", "name": "Commissione Film CEI", "url": "https://www.commissionefilmcei.it/"},
         "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "Dottorato di ricerca",
-                          "educationalLevel": "Dottorato di ricerca in Scienze della comunicazione sociale", "dateCreated": "2025-12-17",
+                          "educationalLevel": "Dottorato di ricerca in Scienze della comunicazione sociale", "dateCreated": "2025-12-17T00:00:00+01:00",
                           "recognizedBy": {"@id": SITE + "/#ups"}},
         "alumniOf": {"@type": "CollegeOrUniversity", "@id": SITE + "/#ups", "name": "Università Pontificia Salesiana",
                      "url": "https://www.unisal.it", "sameAs": "https://www.wikidata.org/wiki/Q543289"},
