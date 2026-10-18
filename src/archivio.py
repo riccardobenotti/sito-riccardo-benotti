@@ -8,7 +8,7 @@ INTRO = ('Ogni giorno, da dicembre 2025, una lettura delle notizie e degli appun
          'La rubrica di Riccardo Benotti esce anche su LinkedIn.')
 
 
-SEGNO = '<svg class="filo-segno" viewBox="0 0 220 24" width="220" height="24" aria-hidden="true" focusable="false"><path d="M2 14 C 30 6 52 20 80 13 S 118 6 132 12 C 146 18 153 5 143 3 C 133 1 131 16 147 16 C 168 16 190 9 218 12"/></svg>'
+SEGNO = '<svg class="filo-segno" viewBox="0 0 240 26" width="240" height="26" aria-hidden="true" focusable="false"><path class="t2" d="M3 15 C 24 21 46 10 72 14 S 114 20 131 13 C 143 8.5 155 11 152 6 C 148 2 136 4 140 11 C 143 16.5 158 20 170 17 C 190 12.5 205 17 222 13 C 226 12 229 11.5 233 10"/><path class="t1" d="M2 18 C 22 11 44 22 70 16 S 112 9 132 15 C 146 19 157 9 150 4.5 C 143 0.5 133 6 139 13 C 144 19 156 18 168 15 C 188 10 206 12 224 15 C 229 16 233 17.5 237 20"/></svg>'
 
 def _mese(iso):
     y, m = iso[:4], int(iso[5:7])
