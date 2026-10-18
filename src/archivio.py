@@ -8,7 +8,8 @@ INTRO = ('Ogni giorno, da dicembre 2025, una lettura delle notizie e degli appun
          'La rubrica di Riccardo Benotti esce anche su LinkedIn.')
 
 
-SEGNO = '<svg class="filo-segno" viewBox="0 0 220 24" width="220" height="24" aria-hidden="true" focusable="false"><path d="M2 14 C 30 6 52 20 80 13 S 118 6 132 12 C 146 18 153 5 143 3 C 133 1 131 16 147 16 C 168 16 190 9 218 12"/></svg>'
+SEGNO = '<svg class="filo-segno" viewBox="0 0 320 44" width="320" height="44" aria-hidden="true" focusable="false"><path class="gom" d="M12.0 33.9 A16 16 0 1 1 28.0 6.1 A16 16 0 1 1 12.0 33.9 M21.4 35.6 Q8.6 29.5 4.9 16.0 M27.1 33.9 Q12.3 26.5 7.6 10.6 M31.4 30.5 Q16.4 23.0 11.6 6.9 M34.6 25.7 Q21.1 19.0 16.9 4.7 M35.8 20.2 Q25.0 15.8 22.6 4.4 M5.1 24.7 Q19.6 19.5 27.2 6.2 M8.1 30.0 Q23.9 24.6 31.9 10.0" pathLength="1"/><path class="coda" d="M25.5 35.0 C26.5 35.5 28.4 37.2 31.5 37.5 C34.6 37.9 38.2 37.8 44.0 37.0 C49.8 36.2 57.3 35.2 66.0 33.0 C74.7 30.8 85.7 25.8 96.0 24.0 C106.3 22.2 117.3 21.0 128.0 22.0 C138.7 23.0 148.7 28.2 160.0 30.0 C171.3 31.8 184.0 33.8 196.0 33.0 C208.0 32.2 220.3 27.2 232.0 25.0 C243.7 22.8 254.7 20.2 266.0 19.5 C277.3 18.8 291.3 20.1 300.0 21.0 C308.7 21.9 315.0 24.3 318.0 25.0" pathLength="1"/></svg>'
+CHIUSA = '<svg class="filo-segno" viewBox="0 0 165 34" width="165" height="34" aria-hidden="true" focusable="false"><path d="M2.0 24.0 C6.7 23.4 20.0 20.3 30.0 20.5 C40.0 20.7 51.0 24.1 62.0 25.0 C73.0 25.9 86.0 26.0 96.0 26.0 C106.0 26.0 115.8 25.4 122.0 25.0 C128.2 24.6 130.5 24.7 133.4 23.8 C136.3 23.0 138.4 20.5 139.4 19.8"/><path d="M144.5 26.5 A11 11 0 1 1 155.5 7.5 A11 11 0 1 1 144.5 26.5 M151.2 27.7 Q142.2 23.5 139.7 14.0 M155.2 26.3 Q144.8 21.3 141.7 10.2 M158.3 23.8 Q147.9 18.8 144.8 7.7 M160.3 20.0 Q151.4 15.8 148.8 6.3 M140.2 21.3 Q150.4 17.5 155.9 8.1"/></svg>'
 
 def _mese(iso):
     y, m = iso[:4], int(iso[5:7])
@@ -154,7 +155,7 @@ def archivio(puntate):
       </header>
       {fig}
       <div class="testo">{"".join(p["paras"])}</div>
-      <div class="filo-chiusa">{SEGNO}</div>
+      <div class="filo-chiusa">{CHIUSA}</div>
       {fonti_html(p)}
       <div class="meta puntata-meta"><a href="{p["linkedin"]}">La puntata su LinkedIn</a><a href="{_mese_url(p["data"])}">Tutte le puntate di {nome_mese}</a></div>
     </article>
