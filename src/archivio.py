@@ -8,6 +8,8 @@ INTRO = ('Ogni giorno, da dicembre 2025, una lettura delle notizie e degli appun
          'La rubrica di Riccardo Benotti esce anche su LinkedIn.')
 
 
+SEGNO = '<svg class="filo-segno" viewBox="0 0 220 24" width="220" height="24" aria-hidden="true" focusable="false"><path d="M2 14 C 30 6 52 20 80 13 S 118 6 132 12 C 146 18 153 5 143 3 C 133 1 131 16 147 16 C 168 16 190 9 218 12"/></svg>'
+
 def _mese(iso):
     y, m = iso[:4], int(iso[5:7])
     return f'{MESI[m - 1]} {y}'
@@ -54,7 +56,7 @@ def archivio(puntate):
         blocchi += f'''
     <section class="mese" id="m{k}">
       <h2><a href="{_mese_url(k)}">{_mese(k + "-01").capitalize()}</a></h2>
-      <ol class="archivio">{righe}
+      <ol class="archivio filo-linea">{righe}
       </ol>
     </section>'''
     bric, bld = _briciole([('Home', '/'), (SERIE, None)])
@@ -63,6 +65,7 @@ def archivio(puntate):
     {bric}
     <span class="label gold">Rubrica quotidiana · {len(puntate)} puntate</span>
     <h1>Leone, <em>il filo del giorno</em></h1>
+    {SEGNO}
     <p class="intro">{html.escape(INTRO)} <a href="{LINKEDIN}">Seguila su LinkedIn</a> o con il <a href="/filo/feed.xml">feed RSS</a>.</p>
     <nav class="mesi" aria-label="Archivio per mese"><span class="label">Archivio per mese</span><ul>{indice_mesi}</ul></nav>
     <p class="ultima-p"><span class="label">Ultima puntata</span> <a href="{puntate[0]["url"]}">{puntate[0]["titolo_html"]}</a> <time datetime="{puntate[0]["data"]}">({data_it(puntate[0]["data"])})</time></p>
@@ -105,8 +108,9 @@ def archivio(puntate):
     {bric}
     <span class="label gold">{SERIE} · {len(lista)} puntate</span>
     <h1>Il filo del giorno, <em>{nome}</em></h1>
+    {SEGNO}
     <p class="intro">Le puntate di {nome} della rubrica quotidiana di Riccardo Benotti su papa Leone XIV.</p>
-    <ol class="lista-mese">{voci}
+    <ol class="lista-mese filo-linea">{voci}
     </ol>
     {vic}
   </main>
@@ -150,6 +154,7 @@ def archivio(puntate):
       </header>
       {fig}
       <div class="testo">{"".join(p["paras"])}</div>
+      <div class="filo-chiusa">{SEGNO}</div>
       {fonti_html(p)}
       <div class="meta puntata-meta"><a href="{p["linkedin"]}">La puntata su LinkedIn</a><a href="{_mese_url(p["data"])}">Tutte le puntate di {nome_mese}</a></div>
     </article>
