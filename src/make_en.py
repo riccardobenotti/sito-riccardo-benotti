@@ -17,6 +17,7 @@ FILO_EN = '''
       <h2 class="label">Daily column</h2>
       <div class="prose">
         <h2 class="big">Leone, <em>il filo del giorno</em></h2>
+        {{SEGNO}}
         <p>Every day Riccardo writes a daily account of Pope Leo XIV’s news and engagements, held together by a single thread: the <i>filo del giorno</i>. The column is published in Italian on this site and on <a href="https://www.linkedin.com/in/riccardo-benotti-0a0534362">LinkedIn</a>. Latest instalments:</p>
         <ol class="filo-en">{{FILO_EN}}</ol>
         <p><a href="/filo/" hreflang="it">Full archive</a> (in Italian)</p>

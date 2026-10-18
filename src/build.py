@@ -31,6 +31,7 @@ def data_en(iso):
     return f'{d} {MONTHS[m-1]} {y}'
 
 
+SEGNO_HOME = re.search(r"^SEGNO = '(.*)'$", (pathlib.Path(__file__).parent / 'archivio.py').read_text(), re.M).group(1)
 ROME = __import__('zoneinfo').ZoneInfo('Europe/Rome')
 
 
@@ -301,7 +302,7 @@ def main():
     urls = []
 
     # Home IT
-    body = (SRC / 'body_it.html').read_text().replace('{{FILO}}', home_items(puntate)).replace('{{CONTATTO}}', contatto('it')).replace('{{N_PUNTATE}}', str(len(puntate)))
+    body = (SRC / 'body_it.html').read_text().replace('{{FILO}}', home_items(puntate)).replace('{{SEGNO}}', SEGNO_HOME).replace('{{CONTATTO}}', contatto('it')).replace('{{N_PUNTATE}}', str(len(puntate)))
     page = head('it', 'Riccardo Benotti – Giornalista e autore',
                 'Riccardo Benotti, giornalista professionista e autore, caposervizio del SIR – Servizio Informazione Religiosa. Chiesa, Santa Sede, comunicazione e intelligenza artificiale.',
                 '/', alt=[('it', '/'), ('en', '/en/'), ('x-default', '/')], og_type='profile', jsonld=ld_home())
@@ -311,7 +312,7 @@ def main():
     # Home EN
     body = (SRC / 'body_en.html').read_text()
     ultime = ''.join(f'<li><time class="mono" datetime="{p["data"]}">{data_en(p["data"])}</time> <a href="{p["url"]}" hreflang="it" lang="it">{p["titolo_html"]}</a></li>' for p in puntate[:5])
-    body = body.replace('{{FILO_EN}}', ultime).replace('{{CONTATTO}}', contatto('en'))
+    body = body.replace('{{FILO_EN}}', ultime).replace('{{SEGNO}}', SEGNO_HOME).replace('{{CONTATTO}}', contatto('en'))
     ld = {"@context": "https://schema.org", "@graph": [{**person_ld(), "jobTitle": "Senior editor",
           "description": "Italian journalist and author, senior editor at SIR – Servizio Informazione Religiosa, the news agency of the Italian Bishops' Conference, accredited to the Holy See Press Office."}]}
     page = head('en', 'Riccardo Benotti – Journalist and author',
