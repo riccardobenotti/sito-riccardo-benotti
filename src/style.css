@@ -298,8 +298,8 @@ footer .contatto a { color: var(--band-ink); text-decoration-color: var(--band-s
 /* Archivio del filo */
 .pagina.larga { max-width: 60rem; }
 .briciole { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 1.6rem; overflow-wrap: anywhere; }
-.briciole a { color: var(--gold); text-decoration: none; }
-.briciole a:hover { text-decoration: underline; }
+.briciole a { color: var(--gold); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; text-decoration-color: color-mix(in srgb, var(--gold) 45%, transparent); }
+.briciole a:hover { text-decoration-color: var(--gold); }
 .pagina .intro { font-size: 1.12rem; color: var(--ink-soft); max-width: 62ch; }
 .mesi { margin: 1.6rem 0; padding: 1rem 1.2rem; background: var(--paper-alt); border-radius: 4px; }
 .mesi ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin: 0.4rem 0 0; padding: 0; }
