@@ -386,7 +386,8 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 /* Il filo: il gomitolo che si srotola, il filo che lega le puntate, il gomitolo che si riavvolge */
 .filo-segno { display: block; width: 20rem; max-width: 86%; height: auto; margin: -0.4rem 0 1.4rem; overflow: visible; }
 .filo-segno path { fill: none; stroke: var(--gold); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
-.filo-head .filo-segno { width: 17rem; margin: 1rem 0 0; }
+.filo-head .filo-segno { width: 12.5rem; margin: 0.45rem 0 0 0.1rem; }
+@media (max-width: 640px) { .filo-head .filo-segno { width: 10.5rem; margin-top: 0.3rem; } }
 .filo-chiusa { margin: 2.2rem 0 0.4rem; }
 .filo-chiusa .filo-segno { width: 10.5rem; margin: 0 auto; }
 @media (prefers-reduced-motion: no-preference) {
