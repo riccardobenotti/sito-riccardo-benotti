@@ -51,6 +51,7 @@ Rubrica quotidiana di Riccardo Benotti sulle notizie e gli appuntamenti di Papa 
 ## Profili e fonti esterne
 
 - Pagina autore SIR: https://www.agensir.it/author/r-benotti/
+- Pagina autore Avvenire: https://www.avvenire.it/redazione/riccardo-benotti-3476
 - Wikidata: https://www.wikidata.org/wiki/Q141757006
 - ORCID: https://orcid.org/0009-0000-5747-2592
 - Google Scholar: https://scholar.google.com/citations?user=HPVbAx0AAAAJ

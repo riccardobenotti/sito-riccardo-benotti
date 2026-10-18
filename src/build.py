@@ -215,7 +215,7 @@ def person_ld():
         "identifier": {"@type": "PropertyValue", "propertyID": "ORCID", "value": "0009-0000-5747-2592"},
         "sameAs": ["https://orcid.org/0009-0000-5747-2592", "https://scholar.google.com/citations?user=HPVbAx0AAAAJ", LINKEDIN,
                    "https://www.edizionisanpaolo.it/autore/riccardo-benotti.aspx",
-                   "https://www.agensir.it/author/r-benotti/"] + CFG.get('sameAs_extra', []),
+                   "https://www.agensir.it/author/r-benotti/", "https://www.avvenire.it/redazione/riccardo-benotti-3476"] + CFG.get('sameAs_extra', []),
     }
 
 
