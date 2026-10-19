@@ -170,7 +170,7 @@ def archivio(puntate):
                "author": {"@type": "Person", "@id": SITE + "/#riccardo-benotti", "name": "Riccardo Benotti", "url": SITE + "/"},
                "publisher": {"@id": SITE + "/#riccardo-benotti"},
                "isPartOf": {"@id": SITE + "/filo/#serie"}, "about": {"@type": "Person", "name": "Leone XIV"},
-               "sameAs": p['linkedin']}
+               **({"sameAs": p['linkedin']} if p.get('urn') else {})}
         if p.get('foto'):
             art["image"] = {"@type": "ImageObject", "url": SITE + '/img/filo/' + p['foto'],
                             **({"creditText": p['credito'], "copyrightNotice": "© " + p['credito'],

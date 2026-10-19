@@ -62,10 +62,11 @@ def puntata(p):
     titolo_txt = html.unescape(titolo)
     pub = datetime.datetime.fromtimestamp((int(p['urn']) >> 22) / 1000, ROME) if p.get('urn') else None
     return {**p, 'titolo_html': titolo, 'titolo_txt': titolo_txt, 'paras': paras_html, 'sommario': plain,
-            'descrizione': taglia(plain, 158), 'pubblicato': pub.isoformat(timespec='seconds') if pub else p['data'],
+            'descrizione': taglia(plain, 158),
+            'pubblicato': pub.isoformat(timespec='seconds') if pub else (p.get('pubblicato') or datetime.datetime.fromisoformat(p['data'] + 'T19:00:00').replace(tzinfo=ROME).isoformat()),
             'parole': len(re.sub(r'<[^>]+>', ' ', ' '.join(paras_html)).split()),
             'url': f'/filo/{p.get("slug") or p["data"]}/',
-            'linkedin': f'https://www.linkedin.com/feed/update/urn:li:activity:{p["urn"]}/'}
+            'linkedin': f'https://www.linkedin.com/feed/update/urn:li:activity:{p["urn"]}/' if p.get('urn') else LINKEDIN + '/recent-activity/all/'}
 
 
 def fonti_html(p):
