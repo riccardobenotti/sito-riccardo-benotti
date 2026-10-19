@@ -408,3 +408,5 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
   .filo-linea { --fl-pad: 1.9rem; --fl-x: 0.05rem; }
   .filo.filo-linea { --fl-pad: 2rem; --fl-x: 0.1rem; }
 }
+footer .crediti { margin-top: 0.6rem; font-size: 0.85rem; }
+footer .crediti a { color: var(--band-soft); text-decoration-color: var(--band-soft); }

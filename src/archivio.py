@@ -174,7 +174,8 @@ def archivio(puntate):
         if p.get('foto'):
             art["image"] = {"@type": "ImageObject", "url": SITE + '/img/filo/' + p['foto'],
                             **({"creditText": p['credito'], "copyrightNotice": "© " + p['credito'],
-                                "creator": {"@type": "Organization", "name": p['credito']}} if p.get('credito') else {})}
+                                "creator": {"@type": "Organization", "name": p['credito']}} if p.get('credito') else {}),
+                            "license": SITE + "/crediti/", "acquireLicensePage": SITE + "/crediti/"}
         extra = (f'<meta property="article:published_time" content="{p["pubblicato"]}">\n'
                  f'<meta property="article:author" content="{SITE}/">\n<meta property="article:section" content="{SERIE}">\n')
         if prec:

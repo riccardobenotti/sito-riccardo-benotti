@@ -194,7 +194,7 @@ def person_ld():
         "@type": "Person", "@id": SITE + "/#riccardo-benotti", "name": "Riccardo Benotti",
         "givenName": "Riccardo", "familyName": "Benotti",
         "url": SITE + "/", "mainEntityOfPage": SITE + "/",
-        "image": {"@type": "ImageObject", "url": SITE + "/img/riccardo-benotti-foto.jpg", "caption": "Riccardo Benotti"},
+        "image": {"@type": "ImageObject", "url": SITE + "/img/riccardo-benotti-foto.jpg", "caption": "Riccardo Benotti", "creditText": "Riccardo Benotti", "copyrightNotice": "© Riccardo Benotti", "creator": {"@id": SITE + "/#riccardo-benotti"}, "license": SITE + "/crediti/", "acquireLicensePage": SITE + "/crediti/"},
         "birthDate": "1982-12-28",
         "birthPlace": {"@type": "Place", "name": "Roma", "sameAs": "https://www.wikidata.org/wiki/Q220"},
         "hasOccupation": {"@type": "Occupation", "name": "Giornalista", "sameAs": "https://www.wikidata.org/wiki/Q1930187"},
@@ -323,6 +323,18 @@ def main():
     write('/en/', page); urls.append(('/en/', oggi))
 
     urls += archivio(puntate)
+
+    # crediti delle immagini (licenza e acquisizione per i metadati immagine)
+    body = '''<div class="wrap"><main class="pagina"><span class="label gold">Note</span>
+    <h1>Crediti delle immagini</h1>
+    <p>Il ritratto di Riccardo Benotti pubblicato su questo sito è di sua proprietà. Per utilizzarlo, ad esempio nei materiali di presentazione di un incontro, scrivere a <a href="mailto:info@riccardobenotti.it">info@riccardobenotti.it</a>.</p>
+    <p>Le fotografie delle puntate di «Leone, il filo del giorno» sono di Vatican Media, salvo diversa indicazione nella didascalia, e sono pubblicate a corredo dell’informazione con il credito dell’autore. I diritti restano ai titolari: per riutilizzarle occorre rivolgersi a Vatican Media.</p>
+    <p>Le copertine dei libri sono riprodotte per illustrare i volumi e appartengono ai rispettivi editori.</p>
+    <p lang="en">Image credits: the portrait belongs to Riccardo Benotti (contact info@riccardobenotti.it for use). Photos in “Leone, il filo del giorno” are by Vatican Media unless stated otherwise; rights remain with the copyright holders.</p></main></div>
+'''
+    page = head('it', 'Crediti delle immagini | Riccardo Benotti', 'Crediti e diritti delle immagini pubblicate su riccardobenotti.it.', '/crediti/')
+    write('/crediti/', page + nav('it', False, '/en/') + body + footer('it') + '</body>\n</html>\n')
+    urls.append(('/crediti/', oggi))
 
     # 404
     body = '''<div class="wrap"><main class="pagina"><span class="label gold">Errore 404</span>
