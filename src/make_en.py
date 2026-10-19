@@ -83,8 +83,8 @@ PAIRS = [
     # scritti
     ('<h2 class="label">Scritti e interventi</h2>', '<h2 class="label">Writing and talks</h2>'),
     ('<h3 class="label gold sub-h">Articoli scelti</h3>', '<h3 class="label gold sub-h">Selected articles</h3>'),
-    ('Sei testi per conoscere la scrittura: racconto, commento, critica dei media, intervista. Tutti gli articoli firmati per il SIR sono nella <a href="https://www.agensir.it/author/r-benotti/">pagina autore di agensir.it</a>.',
-     'Six pieces that show the range of his writing: personal narrative, commentary, media criticism and interviews. All are in Italian except the first, which SIR also published in English. His signed SIR articles are collected on his <a href="https://www.agensir.it/author/r-benotti/">agensir.it author page</a>.'),
+    ('Sette testi per conoscere la scrittura: racconto, commento, critica dei media, intervista. Tutti gli articoli firmati per il SIR sono nella <a href="https://www.agensir.it/author/r-benotti/">pagina autore di agensir.it</a>.',
+     'Seven pieces that show the range of his writing: personal narrative, commentary, media criticism and interviews. All are in Italian except the interview with Bishop Cantú, which SIR also published in English. His signed SIR articles are collected on his <a href="https://www.agensir.it/author/r-benotti/">agensir.it author page</a>.'),
     ('<h4><a href="https://www.agensir.it/chiesa/2026/09/22/intelligenza-artificiale-e-big-tech-mons-cantu-vescovi-usa-non-diamo-il-nostro-avallo-alle-aziende/">Intelligenza artificiale e big tech. Mons. Cantú (vescovi Usa): “Non diamo il nostro avallo alle aziende”</a></h4>',
      '<h4><a href="https://www.agensir.it/chiesa/2026/09/22/artificial-intelligence-and-big-tech-bishop-cantu-u-s-bishops-we-do-not-endorse-companies/" hreflang="en">Artificial intelligence and big tech. Bishop Cantú (U.S. bishops): “We do not endorse companies”</a></h4>'),
     ('<h3 class="label gold sub-h">In tv e in video</h3>', '<h3 class="label gold sub-h">On TV and video</h3>'),
@@ -118,6 +118,7 @@ PAIRS = [
     ('SIR · Approfondimento', 'SIR · Feature'), ('Avvenire · Racconto personale', 'Avvenire · Personal essay'), ('Vocazioni · Reportage', 'Vocazioni · Reportage'),
     ('<p>Il vescovo di San José, nella Silicon Valley, guida la task force dei vescovi statunitensi sull’intelligenza artificiale: dialogo con le aziende, tutele per gli utenti, le stesse regole dentro la Chiesa.</p>',
      '<p>The Bishop of San José, in Silicon Valley, leads the US bishops’ task force on artificial intelligence: dialogue with companies, safeguards for users, the same rules inside the Church.</p>'),
+    ('<p>La morte di un sacerdote in diretta Facebook, in Ecuador, diventa in poche ore materia di scherno: una riflessione sulla dignità della persona davanti allo schermo e sugli algoritmi che premiano l’emozione rapida.</p>', '<p>A priest’s death during a Mass streamed on Facebook in Ecuador turns into online mockery within hours: a reflection on human dignity in front of the screen and on algorithms that reward instant emotion.</p>'),
     ('<p>Da una poesia scritta in carcere, una riflessione sulla dignità della persona e sul senso della pena.</p>', '<p>A poem written in prison prompts a reflection on human dignity and the meaning of punishment.</p>'),
     ('<p><i>Temptation Island</i> letto attraverso il montaggio e il giudizio che costruisce nello spettatore.</p>', '<p>An analysis of how the editing of Italy’s <i>Temptation Island</i> shapes the viewer’s judgement.</p>'),
     ('<p>Che cosa accade quando l’incontro digitale con la fede resta senza radici in una comunità.</p>', '<p>What happens when an encounter with faith that begins online never takes root in a community.</p>'),
