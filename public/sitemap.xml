@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url><loc>https://riccardobenotti.it/</loc><lastmod>2026-10-21</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
   <url><loc>https://riccardobenotti.it/en/</loc><lastmod>2026-10-21</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
-  <url><loc>https://riccardobenotti.it/filo/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://riccardobenotti.it/filo/2026/10/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://riccardobenotti.it/filo/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://riccardobenotti.it/filo/2026/10/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/09/</loc><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/08/</loc><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/07/</loc><lastmod>2026-07-31</lastmod></url>
@@ -14,6 +14,7 @@
   <url><loc>https://riccardobenotti.it/filo/2026/02/</loc><lastmod>2026-02-27</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/01/</loc><lastmod>2026-01-31</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2025/12/</loc><lastmod>2025-12-31</lastmod></url>
+  <url><loc>https://riccardobenotti.it/filo/2026-10-21/</loc><lastmod>2026-10-21</lastmod><image:image><image:loc>https://riccardobenotti.it/img/filo/2026-10-21.webp</image:loc></image:image></url>
   <url><loc>https://riccardobenotti.it/filo/2026-10-19/</loc><lastmod>2026-10-19</lastmod><image:image><image:loc>https://riccardobenotti.it/img/filo/2026-10-19.webp</image:loc></image:image></url>
   <url><loc>https://riccardobenotti.it/filo/2026-10-18/</loc><lastmod>2026-10-18</lastmod><image:image><image:loc>https://riccardobenotti.it/img/filo/2026-10-18.webp</image:loc></image:image></url>
   <url><loc>https://riccardobenotti.it/filo/2026-10-17/</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://riccardobenotti.it/img/filo/2026-10-17.webp</image:loc></image:image></url>
