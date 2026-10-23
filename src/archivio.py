@@ -1,5 +1,6 @@
 # Archivio di «Leone, il filo del giorno»: indice generale, pagine mensili,
 # una pagina per puntata, feed RSS. Eseguito da build.py (usa le sue funzioni).
+import re
 from email.utils import format_datetime
 
 SERIE = 'Leone, il filo del giorno'
@@ -28,9 +29,35 @@ def _briciole(voci):
     return f'<nav class="briciole" aria-label="Percorso">{vis}</nav>', ld
 
 
+LEONE_LD = {"@type": "Person", "name": "Leone XIV", "alternateName": ["Papa Leone XIV", "Robert Francis Prevost"],
+            "sameAs": ["https://www.wikidata.org/wiki/Q6109517", "https://it.wikipedia.org/wiki/Papa_Leone_XIV"]}
+
+
+def _editore(url):
+    h = url.split('/')[2]
+    return {'press.vatican.va': 'Sala Stampa della Santa Sede', 'www.vatican.va': 'Santa Sede'}.get(h, h)
+
+
+def titolo_seo(p):
+    """Titolo per i motori di ricerca: data e nome in testa, poi la prima frase del titolo (il titolo intero resta nell'H1)."""
+    t = p['titolo_txt']
+    prima = re.split(r'(?<=[.!?”"])\s+(?=[A-ZÀ-Ý“"])', t, maxsplit=1)[0]
+    if len(prima) >= 25:
+        t = prima.rstrip('.')
+    if len(t) > 78:
+        for sep in (', ', ': ', ' – '):
+            i = t.rfind(sep, 0, 78)
+            if i >= 30:
+                t = t[:i]
+                break
+        else:
+            t = t[:78].rsplit(' ', 1)[0].rstrip(',;:.–—') + '…'
+    return f'{data_it(p["data"])}, papa Leone XIV: {t}'
+
+
 def _serie_ld():
     return {"@type": "CreativeWorkSeries", "@id": SITE + "/filo/#serie", "name": SERIE, "url": SITE + "/filo/",
-            "inLanguage": "it", "author": {"@id": SITE + "/#riccardo-benotti"}, "about": {"@type": "Person", "name": "Leone XIV"}}
+            "inLanguage": "it", "author": {"@id": SITE + "/#riccardo-benotti"}, "about": LEONE_LD}
 
 
 def _pagina(title, desc, path, body, graph, og_type='website', img=None, extra=''):
@@ -77,7 +104,7 @@ def archivio(puntate):
     graph = [{"@type": "CollectionPage", "@id": SITE + "/filo/", "url": SITE + "/filo/", "name": SERIE + " – tutte le puntate",
               "description": INTRO, "inLanguage": "it", "isPartOf": {"@id": SITE + "/#sito"}, "mainEntity": {"@id": SITE + "/filo/#serie"},
               "author": {"@id": SITE + "/#riccardo-benotti"}}, _serie_ld(), bld]
-    _pagina(f'{SERIE}: tutte le puntate | Riccardo Benotti',
+    _pagina(f'{SERIE}: archivio completo su papa Leone XIV | Riccardo Benotti',
             'Archivio completo di «Leone, il filo del giorno», la rubrica quotidiana di Riccardo Benotti su papa Leone XIV: '
             f'{len(puntate)} puntate da dicembre 2025, ordinate per mese.', '/filo/', body, graph)
     urls.append(('/filo/', puntate[0]['data']))
@@ -122,7 +149,7 @@ def archivio(puntate):
                   "inLanguage": "it", "isPartOf": {"@id": SITE + "/filo/"},
                   "hasPart": [{"@type": "NewsArticle", "headline": p['titolo_txt'][:110], "url": SITE + p['url'], "datePublished": p['pubblicato']} for p in lista]},
                  bld]
-        _pagina(f'{SERIE} – {nome} | Riccardo Benotti',
+        _pagina(f'Papa Leone XIV, {nome}: le puntate de «{SERIE}» | Riccardo Benotti',
                 taglia(f'Le {len(lista)} puntate di {nome} di «{SERIE}», la rubrica quotidiana di Riccardo Benotti sul pontificato di Leone XIV: '
                        + '; '.join(p['titolo_txt'] for p in lista[:3]), 158), path, body, graph)
         urls.append((path, lista[0]['data']))
@@ -169,20 +196,28 @@ def archivio(puntate):
                "wordCount": p['parole'], "articleSection": SERIE,
                "author": {"@type": "Person", "@id": SITE + "/#riccardo-benotti", "name": "Riccardo Benotti", "url": SITE + "/"},
                "publisher": {"@id": SITE + "/#riccardo-benotti"},
-               "isPartOf": {"@id": SITE + "/filo/#serie"}, "about": {"@type": "Person", "name": "Leone XIV"},
+               "isPartOf": {"@id": SITE + "/filo/#serie"}, "about": LEONE_LD,
+               "keywords": "Leone XIV, papa Leone XIV, Santa Sede, " + SERIE + ", " + data_it(p['data']),
                **({"sameAs": p['linkedin']} if p.get('urn') else {})}
+        if p.get('fonti'):
+            art["isBasedOn"] = [{"@type": "WebPage", "name": t, "url": u, "publisher": {"@type": "Organization", "name": _editore(u)}} for t, u in p['fonti']]
         if p.get('foto'):
-            art["image"] = {"@type": "ImageObject", "url": SITE + '/img/filo/' + p['foto'],
+            art["thumbnailUrl"] = SITE + '/img/filo/' + p['foto']
+            art["image"] = {"@type": "ImageObject", "url": SITE + '/img/filo/' + p['foto'], "width": w, "height": h,
                             **({"creditText": p['credito'], "copyrightNotice": "© " + p['credito'],
                                 "creator": {"@type": "Organization", "name": p['credito']}} if p.get('credito') else {}),
                             "license": SITE + "/crediti/", "acquireLicensePage": SITE + "/crediti/"}
         extra = (f'<meta property="article:published_time" content="{p["pubblicato"]}">\n'
+                 f'<meta property="article:modified_time" content="{p["pubblicato"]}">\n'
                  f'<meta property="article:author" content="{SITE}/">\n<meta property="article:section" content="{SERIE}">\n')
+        if p.get('foto'):
+            extra += (f'<meta property="og:image:width" content="{w}">\n<meta property="og:image:height" content="{h}">\n'
+                      f'<meta property="og:image:alt" content="{alt}">\n<meta name="twitter:image:alt" content="{alt}">\n')
         if prec:
             extra += f'<link rel="prev" href="{SITE}{prec["url"]}">\n'
         if succ:
             extra += f'<link rel="next" href="{SITE}{succ["url"]}">\n'
-        _pagina(f'{p["titolo_txt"]} | {SERIE}', p['descrizione'], p['url'], body, [art, _serie_ld(), bld],
+        _pagina(titolo_seo(p), p['descrizione'], p['url'], body, [art, _serie_ld(), bld],
                 og_type='article', img=('filo/' + p['foto']) if p.get('foto') else None, extra=extra)
         urls.append((p['url'], p['data'], ('filo/' + p['foto']) if p.get('foto') else None))
 

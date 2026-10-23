@@ -59,10 +59,16 @@ def puntata(p):
     paras = [EMO.sub('', typo(x)).strip() for x in p['testo'].split('\n') if x.strip()]
     paras_html = [f'<p>{tohtml(x)}</p>' for x in paras]
     plain = html.unescape(re.sub(r'<[^>]+>', '', paras_html[0])) if paras_html else ''
+    # descrizione per i motori di ricerca: l'attacco della puntata, completato con il primo tema se è troppo breve
+    desc = plain
+    for altro in paras_html[1:]:
+        if len(desc) >= 140:
+            break
+        desc += ' ' + html.unescape(re.sub(r'<[^>]+>', '', altro))
     titolo_txt = html.unescape(titolo)
     pub = datetime.datetime.fromtimestamp((int(p['urn']) >> 22) / 1000, ROME) if p.get('urn') else None
     return {**p, 'titolo_html': titolo, 'titolo_txt': titolo_txt, 'paras': paras_html, 'sommario': plain,
-            'descrizione': taglia(plain, 158),
+            'descrizione': taglia(desc, 158),
             'pubblicato': pub.isoformat(timespec='seconds') if pub else (p.get('pubblicato') or datetime.datetime.fromisoformat(p['data'] + 'T19:00:00').replace(tzinfo=ROME).isoformat()),
             'parole': len(re.sub(r'<[^>]+>', ' ', ' '.join(paras_html)).split()),
             'url': f'/filo/{p.get("slug") or p["data"]}/',
