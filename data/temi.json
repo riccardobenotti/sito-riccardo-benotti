@@ -1,0 +1,198 @@
+[
+ {
+  "slug": "papa-francesco",
+  "nome": "Papa Francesco",
+  "tipo": "persona",
+  "rx": "(?<!San )(?<!Sant’)(?<!Sant')Francesco(?! d)(?! [A-ZÀ-Ý][a-zà-ý])|Bergoglio",
+  "qid": "Q450675"
+ },
+ {
+  "slug": "benedetto-xvi",
+  "nome": "Benedetto XVI",
+  "tipo": "persona",
+  "rx": "Benedetto XVI|Ratzinger",
+  "qid": "Q2494"
+ },
+ {
+  "slug": "giovanni-paolo-ii",
+  "nome": "Giovanni Paolo II",
+  "tipo": "persona",
+  "rx": "Giovanni Paolo II|Wojtyła",
+  "qid": "Q989"
+ },
+ {
+  "slug": "paolo-vi",
+  "nome": "Paolo VI",
+  "tipo": "persona",
+  "rx": "Paolo VI",
+  "qid": "Q16975"
+ },
+ {
+  "slug": "sant-agostino",
+  "nome": "Sant’Agostino",
+  "tipo": "persona",
+  "rx": "Agostino",
+  "qid": "Q8018"
+ },
+ {
+  "slug": "san-francesco-d-assisi",
+  "nome": "San Francesco d’Assisi",
+  "tipo": "persona",
+  "rx": "San Francesco|Francesco d['’]Assisi|Assisi|Porziuncola",
+  "qid": "Q676555"
+ },
+ {
+  "slug": "pietro-parolin",
+  "nome": "Pietro Parolin",
+  "tipo": "persona",
+  "rx": "Parolin",
+  "qid": "Q574058"
+ },
+ {
+  "slug": "medio-oriente",
+  "nome": "Medio Oriente",
+  "tipo": "luogo",
+  "rx": "Medio Oriente|Gaza|Israele|Terra Santa|Palestin|Gerusalemme|\\bIran\\b|Siria",
+  "qid": "Q7204"
+ },
+ {
+  "slug": "ucraina",
+  "nome": "Ucraina",
+  "tipo": "luogo",
+  "rx": "Ucrain|Zelensk|Shevchuk|Kyiv|Kiev",
+  "qid": "Q212"
+ },
+ {
+  "slug": "libano",
+  "nome": "Libano",
+  "tipo": "luogo",
+  "rx": "Liban|Beirut",
+  "qid": "Q822"
+ },
+ {
+  "slug": "stati-uniti",
+  "nome": "Stati Uniti",
+  "tipo": "luogo",
+  "rx": "Stati Uniti|\\bUsa\\b|Trump|Vance",
+  "qid": "Q30"
+ },
+ {
+  "slug": "spagna",
+  "nome": "Spagna",
+  "tipo": "luogo",
+  "rx": "Spagna|Madrid|Barcellona|Canarie|Tenerife|Gran Canaria|Montserrat|Sagrada",
+  "qid": "Q29"
+ },
+ {
+  "slug": "francia",
+  "nome": "Francia",
+  "tipo": "luogo",
+  "rx": "Francia|Parigi|Lourdes|Metz|Macron|Notre-Dame|Stade de France",
+  "qid": "Q142"
+ },
+ {
+  "slug": "peru",
+  "nome": "Perù",
+  "tipo": "luogo",
+  "rx": "Perù|Peru\\b|Chiclayo",
+  "qid": "Q419"
+ },
+ {
+  "slug": "africa",
+  "nome": "Africa",
+  "tipo": "luogo",
+  "rx": "Africa|Camerun|Angola|Guinea Equatoriale|Algeria|Yaoundé|Congo",
+  "qid": "Q15"
+ },
+ {
+  "slug": "castel-gandolfo",
+  "nome": "Castel Gandolfo",
+  "tipo": "luogo",
+  "rx": "Castel Gandolfo|Villa Barberini",
+  "qid": "Q242105"
+ },
+ {
+  "slug": "angelus",
+  "nome": "Angelus e Regina Caeli",
+  "tipo": "evento",
+  "rx": "Angelus|Regina Caeli",
+  "qid": "Q623699"
+ },
+ {
+  "slug": "udienza-generale",
+  "nome": "Udienza generale",
+  "tipo": "evento",
+  "rx": "[Uu]dienza generale|[Uu]dienze generali",
+  "qid": "Q3494805"
+ },
+ {
+  "slug": "giubileo",
+  "nome": "Giubileo",
+  "tipo": "evento",
+  "rx": "Giubileo|Porta Santa",
+  "qid": "Q838794"
+ },
+ {
+  "slug": "pasqua",
+  "nome": "Pasqua e Settimana Santa",
+  "tipo": "evento",
+  "rx": "Pasqua|Settimana Santa|Triduo|Domenica delle Palme|Via Crucis|Giovedì Santo|Venerdì Santo",
+  "qid": "Q21196"
+ },
+ {
+  "slug": "natale",
+  "nome": "Natale",
+  "tipo": "evento",
+  "rx": "Natale|Presepe|Epifania",
+  "qid": "Q19809"
+ },
+ {
+  "slug": "quaresima",
+  "nome": "Quaresima",
+  "tipo": "evento",
+  "rx": "Quaresima|Ceneri",
+  "qid": "Q82866"
+ },
+ {
+  "slug": "concistoro",
+  "nome": "Concistoro",
+  "tipo": "evento",
+  "rx": "Concistoro",
+  "qid": "Q841535"
+ },
+ {
+  "slug": "sinodo",
+  "nome": "Sinodo",
+  "tipo": "evento",
+  "rx": "Sinodo",
+  "qid": "Q866210"
+ },
+ {
+  "slug": "concilio-vaticano-ii",
+  "nome": "Concilio Vaticano II",
+  "tipo": "evento",
+  "rx": "Concilio|Sacrosanctum|Gaudium et spes|Lumen gentium|Dei Verbum|Nostra aetate",
+  "qid": "Q169789"
+ },
+ {
+  "slug": "magnifica-humanitas",
+  "nome": "Magnifica humanitas",
+  "tipo": "tema",
+  "rx": "Magnifica [Hh]umanitas",
+  "qid": "Q139027804"
+ },
+ {
+  "slug": "intelligenza-artificiale",
+  "nome": "Intelligenza artificiale",
+  "tipo": "tema",
+  "rx": "(?i:intelligenza artificiale)|\\bIA\\b",
+  "qid": "Q11660"
+ },
+ {
+  "slug": "migranti",
+  "nome": "Migranti e rifugiati",
+  "tipo": "tema",
+  "rx": "migrant|rifugiat",
+  "qid": "Q177626"
+ }
+]

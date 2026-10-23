@@ -1,10 +1,10 @@
 """Segnala a IndexNow (Bing, Yandex, Seznam, Naver…) le pagine aggiornate di recente.
 Gira nel workflow di GitHub Pages dopo la pubblicazione."""
-import datetime, json, re, urllib.request, pathlib, sys
+import datetime, json, os, re, urllib.request, pathlib, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 key = (ROOT / 'data' / 'indexnow.key').read_text().strip()
 sm = (ROOT / 'public' / 'sitemap.xml').read_text()
-limite = (datetime.date.today() - datetime.timedelta(days=2)).isoformat()
+limite = '0000' if os.environ.get('INDEXNOW_TUTTE') == 'true' else (datetime.date.today() - datetime.timedelta(days=2)).isoformat()
 urls = [u for u, d in re.findall(r'<loc>([^<]+)</loc><lastmod>([^<]+)</lastmod>', sm) if d >= limite]
 urls = sorted(set(urls + ['https://riccardobenotti.it/', 'https://riccardobenotti.it/en/',
                           'https://riccardobenotti.it/filo/', 'https://riccardobenotti.it/llms.txt']))[:500]

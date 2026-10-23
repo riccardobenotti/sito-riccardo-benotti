@@ -96,6 +96,7 @@ def archivio(puntate):
     {SEGNO}
     <p class="intro">{html.escape(INTRO)} <a href="{LINKEDIN}">Seguila su LinkedIn</a> o con il <a href="/filo/feed.xml">feed RSS</a>.</p>
     <nav class="mesi" aria-label="Archivio per mese"><span class="label">Archivio per mese</span><ul>{indice_mesi}</ul></nav>
+    <p class="ultima-p"><span class="label">Per argomento</span> <a href="/filo/temi/">Persone, luoghi e temi delle puntate</a></p>
     <p class="ultima-p"><span class="label">Ultima puntata</span> <a href="{puntate[0]["url"]}">{puntate[0]["titolo_html"]}</a> <time datetime="{puntate[0]["data"]}">({data_it(puntate[0]["data"])})</time></p>
     {blocchi}
   </main>
@@ -184,6 +185,7 @@ def archivio(puntate):
       <div class="testo">{"".join(p["paras"])}</div>
       <div class="filo-chiusa">{CHIUSA}</div>
       {fonti_html(p)}
+      {temi_html(p)}
       <div class="meta puntata-meta"><a href="{p["linkedin"]}">La puntata su LinkedIn</a><a href="{_mese_url(p["data"])}">Tutte le puntate di {nome_mese}</a></div>
     </article>
     {vic}

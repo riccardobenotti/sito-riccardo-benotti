@@ -410,3 +410,15 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 }
 footer .crediti { margin-top: 0.6rem; font-size: 0.85rem; }
 footer .crediti a { color: var(--band-soft); text-decoration-color: var(--band-soft); }
+
+/* Temi, persone e luoghi */
+.temi-puntata { margin: 1rem 0 0; font-size: 0.98rem; color: var(--ink-soft); }
+.temi-puntata .label { display: block; margin-bottom: 0.3rem; }
+.temi-puntata ul, .temi-altri ul, .temi-gruppo ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; margin: 0.3rem 0 0; padding: 0; }
+.temi-altri { margin: 2.2rem 0 0; padding: 1rem 1.2rem; background: var(--paper-alt); border-radius: 4px; }
+.temi-altri .label { display: block; }
+.temi-gruppo { margin: 1.8rem 0 0; }
+.temi-gruppo h2 { margin: 0 0 0.2rem; font-size: 1.25rem; }
+.temi-gruppo li a, .temi-altri li a { font-weight: 600; }
+.temi-gruppo .n, .temi-altri .n { color: var(--ink-soft); font-size: 0.85rem; }
+.pagina .temi-gruppo { padding: 0; border: 0; margin: 1.6rem 0 0; }
