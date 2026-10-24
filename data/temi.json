@@ -7,6 +7,13 @@
   "qid": "Q450675"
  },
  {
+  "slug": "bartolomeo-i",
+  "nome": "Bartolomeo I",
+  "tipo": "persona",
+  "rx": "Bartolomeo I\\b|[Pp]atriarca ecumenico|Costantinopoli",
+  "qid": "Q44501"
+ },
+ {
   "slug": "benedetto-xvi",
   "nome": "Benedetto XVI",
   "tipo": "persona",
@@ -24,7 +31,7 @@
   "slug": "paolo-vi",
   "nome": "Paolo VI",
   "tipo": "persona",
-  "rx": "Paolo VI",
+  "rx": "(?<!Aula )(?<!Sala )(?<!Auletta )(?<!Scuola )(?<!pontificia )(?<!Auditorium )Paolo VI(?! Hall)",
   "qid": "Q16975"
  },
  {
@@ -171,7 +178,7 @@
   "slug": "concilio-vaticano-ii",
   "nome": "Concilio Vaticano II",
   "tipo": "evento",
-  "rx": "Concilio|Sacrosanctum|Gaudium et spes|Lumen gentium|Dei Verbum|Nostra aetate",
+  "rx": "Concilio Vaticano II|Vaticano II|Concilio(?! di )(?! ecumenico)(?! Vaticano I\\b)|Sacrosanctum|Gaudium et spes|Lumen gentium|Dei Verbum|Nostra aetate",
   "qid": "Q169789"
  },
  {
