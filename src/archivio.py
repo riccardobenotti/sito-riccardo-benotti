@@ -39,20 +39,31 @@ def _editore(url):
 
 
 def titolo_seo(p):
-    """Titolo per i motori di ricerca: data e nome in testa, poi la prima frase del titolo (il titolo intero resta nell'H1)."""
+    """Titolo per i motori di ricerca, entro ~70 caratteri: nome e data in testa, poi l'inizio del titolo (tagliato a un confine naturale). Il titolo intero resta nell'H1."""
     t = p['titolo_txt']
-    prima = re.split(r'(?<=[.!?”"])\s+(?=[A-ZÀ-Ý“"])', t, maxsplit=1)[0]
-    if len(prima) >= 25:
-        t = prima.rstrip('.')
-    if len(t) > 78:
-        for sep in (', ', ': ', ' – '):
-            i = t.rfind(sep, 0, 78)
-            if i >= 30:
-                t = t[:i]
-                break
-        else:
-            t = t[:78].rsplit(' ', 1)[0].rstrip(',;:.–—') + '…'
-    return f'{data_it(p["data"])}, papa Leone XIV: {t}'
+    pre = f'Papa Leone XIV, {data_it(p["data"])}: '
+    cap = max(82 - len(pre), 30)
+    frasi = re.split(r'(?<=[.!?”"])\s+(?=[A-ZÀ-Ý“"])', t)
+    prima = frasi[0].rstrip('.')
+    for f in frasi[1:]:
+        if len(prima) >= 30:
+            break
+        if len(prima) + 2 + len(f) <= cap + 12:
+            prima = prima + ': ' + f.rstrip('.') if not prima.endswith((':', '?', '!')) else prima + ' ' + f.rstrip('.')
+    if len(prima) >= 20:
+        t = prima
+    if len(t) > cap:
+        taglio = max((i for i in (t.rfind(sep, 0, cap + 1) for sep in (': ', '. ', ', ', ' – ', ' e ', ' ma ', ' per ', ' con ')) if i >= 16), default=None)
+        t = t[:taglio] if taglio else t[:cap + 1].rsplit(' ', 1)[0]
+        parole = t.split(' ')
+        while len(parole) > 3 and re.fullmatch(r'(?i)(e|di|a|da|in|con|su|per|tra|fra|il|lo|la|le|i|gli|un|una|del|della|dei|delle|al|alla|ai|alle|nel|nella|che|ma|o)', parole[-1].strip(',;:')):
+            parole.pop()
+        t = ' '.join(parole).rstrip(',;:.–—-')
+        if t.count('“') > t.count('”'):
+            t = t.rstrip(' ,;:.–—-') + '…”'
+        elif t.count('"') % 2:
+            t = t.rstrip(' ,;:.–—-') + '…"'
+    return pre + t
 
 
 def _serie_ld():
