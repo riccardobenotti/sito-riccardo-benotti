@@ -170,7 +170,7 @@ def temi(puntate, TEMI):
     <h1>Temi, <em>persone e luoghi</em></h1>
     {SEGNO}
     <p class="intro">Le puntate di «{SERIE}» raccolte per argomento: i Papi e i santi che Leone XIV cita, i Paesi e i viaggi, i tempi liturgici, i grandi temi del pontificato. Accanto a ogni voce, il numero di puntate.</p>{gruppi}
-    <p class="ultima-p"><a href="/filo/">Tutte le puntate, mese per mese</a></p>
+    <p class="ultima-p"><a href="/filo/viaggi/">I viaggi del Papa</a> · <a href="/filo/">Tutte le puntate, mese per mese</a></p>
   </main>
 </div>
 '''

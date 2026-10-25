@@ -1,21 +1,171 @@
 {
- "pubblica": false,
+ "pubblica": true,
  "intro": "I viaggi apostolici e le visite in Italia di papa Leone XIV, raccontati giorno per giorno in «Leone, il filo del giorno». Per ogni viaggio, le puntate in ordine di data.",
  "viaggi": [
-  {"slug": "uruguay-argentina-peru", "titolo": "Uruguay, Argentina e Perù", "tipo": "annunciato", "periodo": "annunciato", "puntate": ["2026-08-05", "2026-09-21"]},
-  {"slug": "francia", "titolo": "Francia: Parigi, Lourdes, Metz", "tipo": "estero", "periodo": "settembre 2026", "puntate": ["2026-08-07", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-30"]},
-  {"slug": "spagna", "titolo": "Spagna: Madrid, Barcellona, Canarie", "tipo": "estero", "periodo": "giugno 2026", "puntate": ["2026-06-03", "2026-06-05", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-17"]},
-  {"slug": "africa", "titolo": "Algeria, Camerun, Angola e Guinea Equatoriale", "tipo": "estero", "periodo": "aprile 2026", "puntate": ["2026-04-12", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23"]},
-  {"slug": "monaco", "titolo": "Principato di Monaco", "tipo": "estero", "periodo": "marzo 2026", "puntate": ["2026-03-28"]},
-  {"slug": "assisi-2026-10", "titolo": "Assisi, 40 anni dell'Incontro per la pace (visita annullata)", "tipo": "italia", "periodo": "ottobre 2026", "puntate": ["2026-10-03", "2026-10-23", "2026-10-25"]},
-  {"slug": "genazzano", "titolo": "Genazzano", "tipo": "italia", "periodo": "settembre 2026", "puntate": ["2026-09-07"]},
-  {"slug": "san-marino-rimini", "titolo": "San Marino e Rimini", "tipo": "italia", "periodo": "agosto 2026", "puntate": ["2026-08-12", "2026-08-22"]},
-  {"slug": "assisi-2026-08", "titolo": "Assisi, con i giovani", "tipo": "italia", "periodo": "agosto 2026", "puntate": ["2026-08-06"]},
-  {"slug": "vallepietra-subiaco", "titolo": "Vallepietra e Subiaco", "tipo": "italia", "periodo": "luglio 2026", "puntate": ["2026-07-22"]},
-  {"slug": "montecassino", "titolo": "Montecassino", "tipo": "italia", "periodo": "luglio 2026", "puntate": ["2026-07-20"]},
-  {"slug": "lampedusa", "titolo": "Lampedusa", "tipo": "italia", "periodo": "luglio 2026", "puntate": ["2026-07-04"]},
-  {"slug": "pavia", "titolo": "Pavia", "tipo": "italia", "periodo": "giugno 2026", "puntate": ["2026-06-19", "2026-06-20"]},
-  {"slug": "acerra", "titolo": "Acerra, Terra dei Fuochi", "tipo": "italia", "periodo": "maggio 2026", "puntate": ["2026-05-23"]},
-  {"slug": "pompei-napoli", "titolo": "Pompei e Napoli", "tipo": "italia", "periodo": "maggio 2026", "puntate": ["2026-05-08"]}
+  {
+   "slug": "uruguay-argentina-peru",
+   "titolo": "Uruguay, Argentina e Perù",
+   "tipo": "annunciato",
+   "periodo": "annunciato",
+   "puntate": [
+    "2026-08-05",
+    "2026-09-21"
+   ]
+  },
+  {
+   "slug": "francia",
+   "titolo": "Francia: Parigi, Lourdes, Metz",
+   "tipo": "estero",
+   "periodo": "settembre 2026",
+   "puntate": [
+    "2026-08-07",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-26",
+    "2026-09-27",
+    "2026-09-28",
+    "2026-09-30"
+   ]
+  },
+  {
+   "slug": "spagna",
+   "titolo": "Spagna: Madrid, Barcellona, Canarie",
+   "tipo": "estero",
+   "periodo": "giugno 2026",
+   "puntate": [
+    "2026-06-03",
+    "2026-06-05",
+    "2026-06-07",
+    "2026-06-08",
+    "2026-06-09",
+    "2026-06-10",
+    "2026-06-11",
+    "2026-06-12",
+    "2026-06-17"
+   ]
+  },
+  {
+   "slug": "africa",
+   "titolo": "Algeria, Camerun, Angola e Guinea Equatoriale",
+   "tipo": "estero",
+   "periodo": "aprile 2026",
+   "puntate": [
+    "2026-04-12",
+    "2026-04-13",
+    "2026-04-14",
+    "2026-04-15",
+    "2026-04-16",
+    "2026-04-17",
+    "2026-04-18",
+    "2026-04-19",
+    "2026-04-20",
+    "2026-04-21",
+    "2026-04-22",
+    "2026-04-23"
+   ]
+  },
+  {
+   "slug": "monaco",
+   "titolo": "Principato di Monaco",
+   "tipo": "estero",
+   "periodo": "marzo 2026",
+   "puntate": [
+    "2026-03-28"
+   ]
+  },
+  {
+   "slug": "assisi-2026-10",
+   "titolo": "Assisi, 40 anni dell'Incontro per la pace (visita annullata)",
+   "tipo": "italia",
+   "periodo": "ottobre 2026",
+   "puntate": [
+    "2026-10-03",
+    "2026-10-23",
+    "2026-10-25"
+   ]
+  },
+  {
+   "slug": "genazzano",
+   "titolo": "Genazzano",
+   "tipo": "italia",
+   "periodo": "settembre 2026",
+   "puntate": [
+    "2026-09-07"
+   ]
+  },
+  {
+   "slug": "san-marino-rimini",
+   "titolo": "San Marino e Rimini",
+   "tipo": "italia",
+   "periodo": "agosto 2026",
+   "puntate": [
+    "2026-08-12",
+    "2026-08-22"
+   ]
+  },
+  {
+   "slug": "assisi-2026-08",
+   "titolo": "Assisi, con i giovani",
+   "tipo": "italia",
+   "periodo": "agosto 2026",
+   "puntate": [
+    "2026-08-06"
+   ]
+  },
+  {
+   "slug": "vallepietra-subiaco",
+   "titolo": "Vallepietra e Subiaco",
+   "tipo": "italia",
+   "periodo": "luglio 2026",
+   "puntate": [
+    "2026-07-22"
+   ]
+  },
+  {
+   "slug": "montecassino",
+   "titolo": "Montecassino",
+   "tipo": "italia",
+   "periodo": "luglio 2026",
+   "puntate": [
+    "2026-07-20"
+   ]
+  },
+  {
+   "slug": "lampedusa",
+   "titolo": "Lampedusa",
+   "tipo": "italia",
+   "periodo": "luglio 2026",
+   "puntate": [
+    "2026-07-04"
+   ]
+  },
+  {
+   "slug": "pavia",
+   "titolo": "Pavia",
+   "tipo": "italia",
+   "periodo": "giugno 2026",
+   "puntate": [
+    "2026-06-19",
+    "2026-06-20"
+   ]
+  },
+  {
+   "slug": "acerra",
+   "titolo": "Acerra, Terra dei Fuochi",
+   "tipo": "italia",
+   "periodo": "maggio 2026",
+   "puntate": [
+    "2026-05-23"
+   ]
+  },
+  {
+   "slug": "pompei-napoli",
+   "titolo": "Pompei e Napoli",
+   "tipo": "italia",
+   "periodo": "maggio 2026",
+   "puntate": [
+    "2026-05-08"
+   ]
+  }
  ]
 }
