@@ -50,3 +50,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://riccardobenotti.it/sitemap.xml
+Sitemap: https://riccardobenotti.it/sitemap-news.xml

@@ -33,6 +33,69 @@ def calcola_temi(puntate):
     return out
 
 
+def _sintesi(t, TEMI):
+    """Testo introduttivo ricavato dai dati: quante puntate, prima e ultima, temi che ricorrono insieme."""
+    hit = [p for p, _ in t['hit']]
+    n = len(hit)
+    prima, ultima = hit[-1], hit[0]
+    if t['tipo'] == 'persona':
+        frase = f'{html.escape(t["nome"])} compare in {n} puntate'
+    else:
+        frase = f'«{html.escape(t["nome"])}» ricorre in {n} puntate'
+    frase += (f', dalla prima del <a href="{prima["url"]}">{data_it(prima["data"])}</a> '
+              f'alla più recente del <a href="{ultima["url"]}">{data_it(ultima["data"])}</a>.')
+    conta = {}
+    for p in hit:
+        for altro in p.get('temi', []):
+            if altro['slug'] != t['slug']:
+                conta[altro['slug']] = conta.get(altro['slug'], 0) + 1
+    vicini = [x for x in sorted(TEMI, key=lambda x: -conta.get(x['slug'], 0)) if conta.get(x['slug'], 0) >= 2][:4]
+    if vicini:
+        nomi = [f'<a href="/filo/temi/{x["slug"]}/">{html.escape(x["nome"])}</a>' for x in vicini]
+        elenco = nomi[0] if len(nomi) == 1 else ', '.join(nomi[:-1]) + ' e ' + nomi[-1]
+        frase += f' Gli argomenti che tornano più spesso nelle stesse puntate: {elenco}.'
+    return frase
+
+
+def linka(p, massimo=6):
+    """Collega alle pagine dei temi la prima occorrenza di ciascun tema nel testo della puntata (solo testo, mai dentro un link)."""
+    usati, fatti, out = set(), 0, []
+    for par in p['paras']:
+        pezzi = re.split(r'(<[^>]+>)', par)
+        dentro_a = False
+        for i, x in enumerate(pezzi):
+            if x.startswith('<'):
+                if re.match(r'<a\b', x):
+                    dentro_a = True
+                elif x.startswith('</a'):
+                    dentro_a = False
+                continue
+            if dentro_a or fatti >= massimo:
+                continue
+            fatto_qui, resto = '', x
+            while fatti < massimo:
+                migliore = None
+                for t in p.get('temi', []):
+                    if t['slug'] in usati:
+                        continue
+                    m = re.search(t['rx'], resto)
+                    if m and m.group(0).strip() and (migliore is None or m.start() < migliore[1].start()):
+                        migliore = (t, m)
+                if not migliore:
+                    break
+                t, m = migliore
+                a, b = m.span()
+                b += len(re.match(r'\w*', resto[b:]).group(0))  # il link copre la parola intera
+                fatto_qui += resto[:a] + f'<a class="link-tema" href="/filo/temi/{t["slug"]}/">{resto[a:b]}</a>'
+                resto = resto[b:]
+                usati.add(t['slug'])
+                fatti += 1
+            x = fatto_qui + resto
+            pezzi[i] = x
+        out.append(''.join(pezzi))
+    return ''.join(out)
+
+
 def temi_html(p):
     if not p.get('temi'):
         return ''
@@ -64,13 +127,15 @@ def temi(puntate, TEMI):
         <p>{html.escape(taglia(snip, 260))}</p></div>
       </li>'''
         bric, bld = _briciole([('Home', '/'), (SERIE, '/filo/'), ('Temi', '/filo/temi/'), (t['nome'], None)])
+        wd = f' <a href="https://www.wikidata.org/wiki/{t["qid"]}" rel="noopener">Scheda su Wikidata</a>.' if t.get('qid') else ''
         body = f'''<div class="wrap">
   <main class="pagina larga">
     {bric}
     <span class="label gold">{etichetta} · {n} puntate</span>
     <h1>{html.escape(t["nome"])}</h1>
     {SEGNO}
-    <p class="intro">Le puntate di «{SERIE}», la rubrica quotidiana di Riccardo Benotti su papa Leone XIV, che parlano di {html.escape(t["nome"])}, dalla più recente. Per ciascuna, il passaggio in cui compare. <a href="https://www.wikidata.org/wiki/{t["qid"]}" rel="noopener">Scheda su Wikidata</a>.</p>
+    <p class="intro">Le puntate di «{SERIE}», la rubrica quotidiana di Riccardo Benotti su papa Leone XIV, {"in cui compare " + html.escape(t["nome"]) if t["tipo"] == "persona" else "raccolte sotto la voce «" + html.escape(t["nome"]) + "»"}, dalla più recente. Per ciascuna, il passaggio in cui compare.{wd}</p>
+    <p class="intro">{_sintesi(t, TEMI)}</p>
     <ol class="lista-mese filo-linea">{voci}
     </ol>
     <nav class="temi-altri" aria-label="Altri temi"><span class="label">Altri temi</span><ul>{_chip(TEMI, t["slug"])}</ul></nav>
@@ -81,13 +146,13 @@ def temi(puntate, TEMI):
         path = f'/filo/temi/{t["slug"]}/'
         graph = [{"@type": "CollectionPage", "@id": SITE + path, "url": SITE + path, "name": f'{t["nome"]} e papa Leone XIV: le puntate di {SERIE}',
                   "inLanguage": "it", "isPartOf": {"@id": SITE + "/filo/temi/"},
-                  "about": {"@type": tipo_ld, "name": t['nome'], "sameAs": f'https://www.wikidata.org/wiki/{t["qid"]}'},
+                  "about": {"@type": tipo_ld, "name": t['nome'], **({"sameAs": f'https://www.wikidata.org/wiki/{t["qid"]}'} if t.get('qid') else {})},
                   "author": {"@id": SITE + "/#riccardo-benotti"},
                   "hasPart": [{"@type": "NewsArticle", "headline": p['titolo_txt'][:110], "url": SITE + p['url'], "datePublished": p['pubblicato']}
                               for p, _ in t['hit'][:60]]}, bld]
-        cosa = 'in cui compare' if t['tipo'] == 'persona' else 'che parlano di'
+        cosa = 'in cui compare' if t['tipo'] == 'persona' else 'sul tema'
         _pagina(f'{t["nome"]} e papa Leone XIV: tutte le puntate | Il filo del giorno',
-                taglia(f'Le {n} puntate di «{SERIE}» di Riccardo Benotti {cosa} {t["nome"]}, dalla più recente: '
+                taglia(f'Le {n} puntate di «{SERIE}» di Riccardo Benotti {cosa} {t["nome"] if t["tipo"] == "persona" else "«" + t["nome"] + "»"}, dalla più recente: '
                        + '; '.join(p['titolo_txt'] for p, _ in t['hit'][:3]), 158), path, body, graph)
         urls.append((path, t['hit'][0][0]['data']))
 

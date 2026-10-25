@@ -201,5 +201,194 @@
   "tipo": "tema",
   "rx": "migrant|rifugiat",
   "qid": "Q177626"
+ },
+ {
+  "slug": "maria-madre-di-gesu",
+  "nome": "La Madonna",
+  "tipo": "persona",
+  "rx": "Madonna|Vergine Maria|Maria Santissima|Madre di Dio|\\bmarian[ao]\\b|\\bRosario\\b|Lourdes|Fatima|Fátima|Guadalupe|Pompei",
+  "qid": "Q345"
+ },
+ {
+  "slug": "luis-antonio-tagle",
+  "nome": "Luis Antonio Tagle",
+  "tipo": "persona",
+  "rx": "Tagle",
+  "qid": "Q26901"
+ },
+ {
+  "slug": "matteo-zuppi",
+  "nome": "Matteo Zuppi",
+  "tipo": "persona",
+  "rx": "Zuppi",
+  "qid": "Q600191"
+ },
+ {
+  "slug": "pierbattista-pizzaballa",
+  "nome": "Pierbattista Pizzaballa",
+  "tipo": "persona",
+  "rx": "Pizzaballa",
+  "qid": "Q2092723"
+ },
+ {
+  "slug": "diocesi-di-roma",
+  "nome": "Diocesi di Roma",
+  "tipo": "luogo",
+  "rx": "diocesi di Roma|Laterano|[Vv]icario di Roma|parrocchi[ae] (?:di Roma|romane)",
+  "qid": "Q665037"
+ },
+ {
+  "slug": "europa",
+  "nome": "Europa",
+  "tipo": "luogo",
+  "rx": "\\bEuropa\\b|\\beurope[aio]\\b|Unione europea",
+  "qid": "Q46"
+ },
+ {
+  "slug": "turchia",
+  "nome": "Turchia",
+  "tipo": "luogo",
+  "rx": "Turchia|İznik|Iznik|Istanbul|Ankara",
+  "qid": "Q43"
+ },
+ {
+  "slug": "india",
+  "nome": "India",
+  "tipo": "luogo",
+  "rx": "\\bIndia\\b|Kerala|indian[aoei]\\b",
+  "qid": "Q668"
+ },
+ {
+  "slug": "polonia",
+  "nome": "Polonia",
+  "tipo": "luogo",
+  "rx": "Polonia|polacc",
+  "qid": "Q36"
+ },
+ {
+  "slug": "salute-del-papa",
+  "nome": "La salute del Papa",
+  "tipo": "tema",
+  "rx": "Margaritora|convalescen|chirurgia toracica|post[- ]operatori|radiografia|\\bdecorso\\b|[Pp]apa operato|ricoverato|dimissioni dal Gemelli|decimo piano",
+  "qid": ""
+ },
+ {
+  "slug": "pace",
+  "nome": "Pace",
+  "tipo": "tema",
+  "rx": "\\bpace\\b|\\bdisarm",
+  "qid": "Q454"
+ },
+ {
+  "slug": "famiglia",
+  "nome": "Famiglia",
+  "tipo": "tema",
+  "rx": "\\bfamigli[ae]\\b",
+  "qid": "Q8436"
+ },
+ {
+  "slug": "giovani",
+  "nome": "Giovani",
+  "tipo": "tema",
+  "rx": "\\bgiovani\\b|Jesus Youth|Gmg|Giubileo dei giovani",
+  "qid": "Q190007"
+ },
+ {
+  "slug": "poveri",
+  "nome": "Poveri e povertà",
+  "tipo": "tema",
+  "rx": "\\bpoveri\\b|\\bpovertà\\b|Dilexi te|Caritas|\\bmense?\\b",
+  "qid": "Q10294"
+ },
+ {
+  "slug": "lavoro",
+  "nome": "Lavoro",
+  "tipo": "tema",
+  "rx": "\\blavoro\\b|\\blavorator|disoccupa|sindacat",
+  "qid": "Q192581"
+ },
+ {
+  "slug": "educazione",
+  "nome": "Educazione e scuola",
+  "tipo": "tema",
+  "rx": "\\beduca|\\bscuol[ae]\\b|universit|studenti|insegnant",
+  "qid": "Q8434"
+ },
+ {
+  "slug": "santi-e-beati",
+  "nome": "Santi, beati e venerabili",
+  "tipo": "tema",
+  "rx": "canonizz|beatificaz|venerabil|Cause dei Santi|nuovi santi",
+  "qid": "Q43115"
+ },
+ {
+  "slug": "cura-del-creato",
+  "nome": "Cura del creato",
+  "tipo": "tema",
+  "rx": "\\bcreato\\b|ambiental|\\bclima|Laudato si|ecologi",
+  "qid": "Q7150"
+ },
+ {
+  "slug": "comunicazione",
+  "nome": "Comunicazione e giornalismo",
+  "tipo": "tema",
+  "rx": "giornalist|comunicazion|\\bmedia\\b|\\bsocial\\b",
+  "qid": "Q11030"
+ },
+ {
+  "slug": "malati",
+  "nome": "Malati e sofferenza",
+  "tipo": "tema",
+  "rx": "\\bmalat[io]\\b|\\bmalattia|ospedal|sofferen",
+  "qid": "Q12136"
+ },
+ {
+  "slug": "ecumenismo",
+  "nome": "Ecumenismo",
+  "tipo": "tema",
+  "rx": "ecumenic|ortodoss|anglican|luteran|unità dei cristiani|Bartolomeo|Costantinopoli|Nicea",
+  "qid": "Q156112"
+ },
+ {
+  "slug": "dialogo-interreligioso",
+  "nome": "Dialogo interreligioso",
+  "tipo": "tema",
+  "rx": "musulman|\\bislam|\\bebrei\\b|ebraic|rabbin|interreligios",
+  "qid": "Q1304214"
+ },
+ {
+  "slug": "carcere",
+  "nome": "Carcere e detenuti",
+  "tipo": "tema",
+  "rx": "carcer|detenut",
+  "qid": "Q40357"
+ },
+ {
+  "slug": "donne",
+  "nome": "Donne",
+  "tipo": "tema",
+  "rx": "\\bdonne\\b",
+  "qid": "Q467"
+ },
+ {
+  "slug": "curia-romana",
+  "nome": "Curia romana",
+  "tipo": "tema",
+  "rx": "\\bCuria\\b|[Dd]icaster",
+  "qid": "Q108169"
+ },
+ {
+  "slug": "agostiniani",
+  "nome": "Agostiniani",
+  "tipo": "tema",
+  "rx": "agostinian|Ordine di Sant.Agostino",
+  "qid": "Q29075"
+ },
+ {
+  "slug": "dilexi-te",
+  "nome": "Dilexi te",
+  "tipo": "tema",
+  "rx": "Dilexi te",
+  "qid": "Q136450956"
  }
 ]

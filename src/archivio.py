@@ -175,12 +175,21 @@ def archivio(puntate):
         vic += f'<a href="{succ["url"]}" rel="next" style="text-align:right"><span class="label">Puntata successiva →</span>{succ["titolo_html"]}</a>' if succ else '<span></span>'
         vic += '</nav>'
         fig = ''
+        grande = gw = gh = None
         if p.get('foto'):
             from PIL import Image
             w, h = Image.open(PUB / 'img' / 'filo' / p['foto']).size
             alt = html.escape(('Foto della puntata del ' + data_it(p['data']) + ': ' + p['titolo_txt'])[:180])
             cap = f'<figcaption>Foto {html.escape(p["credito"])}</figcaption>' if p.get('credito') else ''
-            fig = f'<figure class="foto-grande"><img src="/img/filo/{p["foto"]}" width="{w}" height="{h}" alt="{alt}" fetchpriority="high">{cap}</figure>'
+            # versione grande (1200 px) per Google Discover, anteprime social e schermi ad alta densità
+            grande = p['foto'].rsplit('.', 1)[0] + '-1200.webp'
+            gw = gh = None
+            if (PUB / 'img' / 'filo' / grande).exists():
+                gw, gh = Image.open(PUB / 'img' / 'filo' / grande).size
+            else:
+                grande = None
+            srcset = f' srcset="/img/filo/{p["foto"]} {w}w, /img/filo/{grande} {gw}w" sizes="(max-width: 760px) 100vw, 720px"' if grande else ''
+            fig = f'<figure class="foto-grande"><img src="/img/filo/{p["foto"]}"{srcset} width="{w}" height="{h}" alt="{alt}" fetchpriority="high">{cap}</figure>'
         nome_mese = _mese(p['data'])
         bric, bld = _briciole([('Home', '/'), (SERIE, '/filo/'), (nome_mese.capitalize(), _mese_url(p['data'])), (taglia(p['titolo_txt'], 60), None)])
         body = f'''<div class="wrap">
@@ -193,7 +202,7 @@ def archivio(puntate):
         <p class="firma-art">di <a href="/" rel="author">Riccardo Benotti</a></p>
       </header>
       {fig}
-      <div class="testo">{"".join(p["paras"])}</div>
+      <div class="testo">{linka(p)}</div>
       <div class="filo-chiusa">{CHIUSA}</div>
       {fonti_html(p)}
       {temi_html(p)}
@@ -216,7 +225,7 @@ def archivio(puntate):
             art["isBasedOn"] = [{"@type": "WebPage", "name": t, "url": u, "publisher": {"@type": "Organization", "name": _editore(u)}} for t, u in p['fonti']]
         if p.get('foto'):
             art["thumbnailUrl"] = SITE + '/img/filo/' + p['foto']
-            art["image"] = {"@type": "ImageObject", "url": SITE + '/img/filo/' + p['foto'], "width": w, "height": h,
+            art["image"] = {"@type": "ImageObject", "url": SITE + '/img/filo/' + (grande or p['foto']), "width": gw or w, "height": gh or h,
                             **({"creditText": p['credito'], "copyrightNotice": "© " + p['credito'],
                                 "creator": {"@type": "Organization", "name": p['credito']}} if p.get('credito') else {}),
                             "license": SITE + "/crediti/", "acquireLicensePage": SITE + "/crediti/"}
@@ -224,15 +233,15 @@ def archivio(puntate):
                  f'<meta property="article:modified_time" content="{p["pubblicato"]}">\n'
                  f'<meta property="article:author" content="{SITE}/">\n<meta property="article:section" content="{SERIE}">\n')
         if p.get('foto'):
-            extra += (f'<meta property="og:image:width" content="{w}">\n<meta property="og:image:height" content="{h}">\n'
+            extra += (f'<meta property="og:image:width" content="{gw or w}">\n<meta property="og:image:height" content="{gh or h}">\n'
                       f'<meta property="og:image:alt" content="{alt}">\n<meta name="twitter:image:alt" content="{alt}">\n')
         if prec:
             extra += f'<link rel="prev" href="{SITE}{prec["url"]}">\n'
         if succ:
             extra += f'<link rel="next" href="{SITE}{succ["url"]}">\n'
         _pagina(titolo_seo(p), p['descrizione'], p['url'], body, [art, _serie_ld(), bld],
-                og_type='article', img=('filo/' + p['foto']) if p.get('foto') else None, extra=extra)
-        urls.append((p['url'], p['data'], ('filo/' + p['foto']) if p.get('foto') else None))
+                og_type='article', img=('filo/' + (grande or p['foto'])) if p.get('foto') else None, extra=extra)
+        urls.append((p['url'], p['data'], ('filo/' + (grande or p['foto'])) if p.get('foto') else None))
 
     # --- feed RSS (ultime 40 puntate)
     items = ''

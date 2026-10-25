@@ -422,3 +422,6 @@ footer .crediti a { color: var(--band-soft); text-decoration-color: var(--band-s
 .temi-gruppo li a, .temi-altri li a { font-weight: 600; }
 .temi-gruppo .n, .temi-altri .n { color: var(--ink-soft); font-size: 0.85rem; }
 .pagina .temi-gruppo { padding: 0; border: 0; margin: 1.6rem 0 0; }
+/* link ai temi dentro il testo delle puntate: discreti, sottolineatura leggera */
+.pagina .testo a.link-tema { color: inherit; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.pagina .testo a.link-tema:hover { color: var(--gold); }

@@ -129,6 +129,9 @@ def home_items(puntate):
 CSS_VER = None
 
 
+ROBOTS = '<meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">'
+
+
 def head(lang, title, desc, path, alt=None, og_type='website', jsonld=None, extra=''):
     url = SITE + path
     alts = ''
@@ -145,6 +148,7 @@ def head(lang, title, desc, path, alt=None, og_type='website', jsonld=None, extr
 <meta name="msvalidate.01" content="30EC3B24ACA589BA91D97B8485001137">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
+{ROBOTS}
 <link rel="canonical" href="{url}">
 {alts}<meta property="og:type" content="{og_type}">
 <meta property="og:locale" content="{loc}">
@@ -351,7 +355,7 @@ def main():
     <p lang="en">Page not found. Go to the <a href="/en/">English home page</a>.</p></main></div>
 '''
     page = head('it', 'Pagina non trovata | Riccardo Benotti', 'Pagina non trovata.', '/404.html')
-    page = page.replace('<meta name="viewport"', '<meta name="robots" content="noindex">\n<meta name="viewport"')
+    page = page.replace(ROBOTS, '<meta name="robots" content="noindex">')
     write('/404.html', page + nav('it', False, '/en/') + body + footer('it') + '</body>\n</html>\n')
 
     # sitemap e robots
@@ -369,7 +373,21 @@ def main():
             'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot', 'Applebot-Extended',
             'Bingbot', 'Googlebot', 'DuckAssistBot', 'MistralAI-User', 'CCBot']
     robots = ''.join(f'User-agent: {b}\nAllow: /\n\n' for b in bots)
-    write('/robots.txt', robots + f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
+    write('/robots.txt', robots + f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/sitemap-news.xml\n')
+    # sitemap per Google News: solo le puntate delle ultime 48 ore
+    adesso = datetime.datetime.now(datetime.timezone.utc)
+    news = ''
+    for p in puntate:
+        try:
+            dt = datetime.datetime.fromisoformat(p['pubblicato'])
+        except ValueError:
+            continue
+        if dt.tzinfo and adesso - dt <= datetime.timedelta(hours=48):
+            news += (f'  <url><loc>{SITE}{p["url"]}</loc><news:news><news:publication><news:name>Riccardo Benotti</news:name>'
+                     f'<news:language>it</news:language></news:publication><news:publication_date>{p["pubblicato"]}</news:publication_date>'
+                     f'<news:title>{html.escape(p["titolo_txt"])}</news:title></news:news></url>\n')
+    write('/sitemap-news.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+          'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n' + news + '</urlset>\n')
     # scheda per assistenti IA (llms.txt)
     ultima = puntate[0]['data'] if puntate else ''
     write('/llms.txt', (SRC / 'llms.txt').read_text().replace('{{N_PUNTATE}}', str(len(puntate)))
