@@ -336,6 +336,7 @@ def main():
     TEMI = calcola_temi(puntate)
     urls += archivio(puntate)
     urls += temi(puntate, TEMI)
+    urls += viaggi(puntate)
 
     # crediti delle immagini (licenza e acquisizione per i metadati immagine)
     body = '''<div class="wrap"><main class="pagina"><span class="label gold">Note</span>
@@ -400,6 +401,7 @@ def main():
 
 exec((SRC / 'archivio.py').read_text())
 exec((SRC / 'temi.py').read_text())
+exec((SRC / 'viaggi.py').read_text())
 
 
 if __name__ == '__main__':

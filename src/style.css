@@ -425,3 +425,11 @@ footer .crediti a { color: var(--band-soft); text-decoration-color: var(--band-s
 /* link ai temi dentro il testo delle puntate: discreti, sottolineatura leggera */
 .pagina .testo a.link-tema { color: inherit; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .pagina .testo a.link-tema:hover { color: var(--gold); }
+/* pagina dei viaggi */
+.viaggi-gruppo { margin: 2.4rem 0 0.2rem; font-size: 1.5rem; }
+.pagina .viaggio { margin: 1.4rem 0 0; padding: 1rem 0 0; border-top: 1px solid var(--rule); }
+.viaggio h3 { font-family: var(--display); font-weight: 500; font-size: 1.3rem; line-height: 1.25; margin: 0 0 0.2rem; }
+.viaggio-puntate { list-style: none; margin: 0.6rem 0 0; padding: 0; display: grid; gap: 0.5rem; }
+.viaggio-puntate li { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0 1rem; align-items: baseline; }
+.viaggio-puntate time { color: var(--ink-soft); font-size: 0.85rem; }
+@media (max-width: 600px) { .viaggio-puntate li { grid-template-columns: 1fr; } }
