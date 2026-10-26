@@ -269,7 +269,7 @@
   "slug": "salute-del-papa",
   "nome": "La salute del Papa",
   "tipo": "tema",
-  "rx": "Margaritora|convalescen|chirurgia toracica|post[- ]operatori|radiografia|\\bdecorso\\b|[Pp]apa operato|ricoverato|dimissioni dal Gemelli|decimo piano",
+  "rx": "Margaritora|convalescen|chirurgia toracica|post[- ]operatori|radiografia|\\bdecorso\\b|[Pp]apa operato|ricoverato|dimissioni dal Gemelli|decimo piano|intervento al torace|intervento chirurgico|appena operato|condizioni cliniche",
   "qid": ""
  },
  {
