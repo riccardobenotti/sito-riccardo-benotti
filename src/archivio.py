@@ -56,7 +56,7 @@ def titolo_seo(p):
         taglio = max((i for i in (t.rfind(sep, 0, cap + 1) for sep in (': ', '. ', ', ', ' – ', ' e ', ' ma ', ' per ', ' con ')) if i >= 16), default=None)
         t = t[:taglio] if taglio else t[:cap + 1].rsplit(' ', 1)[0]
         parole = t.split(' ')
-        while len(parole) > 3 and re.fullmatch(r'(?i)(e|di|a|da|in|con|su|per|tra|fra|il|lo|la|le|i|gli|un|una|del|della|dei|delle|al|alla|ai|alle|nel|nella|che|ma|o)', parole[-1].strip(',;:')):
+        while len(parole) > 3 and re.fullmatch(r'(?i)(e|è|non|come|sono|sia|di|a|da|in|con|su|per|tra|fra|il|lo|la|le|i|gli|un|una|del|della|dei|delle|al|alla|ai|alle|nel|nella|che|ma|o)', parole[-1].strip(',;:')):
             parole.pop()
         t = ' '.join(parole).rstrip(',;:.–—-')
         if t.count('“') > t.count('”'):
