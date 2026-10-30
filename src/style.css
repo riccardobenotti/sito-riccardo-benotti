@@ -433,3 +433,5 @@ footer .crediti a { color: var(--band-soft); text-decoration-color: var(--band-s
 .viaggio-puntate li { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0 1rem; align-items: baseline; }
 .viaggio-puntate time { color: var(--ink-soft); font-size: 0.85rem; }
 @media (max-width: 600px) { .viaggio-puntate li { grid-template-columns: 1fr; } }
+
+.libro .uscita { display: inline-block; margin-bottom: .55rem; padding: .3rem .6rem; border: 1px solid currentColor; border-radius: 3px; }
