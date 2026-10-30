@@ -231,6 +231,7 @@ def person_ld():
 
 
 BOOKS = [
+    ("Governare il patrimonio ecclesiale nell'era dell'IA. Discernimento, governance e asset management per enti religiosi", "Marcianum Press", "2026-12-04", "9791256272440", 320, None),
     ("Covid-19: preti in prima linea. Storie stra-ordinarie di chi ha dato la vita e di chi non si è arreso", "San Paolo", "2021", "9788892223813", 464, "Q141757041"),
     ("Viaggio nella vita religiosa. Interviste e incontri", "Libreria Editrice Vaticana", "2016", "9788820997304", 232, "Q141757042"),
     ("Viaggio nel New Journalism americano", "Aracne", "2009", "9788854822931", 143, "Q141757043"),
@@ -247,9 +248,17 @@ def ld_home():
          person_ld(), {"@type": "WebSite", "@id": SITE + "/#sito", "url": SITE + "/", "name": "Riccardo Benotti",
                        "inLanguage": ["it", "en"], "publisher": {"@id": SITE + "/#riccardo-benotti"}}]
     for n, pub, y, isbn, pp, q in BOOKS:
-        g.append({"@type": "Book", "name": n, "author": {"@id": SITE + "/#riccardo-benotti"},
-                  "publisher": {"@type": "Organization", "name": pub}, "datePublished": y, "isbn": isbn,
-                  "numberOfPages": pp, "inLanguage": "it", "sameAs": "https://www.wikidata.org/wiki/" + q})
+        libro = {"@type": "Book", "name": n, "author": {"@id": SITE + "/#riccardo-benotti"},
+                 "publisher": {"@type": "Organization", "name": pub}, "datePublished": y, "isbn": isbn,
+                 "numberOfPages": pp, "inLanguage": "it"}
+        if q:
+            libro["sameAs"] = "https://www.wikidata.org/wiki/" + q
+        if isbn == "9791256272440":
+            libro["author"] = [{"@id": SITE + "/#riccardo-benotti"}, {"@type": "Person", "name": "Dario Sgrulletti"}]
+            libro["contributor"] = {"@type": "Person", "name": "Giuseppe Baturi", "roleName": "Prefazione"}
+            libro["image"] = SITE + "/img/cover-governare-patrimonio.webp"
+            libro["bookFormat"] = "https://schema.org/Paperback"
+        g.append(libro)
     g.append({"@type": "Thesis", "name": "Intelligenza artificiale e giornalismo. Un'indagine sui pro e contro di una possibile implementazione di sistemi IA nelle redazioni cattoliche della CEI e della Santa Sede",
               "author": {"@id": SITE + "/#riccardo-benotti"}, "datePublished": "2025-12-17", "inLanguage": "it",
               "contributor": {"@type": "Person", "name": "Fabio Pasqualetti", "roleName": "Relatore"},
