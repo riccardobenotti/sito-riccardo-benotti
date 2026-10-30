@@ -258,6 +258,7 @@ def ld_home():
             libro["contributor"] = {"@type": "Person", "name": "Giuseppe Baturi", "roleName": "Prefazione"}
             libro["image"] = SITE + "/img/cover-governare-patrimonio.webp"
             libro["bookFormat"] = "https://schema.org/Paperback"
+            libro["url"] = "https://www.governareilpatrimonio.it/"
         g.append(libro)
     g.append({"@type": "Thesis", "name": "Intelligenza artificiale e giornalismo. Un'indagine sui pro e contro di una possibile implementazione di sistemi IA nelle redazioni cattoliche della CEI e della Santa Sede",
               "author": {"@id": SITE + "/#riccardo-benotti"}, "datePublished": "2025-12-17", "inLanguage": "it",

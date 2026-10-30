@@ -70,6 +70,7 @@ PAIRS = [
      '<p>How to govern the assets of dioceses and religious congregations once artificial intelligence enters financial analysis and decision-making: a governance framework for bursars, superiors and administrators, with checklists, templates and a glossary. One principle runs through it: “Execution can be delegated, conscience cannot.” Preface by Archbishop Giuseppe Baturi, with introductory notes by Fr Arturo Sosa and Sr Oonah O’Shea.</p>'),
     ('<span class="label gold uscita">In libreria dal 4 dicembre 2026</span>', '<span class="label gold uscita">In bookshops from 4 December 2026</span>'),
     ('<div class="dati"><span>320 pagine</span>', '<div class="dati"><span>320 pages</span>'),
+    ('">Il sito del libro</a>', '">The book’s website</a>'),
     ('LAS · in produzione', 'LAS · in production'),
     ('alt="Copertina di Covid-19: preti in prima linea"', 'alt="Cover of Covid-19: preti in prima linea"'),
     ('alt="Copertina di Viaggio nella vita religiosa"', 'alt="Cover of Viaggio nella vita religiosa"'),
