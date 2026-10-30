@@ -80,7 +80,7 @@
   "slug": "stati-uniti",
   "nome": "Stati Uniti",
   "tipo": "luogo",
-  "rx": "Stati Uniti|\\bUsa\\b|Trump|Vance",
+  "rx": "Stati Uniti|\\bUsa\\b|Trump|Vance|statunitens|Chicago",
   "qid": "Q30"
  },
  {
