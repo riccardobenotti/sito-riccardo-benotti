@@ -435,3 +435,6 @@ footer .crediti a { color: var(--band-soft); text-decoration-color: var(--band-s
 @media (max-width: 600px) { .viaggio-puntate li { grid-template-columns: 1fr; } }
 
 .libro .uscita { display: inline-block; margin-bottom: .55rem; padding: .3rem .6rem; border: 1px solid currentColor; border-radius: 3px; }
+.libro h3 a.titolo-libro { color: inherit; text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size .25s ease; }
+.libro h3 a.titolo-libro:hover, .libro h3 a.titolo-libro:focus-visible { background-size: 100% 1px; }
+.libro .cover a { display: block; }
