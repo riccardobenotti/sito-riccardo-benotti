@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://riccardobenotti.it/</loc><lastmod>2026-10-30</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
-  <url><loc>https://riccardobenotti.it/en/</loc><lastmod>2026-10-30</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
+  <url><loc>https://riccardobenotti.it/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
+  <url><loc>https://riccardobenotti.it/en/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
   <url><loc>https://riccardobenotti.it/filo/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/10/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/09/</loc><lastmod>2026-09-30</lastmod></url>
@@ -303,5 +303,5 @@
   <url><loc>https://riccardobenotti.it/filo/temi/agostiniani/</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/viaggi/</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://riccardobenotti.it/crediti/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://riccardobenotti.it/crediti/</loc><lastmod>2026-10-31</lastmod></url>
 </urlset>
