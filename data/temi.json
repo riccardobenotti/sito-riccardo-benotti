@@ -390,5 +390,32 @@
   "tipo": "tema",
   "rx": "Dilexi te",
   "qid": "Q136450956"
+ },
+ {
+  "slug": "uruguay",
+  "nome": "Uruguay",
+  "tipo": "luogo",
+  "rx": "Uruguay|Montevideo|Paysand|Paisand",
+  "qid": "Q77"
+ },
+ {
+  "slug": "argentina",
+  "nome": "Argentina",
+  "tipo": "luogo",
+  "rx": "Argentina|Buenos Aires|Luján",
+  "qid": "Q414"
+ },
+ {
+  "slug": "terremoti",
+  "nome": "Terremoti e ricostruzione",
+  "tipo": "tema",
+  "rx": "terremot|sisma|sismic|ricostruzion"
+ },
+ {
+  "slug": "sport",
+  "nome": "Sport",
+  "tipo": "tema",
+  "rx": "\\bsport\\b|atlet|Olimpiad|basket|Milano-Cortina",
+  "qid": "Q349"
  }
 ]
