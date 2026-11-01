@@ -66,7 +66,7 @@
   "slug": "ucraina",
   "nome": "Ucraina",
   "tipo": "luogo",
-  "rx": "Ucrain|Zelensk|Shevchuk|Kyiv|Kiev",
+  "rx": "Ucrain|Zelensk|Shevchuk|Kyiv|Kiev|Oleshk",
   "qid": "Q212"
  },
  {
@@ -367,7 +367,7 @@
   "slug": "donne",
   "nome": "Donne",
   "tipo": "tema",
-  "rx": "\\bdonne\\b",
+  "rx": "(?<!uomini e )\\bdonne\\b",
   "qid": "Q467"
  },
  {
