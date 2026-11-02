@@ -417,5 +417,12 @@
   "tipo": "tema",
   "rx": "\\bsport\\b|atlet|Olimpiad|basket|Milano-Cortina",
   "qid": "Q349"
+ },
+ {
+  "slug": "guerra",
+  "nome": "Guerra",
+  "tipo": "tema",
+  "rx": "\\bguerr[ae]\\b",
+  "qid": "Q198"
  }
 ]

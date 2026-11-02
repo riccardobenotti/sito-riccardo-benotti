@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://riccardobenotti.it/</loc><lastmod>2026-11-01</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
-  <url><loc>https://riccardobenotti.it/en/</loc><lastmod>2026-11-01</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
-  <url><loc>https://riccardobenotti.it/filo/</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://riccardobenotti.it/filo/2026/11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://riccardobenotti.it/</loc><lastmod>2026-11-02</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
+  <url><loc>https://riccardobenotti.it/en/</loc><lastmod>2026-11-02</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
+  <url><loc>https://riccardobenotti.it/filo/</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://riccardobenotti.it/filo/2026/11/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/10/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/09/</loc><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/08/</loc><lastmod>2026-08-30</lastmod></url>
@@ -15,6 +15,7 @@
   <url><loc>https://riccardobenotti.it/filo/2026/02/</loc><lastmod>2026-02-27</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/01/</loc><lastmod>2026-01-31</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2025/12/</loc><lastmod>2025-12-31</lastmod></url>
+  <url><loc>https://riccardobenotti.it/filo/2026-11-02/</loc><lastmod>2026-11-02</lastmod><image:image><image:loc>https://riccardobenotti.it/img/filo/2026-11-02-1200.webp</image:loc></image:image></url>
   <url><loc>https://riccardobenotti.it/filo/2026-11-01/</loc><lastmod>2026-11-01</lastmod><image:image><image:loc>https://riccardobenotti.it/img/filo/2026-11-01-1200.webp</image:loc></image:image></url>
   <url><loc>https://riccardobenotti.it/filo/2026-10-31/</loc><lastmod>2026-10-31</lastmod><image:image><image:loc>https://riccardobenotti.it/img/filo/2026-10-31-1200.webp</image:loc></image:image></url>
   <url><loc>https://riccardobenotti.it/filo/2026-10-30/</loc><lastmod>2026-10-30</lastmod><image:image><image:loc>https://riccardobenotti.it/img/filo/2026-10-30-1200.webp</image:loc></image:image></url>
@@ -260,7 +261,7 @@
   <url><loc>https://riccardobenotti.it/filo/temi/giovanni-paolo-ii/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/paolo-vi/</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/sant-agostino/</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://riccardobenotti.it/filo/temi/san-francesco-d-assisi/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://riccardobenotti.it/filo/temi/san-francesco-d-assisi/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/pietro-parolin/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/medio-oriente/</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/ucraina/</loc><lastmod>2026-11-01</lastmod></url>
@@ -295,7 +296,7 @@
   <url><loc>https://riccardobenotti.it/filo/temi/lavoro/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/educazione/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/santi-e-beati/</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://riccardobenotti.it/filo/temi/cura-del-creato/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://riccardobenotti.it/filo/temi/cura-del-creato/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/comunicazione/</loc><lastmod>2026-09-23</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/malati/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/ecumenismo/</loc><lastmod>2026-10-25</lastmod></url>
@@ -308,7 +309,8 @@
   <url><loc>https://riccardobenotti.it/filo/temi/argentina/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/terremoti/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/temi/sport/</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://riccardobenotti.it/filo/temi/</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://riccardobenotti.it/filo/viaggi/</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://riccardobenotti.it/crediti/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://riccardobenotti.it/filo/temi/guerra/</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://riccardobenotti.it/filo/temi/</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://riccardobenotti.it/filo/viaggi/</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://riccardobenotti.it/crediti/</loc><lastmod>2026-11-02</lastmod></url>
 </urlset>
