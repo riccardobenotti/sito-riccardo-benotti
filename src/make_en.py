@@ -179,8 +179,10 @@ PAIRS = [
     ('<dt class="label">In sintesi</dt>', '<dt class="label">Abstract</dt>'),
     ('<dd>Una ricerca qualitativa, condotta con interviste semi-strutturate a giornalisti, direttori ed esperti di Avvenire, Tv2000, SIR e Vatican News. La tetrade di McLuhan serve a leggere che cosa l’IA potenzia, rende obsoleto, recupera e rovescia nelle tre fasi del lavoro redazionale: raccolta, produzione e distribuzione delle notizie. Le conclusioni propongono un modello di integrazione che lascia al centro la responsabilità umana e la mediazione come atto di discernimento.</dd>',
      '<dd>A qualitative study based on semi-structured interviews with journalists, editors and experts at Avvenire, Tv2000, SIR and Vatican News. McLuhan’s tetrad is used to read what AI enhances, makes obsolete, retrieves and reverses across the three stages of newsroom work: gathering, producing and distributing the news. The conclusions propose a model of integration that keeps human responsibility, and mediation as an act of discernment, at the centre.</dd>'),
+    ('<h3 class="label gold sub-h ric-h">Pubblicati</h3>', '<h3 class="label gold sub-h ric-h">Published</h3>'),
+    ('<p>La voce è l’atto responsabile di una persona e l’IA può solo mediarla. L’articolo indica cinque criteri per la comunicazione cristiana.</p>', '<p>Voice is the answerable act of a person, and AI can only mediate human speech. The article sets out five criteria for Christian communication.</p>'),
+    ('<p>Pubblicato online in anticipo di stampa, novembre 2026. DOI 10.1163/23528230-bja10144</p>', '<p>Published online ahead of print, November 2026. DOI 10.1163/23528230-bja10144</p>'),
     ('Accettati e in corso di stampa', 'Accepted and in press'),
-    ('<p>Accettato, in produzione.</p>', '<p>Accepted, in production.</p>'),
     ('<p>In produzione, n. 3/2026.</p>', '<p>In production, issue 3/2026.</p>'),
     ('<p>Accettato, in attesa di pubblicazione.</p>', '<p>Accepted, awaiting publication.</p>'),
     # contatti

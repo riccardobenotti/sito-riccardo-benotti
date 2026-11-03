@@ -265,6 +265,11 @@ def ld_home():
               "contributor": {"@type": "Person", "name": "Fabio Pasqualetti", "roleName": "Relatore"},
               "inSupportOf": "Dottorato di ricerca in Scienze della comunicazione sociale",
               "sourceOrganization": {"@id": SITE + "/#ups"}, "sameAs": "https://www.wikidata.org/wiki/Q141757044"})
+    g.append({"@type": "ScholarlyArticle", "name": "A Tool, Not a Voice: Artificial Intelligence, Human Speech, and Christian Communicative Agency",
+              "author": {"@id": SITE + "/#riccardo-benotti"}, "datePublished": "2026-11-03", "inLanguage": "en",
+              "isPartOf": {"@type": "Periodical", "name": "Philosophia Reformata", "issn": ["0031-8035", "2352-8230"]},
+              "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.1163/23528230-bja10144"},
+              "url": "https://doi.org/10.1163/23528230-bja10144", "sameAs": "https://doi.org/10.1163/23528230-bja10144"})
     return {"@context": "https://schema.org", "@graph": g}
 
 
