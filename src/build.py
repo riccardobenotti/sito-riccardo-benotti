@@ -269,7 +269,8 @@ def ld_home():
               "author": {"@id": SITE + "/#riccardo-benotti"}, "datePublished": "2026-11-03", "inLanguage": "en",
               "isPartOf": {"@type": "Periodical", "name": "Philosophia Reformata", "issn": ["0031-8035", "2352-8230"]},
               "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.1163/23528230-bja10144"},
-              "url": "https://doi.org/10.1163/23528230-bja10144", "sameAs": "https://doi.org/10.1163/23528230-bja10144"})
+              "url": "https://doi.org/10.1163/23528230-bja10144",
+              "sameAs": ["https://doi.org/10.1163/23528230-bja10144", "https://www.wikidata.org/wiki/Q141985776"]})
     return {"@context": "https://schema.org", "@graph": g}
 
 
