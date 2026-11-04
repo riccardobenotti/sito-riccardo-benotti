@@ -146,6 +146,8 @@ PAIRS = [
     ('<span class="label tipo">Relazione</span>', '<span class="label tipo">Talk</span>'),
     ('Incontro nazionale dei direttori degli uffici catechistici diocesani e delle équipe, “Edificati dalla comunità”, Roma. Tavola rotonda con don Andrea Ciucci e Stefano Pasta.',
      'National meeting of Italian diocesan catechetical directors, “Edificati dalla comunità”, Rome. Round table with Fr Andrea Ciucci and Stefano Pasta.'),
+    ('<p>Il testo della tavola rotonda è negli <a href="https://catechistico.chiesacattolica.it/pubblicati-gli-atti-del-convegno-nazionale-dei-direttori-ucd-e-membri-delle-equipe-diocesane/">Atti del convegno</a> dell’Ufficio catechistico nazionale della Cei (<a href="https://catechistico.chiesacattolica.it/wp-content/uploads/sites/11/2026/06/04/Testo.pdf">PDF</a>, pp. 25-44).</p>',
+     '<p>The text of the round table is in the <a href="https://catechistico.chiesacattolica.it/pubblicati-gli-atti-del-convegno-nazionale-dei-direttori-ucd-e-membri-delle-equipe-diocesane/">proceedings of the meeting</a> published by the National Catechetical Office of the Italian Bishops’ Conference (<a href="https://catechistico.chiesacattolica.it/wp-content/uploads/sites/11/2026/06/04/Testo.pdf">PDF</a>, pp. 25-44).</p>'),
     ('Docenza · corso online', 'Teaching · online course'),
     ('Modulo sul giornalismo del MOOC “(Post)Digitale: comunicazione, educazione ed etica”, Cei e Cremit, Università Cattolica.', 'Journalism module of the MOOC “(Post)Digitale: comunicazione, educazione ed etica”, Italian Bishops’ Conference and Cremit, Università Cattolica.'),
     ('<span class="label tipo">Intervento</span>', '<span class="label tipo">Talk</span>'),
