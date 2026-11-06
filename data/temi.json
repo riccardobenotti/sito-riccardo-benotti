@@ -91,6 +91,13 @@
   "qid": "Q29"
  },
  {
+  "slug": "uruguay",
+  "nome": "Uruguay",
+  "tipo": "luogo",
+  "rx": "Uruguay|Montevideo|Paysand|Paisand",
+  "qid": "Q77"
+ },
+ {
   "slug": "francia",
   "nome": "Francia",
   "tipo": "luogo",
@@ -276,7 +283,7 @@
   "slug": "salute-del-papa",
   "nome": "La salute del Papa",
   "tipo": "tema",
-  "rx": "Margaritora|convalescen|chirurgia toracica|post[- ]operatori|radiografia|\\bdecorso\\b|[Pp]apa operato|ricoverato|dimissioni dal Gemelli|decimo piano|intervento al torace|intervento chirurgico|appena operato|condizioni cliniche",
+  "rx": "Margaritora|convalescen|chirurgia toracica|post[- ]operatori|radiografia|\\bdecorso\\b|[Pp]apa operato|ricoverato|dimissioni dal Gemelli|decimo piano|intervento al torace|intervento chirurgico|appena operato|condizioni cliniche|intervento al Gemelli|in degenza|un referto",
   "qid": ""
  },
  {
@@ -397,13 +404,6 @@
   "tipo": "tema",
   "rx": "Dilexi te",
   "qid": "Q136450956"
- },
- {
-  "slug": "uruguay",
-  "nome": "Uruguay",
-  "tipo": "luogo",
-  "rx": "Uruguay|Montevideo|Paysand|Paisand",
-  "qid": "Q77"
  },
  {
   "slug": "argentina",
