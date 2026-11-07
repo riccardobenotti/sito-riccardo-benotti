@@ -48,6 +48,58 @@ def bandiera(p, lingua='it'):
     return f'<img class="bandiera" src="/img/bandiere/{c}.svg" width="18" height="12" alt="{nome}" title="{nome}">'
 
 
+# Colori del paese: bande della bandiera ('v' = bande affiancate, 'h' = bande sovrapposte) e colori di accento per la cornice.
+FASCE = {'uy': ('h', [('#FFFFFF', 1), ('#0038A8', 1)] * 4 + [('#FFFFFF', 1)]),
+         'ar': ('h', [('#74ACDF', 1), ('#FFFFFF', 1), ('#74ACDF', 1)]),
+         'pe': ('v', [('#D91023', 1), ('#FFFFFF', 1), ('#D91023', 1)]),
+         'fr': ('v', [('#002654', 1), ('#FFFFFF', 1), ('#CE1126', 1)]),
+         'es': ('h', [('#AA151B', 1), ('#F1BF00', 2), ('#AA151B', 1)]),
+         'mc': ('h', [('#CE1126', 1), ('#FFFFFF', 1)]),
+         'dz': ('v', [('#006233', 1), ('#FFFFFF', 1)]),
+         'cm': ('v', [('#007A5E', 1), ('#CE1126', 1), ('#FCD116', 1)]),
+         'ao': ('h', [('#CC092F', 1), ('#000000', 1)]),
+         'gq': ('h', [('#3E9A00', 1), ('#FFFFFF', 1), ('#E32118', 1)]),
+         'it': ('v', [('#009246', 1), ('#FFFFFF', 1), ('#CE2B37', 1)])}
+ACCENTI = {'uy': ['#0038A8', '#FCD116'], 'ar': ['#74ACDF', '#F6B40E'], 'pe': ['#D91023', '#D91023'], 'fr': ['#002654', '#CE1126'],
+           'es': ['#AA151B', '#F1BF00'], 'mc': ['#CE1126', '#CE1126'], 'dz': ['#006233', '#D21034'],
+           'cm': ['#007A5E', '#CE1126', '#FCD116'], 'ao': ['#CC092F', '#000000'], 'gq': ['#3E9A00', '#E32118'], 'it': ['#009246', '#CE2B37']}
+
+
+def fascia(c):
+    """Gradiente a bande nette con l'orientamento vero della bandiera."""
+    verso, segs = FASCE[c]
+    tot = sum(w for _, w in segs)
+    a, st = 0.0, []
+    for col, w in segs:
+        b = a + w / tot * 100
+        st.append(f'{col} {a:.2f}% {b:.2f}%')
+        a = b
+    return f'linear-gradient({90 if verso == "v" else 180}deg, ' + ', '.join(st) + ')'
+
+
+def cornice(c):
+    """Righe sottili concentriche (ombre) attorno alla foto: un colore del paese per riga. Restituisce (box-shadow, ingombro in px)."""
+    sh, r = ['0 0 0 4px var(--passe)'], 4
+    for col in ACCENTI[c]:
+        sh.append(f'0 0 0 {r + 2}px {col}')
+        sh.append(f'0 0 0 {r + 5}px var(--passe)')
+        r += 5
+    return ', '.join(sh[:-1]), r - 3
+
+
+def attr_paese(p):
+    c = p.get('paese')
+    if not c:
+        return ''
+    ombra, ing = cornice(c)
+    return f' data-paese="{c}" style="--bn:{fascia(c)};--bf:url(/img/bandiere/{c}.svg);--cornice:{ombra};--cp:{ing}px"'
+
+
+def nome_paese(p):
+    c = p.get('paese')
+    return f'<span class="paese-nome">{html.escape(PAESI[c][0])}</span>' if c else ''
+
+
 SEGNO_HOME = re.search(r"^SEGNO = '(.*)'$", (pathlib.Path(__file__).parent / 'archivio.py').read_text(), re.M).group(1)
 ROME = __import__('zoneinfo').ZoneInfo('Europe/Rome')
 
@@ -129,7 +181,7 @@ def figura(p, cls='foto', lazy=True):
 def home_items(puntate):
     out = []
     for k, p in enumerate(puntate[:3]):
-        testa = (f'<time class="mono" datetime="{p["data"]}">{data_it(p["data"])}{bandiera(p)}</time>'
+        testa = (f'<time class="mono" datetime="{p["data"]}">{data_it(p["data"])}{bandiera(p)}</time>{nome_paese(p)}'
                  f'<h3><a class="tit" href="{p["url"]}">{p["titolo_html"]}</a></h3>')
         if k == 0:
             corpo = (f'<div class="testo">{p["paras"][0]}</div>'
@@ -139,7 +191,7 @@ def home_items(puntate):
             corpo = (f'<details><summary>Leggi la puntata</summary><div class="testo">{"".join(p["paras"])}</div>'
                      f'{fonti_html(p)}{meta_html(p)}</details>')
         cls = 'puntata ultima' if k == 0 else 'puntata'
-        out.append(f'\n      <li class="{cls}">\n        <div class="corpo">{testa}{corpo}</div>\n        {figura(p, lazy=k > 0)}\n      </li>')
+        out.append(f'\n      <li class="{cls}"{attr_paese(p)}>\n        <div class="corpo">{testa}{corpo}</div>\n        {figura(p, lazy=k > 0)}\n      </li>')
     return ''.join(out) + '\n    '
 
 

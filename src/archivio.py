@@ -195,9 +195,9 @@ def archivio(puntate):
         body = f'''<div class="wrap">
   <main class="pagina">
     {bric}
-    <article>
+    <article{attr_paese(p)}>
       <header>
-        <span class="label gold"><a href="/filo/">{SERIE}</a> · <time datetime="{p["pubblicato"]}">{data_it(p["data"])}{bandiera(p)}</time></span>
+        <span class="label gold"><a href="/filo/">{SERIE}</a> · <time datetime="{p["pubblicato"]}">{data_it(p["data"])}{bandiera(p)}</time>{nome_paese(p)}</span>
         <h1>{p["titolo_html"]}</h1>
         <p class="firma-art">di <a href="/" rel="author">Riccardo Benotti</a></p>
       </header>
