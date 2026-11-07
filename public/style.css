@@ -444,31 +444,21 @@ footer .crediti a { color: var(--band-soft); text-decoration-color: var(--band-s
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 22%, transparent), 0 1px 2px -1px color-mix(in srgb, var(--ink) 35%, transparent); }
 time:has(> .bandiera) { white-space: nowrap; }
 
-/* ANTEPRIMA varianti coi colori del paese (data-bv sul tag html): alla fine resta solo la scelta */
+/* Viaggi all'estero: filetto e cornice nei colori del paese (home e pagina della puntata) */
 [data-paese] { --passe: var(--paper); }
 .filo-sec [data-paese] { --passe: var(--paper-alt); }
-[data-paese] .bandiera { display: none; }
-.paese-nome { display: none; }
 .puntata .paese-nome { font-weight: 700; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
-/* R: filetto nei colori (orientamento vero della bandiera) sopra la data, col nome del paese */
-html[data-bv~="r"] .puntata[data-paese] .corpo::before, html[data-bv~="r"] article[data-paese] > header::before {
+.paese-nome::before { content: " \00b7  "; }
+/* filetto sopra la data, con l'orientamento vero della bandiera */
+.puntata[data-paese] .corpo::before, article[data-paese] > header::before {
   content: ""; display: block; height: 9px; border-radius: 2px; background: var(--bn); margin-bottom: 1rem;
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 20%, transparent); }
-html[data-bv~="r"] .paese-nome { display: inline; }
-html[data-bv~="r"] .paese-nome::before { content: " \00b7  "; }
-/* F: cornice a righe sottili nei colori del paese attorno alla foto */
-html[data-bv~="f"] [data-paese] .foto, html[data-bv~="f"] [data-paese] .foto-grande { padding: var(--cp); }
-html[data-bv~="f"] [data-paese] .foto img, html[data-bv~="f"] [data-paese] .foto-grande img { border-radius: 3px; box-shadow: var(--cornice); }
-/* V: velo con la bandiera vera, sfumata, dietro al titolo */
-html[data-bv~="v"] .puntata[data-paese] .corpo, html[data-bv~="v"] article[data-paese] > header {
-  position: relative; isolation: isolate; overflow: hidden; padding: 1.2rem 1.4rem 1.3rem; border-radius: 8px; }
-html[data-bv~="v"] article[data-paese] > header { margin-bottom: 1.6rem; }
-html[data-bv~="v"] .puntata[data-paese] .corpo::before, html[data-bv~="v"] article[data-paese] > header::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; background: var(--bf) center / cover no-repeat; opacity: 0.17;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 100%); }
-html[data-bv~="f"] [data-paese] .foto-grande figcaption { margin-left: calc(var(--cp) * -1); }
+/* cornice a righe sottili attorno alla foto */
+[data-paese] .foto, [data-paese] .foto-grande { padding: var(--cp); }
+[data-paese] .foto img, [data-paese] .foto-grande img { border-radius: 3px; box-shadow: var(--cornice); }
+[data-paese] .foto-grande figcaption { margin-left: calc(var(--cp) * -1); }
 @media (max-width: 600px) {
-  html[data-bv~="r"] article[data-paese] > header .paese-nome { display: block; margin-top: 0.3rem; }
-  html[data-bv~="r"] article[data-paese] > header .paese-nome::before { content: none; }
-  html[data-bv~="r"] .puntata[data-paese] .corpo::before { display: none; }
+  article[data-paese] > header .paese-nome { display: block; margin-top: 0.3rem; }
+  article[data-paese] > header .paese-nome::before { content: none; }
+  .puntata[data-paese] .corpo::before { display: none; }
 }

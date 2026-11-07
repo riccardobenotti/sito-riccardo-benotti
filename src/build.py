@@ -92,7 +92,7 @@ def attr_paese(p):
     if not c:
         return ''
     ombra, ing = cornice(c)
-    return f' data-paese="{c}" style="--bn:{fascia(c)};--bf:url(/img/bandiere/{c}.svg);--cornice:{ombra};--cp:{ing}px"'
+    return f' data-paese="{c}" style="--bn:{fascia(c)};--cornice:{ombra};--cp:{ing}px"'
 
 
 def nome_paese(p):
@@ -181,7 +181,7 @@ def figura(p, cls='foto', lazy=True):
 def home_items(puntate):
     out = []
     for k, p in enumerate(puntate[:3]):
-        testa = (f'<time class="mono" datetime="{p["data"]}">{data_it(p["data"])}{bandiera(p)}</time>{nome_paese(p)}'
+        testa = (f'<time class="mono" datetime="{p["data"]}">{data_it(p["data"])}</time>{nome_paese(p)}'
                  f'<h3><a class="tit" href="{p["url"]}">{p["titolo_html"]}</a></h3>')
         if k == 0:
             corpo = (f'<div class="testo">{p["paras"][0]}</div>'

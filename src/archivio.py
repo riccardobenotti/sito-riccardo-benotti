@@ -197,7 +197,7 @@ def archivio(puntate):
     {bric}
     <article{attr_paese(p)}>
       <header>
-        <span class="label gold"><a href="/filo/">{SERIE}</a> · <time datetime="{p["pubblicato"]}">{data_it(p["data"])}{bandiera(p)}</time>{nome_paese(p)}</span>
+        <span class="label gold"><a href="/filo/">{SERIE}</a> · <time datetime="{p["pubblicato"]}">{data_it(p["data"])}</time>{nome_paese(p)}</span>
         <h1>{p["titolo_html"]}</h1>
         <p class="firma-art">di <a href="/" rel="author">Riccardo Benotti</a></p>
       </header>
