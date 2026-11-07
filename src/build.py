@@ -31,6 +31,23 @@ def data_en(iso):
     return f'{d} {MONTHS[m-1]} {y}'
 
 
+# Paesi dei viaggi: sigla -> (nome italiano, nome inglese, Q-id Wikidata). Le bandiere sono in public/img/bandiere/<sigla>.svg.
+PAESI = {'uy': ('Uruguay', 'Uruguay', 'Q77'), 'ar': ('Argentina', 'Argentina', 'Q414'), 'pe': ('Perù', 'Peru', 'Q419'),
+         'fr': ('Francia', 'France', 'Q142'), 'es': ('Spagna', 'Spain', 'Q29'), 'mc': ('Principato di Monaco', 'Monaco', 'Q235'),
+         'dz': ('Algeria', 'Algeria', 'Q262'), 'cm': ('Camerun', 'Cameroon', 'Q1009'), 'ao': ('Angola', 'Angola', 'Q916'),
+         'gq': ('Guinea Equatoriale', 'Equatorial Guinea', 'Q983'), 'it': ('Italia', 'Italy', 'Q38')}
+
+
+def bandiera(p, lingua='it'):
+    """Bandierina accanto alla data quando il Papa è in viaggio all'estero. Campo "paese" (sigla) in filo.json:
+    il paese in cui il Papa si trova nella giornata della puntata (non per annunci e puntate dopo il rientro)."""
+    c = p.get('paese')
+    if not c:
+        return ''
+    nome = html.escape(PAESI[c][0 if lingua == 'it' else 1])
+    return f'<img class="bandiera" src="/img/bandiere/{c}.svg" width="18" height="12" alt="{nome}" title="{nome}">'
+
+
 SEGNO_HOME = re.search(r"^SEGNO = '(.*)'$", (pathlib.Path(__file__).parent / 'archivio.py').read_text(), re.M).group(1)
 ROME = __import__('zoneinfo').ZoneInfo('Europe/Rome')
 
@@ -112,7 +129,7 @@ def figura(p, cls='foto', lazy=True):
 def home_items(puntate):
     out = []
     for k, p in enumerate(puntate[:3]):
-        testa = (f'<time class="mono" datetime="{p["data"]}">{data_it(p["data"])}</time>'
+        testa = (f'<time class="mono" datetime="{p["data"]}">{data_it(p["data"])}{bandiera(p)}</time>'
                  f'<h3><a class="tit" href="{p["url"]}">{p["titolo_html"]}</a></h3>')
         if k == 0:
             corpo = (f'<div class="testo">{p["paras"][0]}</div>'
@@ -339,7 +356,7 @@ def main():
 
     # Home EN
     body = (SRC / 'body_en.html').read_text()
-    ultime = ''.join(f'<li><time class="mono" datetime="{p["data"]}">{data_en(p["data"])}</time> <a href="{p["url"]}" hreflang="it" lang="it">{p["titolo_html"]}</a></li>' for p in puntate[:5])
+    ultime = ''.join(f'<li><time class="mono" datetime="{p["data"]}">{data_en(p["data"])}{bandiera(p, "en")}</time> <a href="{p["url"]}" hreflang="it" lang="it">{p["titolo_html"]}</a></li>' for p in puntate[:5])
     body = body.replace('{{FILO_EN}}', ultime).replace('{{SEGNO}}', SEGNO_HOME).replace('{{CONTATTO}}', contatto('en'))
     ld = {"@context": "https://schema.org", "@graph": [{**person_ld(), "jobTitle": "Senior editor",
           "description": "Italian journalist and author, senior editor at SIR – Servizio Informazione Religiosa, the news agency of the Italian Bishops' Conference, accredited to the Holy See Press Office."}]}

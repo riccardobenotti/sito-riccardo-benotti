@@ -91,7 +91,7 @@ def archivio(puntate):
     indice_mesi = ''.join(f'<li><a href="{_mese_url(k)}">{_mese(k + "-01")}</a> <span class="n">{len(mesi[k])}</span></li>' for k in chiavi)
     blocchi = ''
     for k in chiavi:
-        righe = ''.join(f'\n        <li><time class="mono" datetime="{p["data"]}">{data_it(p["data"])}</time><a href="{p["url"]}">{p["titolo_html"]}</a></li>' for p in mesi[k])
+        righe = ''.join(f'\n        <li><time class="mono" datetime="{p["data"]}">{data_it(p["data"])}{bandiera(p)}</time><a href="{p["url"]}">{p["titolo_html"]}</a></li>' for p in mesi[k])
         blocchi += f'''
     <section class="mese" id="m{k}">
       <h2><a href="{_mese_url(k)}">{_mese(k + "-01").capitalize()}</a></h2>
@@ -132,7 +132,7 @@ def archivio(puntate):
                 th = f'<a class="th" href="{p["url"]}" tabindex="-1" aria-hidden="true"><img src="/img/filo/{p["foto"]}" alt="" loading="lazy" width="160" height="107"{fuoco(p)}></a>'
             voci += f'''
       <li class="voce-mese">
-        {th}<div><time class="mono" datetime="{p["data"]}">{data_it(p["data"])}</time>
+        {th}<div><time class="mono" datetime="{p["data"]}">{data_it(p["data"])}{bandiera(p)}</time>
         <h2><a href="{p["url"]}">{p["titolo_html"]}</a></h2>
         <p>{html.escape(taglia(p["sommario"], 260))}</p></div>
       </li>'''
@@ -197,7 +197,7 @@ def archivio(puntate):
     {bric}
     <article>
       <header>
-        <span class="label gold"><a href="/filo/">{SERIE}</a> · <time datetime="{p["pubblicato"]}">{data_it(p["data"])}</time></span>
+        <span class="label gold"><a href="/filo/">{SERIE}</a> · <time datetime="{p["pubblicato"]}">{data_it(p["data"])}{bandiera(p)}</time></span>
         <h1>{p["titolo_html"]}</h1>
         <p class="firma-art">di <a href="/" rel="author">Riccardo Benotti</a></p>
       </header>
@@ -221,6 +221,8 @@ def archivio(puntate):
                "isPartOf": {"@id": SITE + "/filo/#serie"}, "about": LEONE_LD,
                "keywords": "Leone XIV, papa Leone XIV, Santa Sede, " + SERIE + ", " + data_it(p['data']),
                **({"sameAs": p['linkedin']} if p.get('urn') else {})}
+        if p.get('paese'):
+            art["contentLocation"] = {"@type": "Country", "name": PAESI[p['paese']][0], "sameAs": "https://www.wikidata.org/wiki/" + PAESI[p['paese']][2]}
         if p.get('fonti'):
             art["isBasedOn"] = [{"@type": "WebPage", "name": t, "url": u, "publisher": {"@type": "Organization", "name": _editore(u)}} for t, u in p['fonti']]
         if p.get('foto'):

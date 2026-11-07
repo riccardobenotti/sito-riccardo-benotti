@@ -122,7 +122,7 @@ def temi(puntate, TEMI):
                 th = f'<a class="th" href="{p["url"]}" tabindex="-1" aria-hidden="true"><img src="/img/filo/{p["foto"]}" alt="" loading="lazy" width="160" height="107"{fuoco(p)}></a>'
             voci += f'''
       <li class="voce-mese">
-        {th}<div><time class="mono" datetime="{p["data"]}">{data_it(p["data"])}</time>
+        {th}<div><time class="mono" datetime="{p["data"]}">{data_it(p["data"])}{bandiera(p)}</time>
         <h2><a href="{p["url"]}">{p["titolo_html"]}</a></h2>
         <p>{html.escape(taglia(snip, 260))}</p></div>
       </li>'''

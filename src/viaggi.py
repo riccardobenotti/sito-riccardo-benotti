@@ -17,7 +17,7 @@ def viaggi(puntate, forza=False, percorso='/filo/viaggi/'):
                 continue
             n_tot += 1
             voci = ''.join(f'''
-        <li><time class="mono" datetime="{p["data"]}">{data_it(p["data"])}</time> <a href="{p["url"]}">{p["titolo_html"]}</a></li>''' for p in lista)
+        <li><time class="mono" datetime="{p["data"]}">{data_it(p["data"])}{bandiera(p)}</time> <a href="{p["url"]}">{p["titolo_html"]}</a></li>''' for p in lista)
             blocchi += f'''
     <section class="viaggio" id="{v["slug"]}">
       <h3>{html.escape(v["titolo"])}</h3>
