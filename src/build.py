@@ -77,8 +77,19 @@ def fascia(c):
     return f'linear-gradient({90 if verso == "v" else 180}deg, ' + ', '.join(st) + ')'
 
 
+# Paesi la cui cornice riprende le bande della bandiera, senza stacchi: dall'interno verso l'esterno.
+CORNICE_BANDE = {'ar': ['#74ACDF', '#FFFFFF', '#74ACDF']}
+
+
 def cornice(c):
-    """Righe sottili concentriche (ombre) attorno alla foto: un colore del paese per riga. Restituisce (box-shadow, ingombro in px)."""
+    """Righe sottili concentriche (ombre) attorno alla foto: un colore del paese per riga. Restituisce (box-shadow, ingombro in px).
+    Per i paesi in CORNICE_BANDE le bande sono contigue, come nella bandiera."""
+    if c in CORNICE_BANDE:
+        sh, r = ['0 0 0 3px var(--passe)'], 3
+        for col in CORNICE_BANDE[c]:
+            r += 3
+            sh.append(f'0 0 0 {r}px {col}')
+        return ', '.join(sh), r
     sh, r = ['0 0 0 4px var(--passe)'], 4
     for col in ACCENTI[c]:
         sh.append(f'0 0 0 {r + 2}px {col}')
