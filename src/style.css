@@ -463,43 +463,54 @@ time:has(> .bandiera) { white-space: nowrap; }
   .puntata[data-paese] .corpo::before { display: none; }
 }
 
-/* Pagine dei libri (/libri/<slug>/): fascia d'apertura nei colori della copertina, poi testo, dati e collegamenti */
-.lp { --bk-band: #E8DEC8; --bk-ink: #1F2A3D; --bk-soft: #5B5547; --bk-acc: #2F628F; --bk-line: rgba(31,42,61,.16); --bk-shadow: rgba(60,45,20,.5); }
-.lp-covid { --bk-band: #E7DCC4; --bk-ink: #1F2A3D; --bk-soft: #5A5446; --bk-acc: #2F628F; --bk-hl: #2F628F; --bk-line: rgba(31,42,61,.16); }
-.lp-vita-religiosa { --bk-band: #2B2017; --bk-ink: #F5ECD8; --bk-soft: #CDBF9F; --bk-acc: #8A5A12; --bk-hl: #E7B92E; --bk-line: rgba(231,185,46,.28); --bk-shadow: rgba(0,0,0,.6); }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .lp-covid { --bk-band: #262116; --bk-ink: #F0EADB; --bk-soft: #BDB39A; --bk-acc: #9CC3E6; --bk-hl: #A9C6E0; --bk-line: rgba(240,234,219,.18); }
-  :root:not([data-theme="light"]) .lp-vita-religiosa { --bk-band: #1C150F; --bk-acc: #E7B92E; }
+/* Pagine dei libri (/libri/<slug>/): tutta la pagina nei colori e nello stile della copertina. I colori del sito (carta, inchiostro, filetti, accento, fascia del piede) sono ridefiniti sul body, così anche menu e piede li seguono */
+body.lp-body-covid {
+  --paper: #F2E9D5; --paper-alt: #E5D8BA; --ink: #1C2740; --ink-soft: #5A5446; --rule: #CFC1A0; --gold: #2F628F;
+  --band: #1C2B45; --band-ink: #F2ECDD; --band-soft: #A9C6E0; --lp-hl: #2F628F; --lp-shadow: rgba(60, 45, 20, .5);
 }
-:root[data-theme="dark"] .lp-covid { --bk-band: #262116; --bk-ink: #F0EADB; --bk-soft: #BDB39A; --bk-acc: #9CC3E6; --bk-hl: #A9C6E0; --bk-line: rgba(240,234,219,.18); }
-:root[data-theme="dark"] .lp-vita-religiosa { --bk-band: #1C150F; --bk-acc: #E7B92E; }
-.lp-fascia { background: var(--bk-band); color: var(--bk-ink); border-bottom: 1px solid var(--bk-line); }
-.lp-fascia a { color: var(--bk-ink); text-decoration-color: var(--bk-hl, var(--bk-acc)); }
-.lp-fascia .briciole { padding-top: 1.4rem; color: var(--bk-soft); }
-.lp-fascia .briciole a { color: var(--bk-soft); }
-.lp-fascia .briciole [aria-current] { color: var(--bk-ink); }
-.lp-hero { display: grid; grid-template-columns: minmax(11rem, 17rem) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: center; padding: 2rem 0 3.4rem; }
+body.lp-body-vita-religiosa {
+  --paper: #261C14; --paper-alt: #3B2C1E; --ink: #F3E8D0; --ink-soft: #CDBF9F; --rule: #4D3C2A; --gold: #E7B92E;
+  --band: #150F0A; --band-ink: #F3E8D0; --band-soft: #CDBF9F; --lp-hl: #E7B92E; --lp-shadow: rgba(0, 0, 0, .65); color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body.lp-body-covid {
+    --paper: #1E1A13; --paper-alt: #2A241A; --ink: #F0EADB; --ink-soft: #BDB39A; --rule: #3C3529; --gold: #A9C6E0;
+    --band: #12100C; --band-ink: #F0EADB; --band-soft: #A9C6E0; --lp-hl: #A9C6E0; --lp-shadow: rgba(0, 0, 0, .65); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] body.lp-body-covid {
+  --paper: #1E1A13; --paper-alt: #2A241A; --ink: #F0EADB; --ink-soft: #BDB39A; --rule: #3C3529; --gold: #A9C6E0;
+  --band: #12100C; --band-ink: #F0EADB; --band-soft: #A9C6E0; --lp-hl: #A9C6E0; --lp-shadow: rgba(0, 0, 0, .65); color-scheme: dark;
+}
+.lp-fascia { background: linear-gradient(180deg, var(--paper-alt) 0%, var(--paper) 100%); }
+.lp-fascia .briciole { padding-top: 1.4rem; margin-bottom: 0; }
+.lp-hero { display: grid; grid-template-columns: minmax(11rem, 17rem) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: center; padding: 2rem 0 3.6rem; }
 .lp-cover { margin: 0; }
-.lp-cover img { display: block; width: 100%; height: auto; border-radius: 2px 5px 5px 2px; box-shadow: 0 2px 4px rgba(0,0,0,.2), 0 22px 40px -18px var(--bk-shadow); }
-.lp-testa .label { color: var(--bk-soft); }
-.lp-testa h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.08; margin: 0.7rem 0 1.1rem; text-wrap: balance; color: var(--bk-ink); }
-.lp-vita-religiosa .lp-testa h1 { color: var(--bk-hl); }
-.lp-testa h1 .sub { display: block; margin-top: 0.7rem; font-style: italic; font-weight: 400; font-size: 0.42em; line-height: 1.3; color: var(--bk-ink); opacity: .86; }
+.lp-cover img { display: block; width: 100%; height: auto; border-radius: 2px 5px 5px 2px; box-shadow: 0 2px 4px rgba(0, 0, 0, .2), 0 22px 40px -18px var(--lp-shadow); }
+.lp-testa .label { color: var(--gold); }
+.lp-testa h1 { margin: 0.7rem 0 1.1rem; text-wrap: balance; }
+.lp-testa h1 .sub { display: block; margin-top: 0.8rem; }
+/* Covid-19: titolo in maiuscolo e grassetto senza grazie, come in copertina */
+.lp-covid .lp-testa h1 { font-family: var(--body); font-weight: 700; font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.05; text-transform: uppercase; color: var(--ink); }
+.lp-covid .lp-testa h1 .sub { font-weight: 600; font-size: 0.4em; line-height: 1.35; text-transform: none; color: var(--gold); letter-spacing: 0; }
+/* Viaggio nella vita religiosa: corsivo con le grazie, in oro, come il titolo della copertina */
+.lp-vita-religiosa .lp-testa h1 { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(2.3rem, 5.4vw, 3.7rem); line-height: 1.06; color: var(--lp-hl); }
+.lp-vita-religiosa .lp-testa h1 .sub { font-weight: 400; font-size: 0.4em; line-height: 1.3; color: var(--ink); opacity: .88; }
 .lp-lead { font-size: 1.15rem; line-height: 1.6; max-width: 54ch; margin: 0; }
-.lp-dati { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin-top: 1.2rem; font-size: 0.95rem; color: var(--bk-soft); font-variant-numeric: tabular-nums; }
-.lp-corpo { max-width: 46rem; margin: 0 auto; padding: 3rem 0 5rem; }
+.lp-dati { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin-top: 1.2rem; font-size: 0.95rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.lp-corpo { max-width: 46rem; margin: 0 auto; padding: 1.2rem 0 5rem; }
 .lp-sez { margin: 0 0 2.4rem; padding-block: 0; border-top: 0; }
-.lp-sez > .label { display: block; margin: 0 0 0.9rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); color: var(--bk-acc); }
+.lp-sez > .label { display: block; margin: 0 0 0.9rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); color: var(--gold); }
 .lp-testo { margin-bottom: 2.4rem; }
 .lp-testo p { margin: 0 0 1.1rem; }
-.lp-corpo a { color: var(--bk-acc); }
+.lp-corpo a { color: var(--gold); }
 .lp-dl { margin: 0; display: grid; gap: 0.9rem 2rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
 .lp-dl div { min-width: 0; }
 .lp-dl dt { font-family: var(--body); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
 .lp-dl dd { margin: 0.15rem 0 0; font-size: 1.05rem; line-height: 1.5; font-variant-numeric: tabular-nums; }
 .lp-cifre { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem 2rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
-.lp-cifre li { border-left: 3px solid var(--bk-acc); padding-left: 1rem; }
-.lp-cifre strong { display: block; font-family: var(--display); font-weight: 500; font-size: 2.3rem; line-height: 1.05; color: var(--bk-acc); font-variant-numeric: lining-nums; }
+.lp-cifre li { border-left: 3px solid var(--gold); padding-left: 1rem; }
+.lp-cifre strong { display: block; font-family: var(--body); font-weight: 700; font-size: 2.2rem; line-height: 1.05; color: var(--gold); font-variant-numeric: lining-nums; }
 .lp-cifre span { display: block; margin-top: 0.3rem; font-size: 1rem; line-height: 1.45; color: var(--ink-soft); }
 .lp-nota { margin: 1.2rem 0 0; font-size: 0.92rem; color: var(--ink-soft); }
 .lp-intervistati { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem 2rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
@@ -512,5 +523,6 @@ time:has(> .bandiera) { white-space: nowrap; }
 @media (max-width: 720px) {
   .lp-hero { grid-template-columns: minmax(0, 1fr); gap: 1.8rem; padding: 1.6rem 0 2.6rem; justify-items: start; }
   .lp-cover { width: min(58%, 15rem); }
-  .lp-testa h1 { font-size: clamp(2rem, 9vw, 2.6rem); }
+  .lp-covid .lp-testa h1 { font-size: clamp(1.9rem, 8.5vw, 2.5rem); }
+  .lp-vita-religiosa .lp-testa h1 { font-size: clamp(2.1rem, 9.5vw, 2.8rem); }
 }

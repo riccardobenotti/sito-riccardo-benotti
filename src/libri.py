@@ -102,6 +102,6 @@ def libri():
                   "about": {"@id": SITE + url + "#libro"}, "author": {"@id": SITE + "/#riccardo-benotti"},
                   "dateModified": cfg['aggiornato'], "primaryImageOfPage": {"@type": "ImageObject", "url": SITE + '/img/' + l['cover']}}
         _pagina(f'{l["titolo"]} | libro di Riccardo Benotti', taglia(l['descrizione'], 158), url, body,
-                [pagina, libro_ld(l, cfg['libri']), person_ld(), bld], og_type='book', img=l['cover'])
+                [pagina, libro_ld(l, cfg['libri']), person_ld(), bld], og_type='book', img=l['cover'], body_cls=f'lp-body-{l["tema"]}')
         urls.append((url, cfg['aggiornato'], l['cover']))
     return urls

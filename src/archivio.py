@@ -71,12 +71,14 @@ def _serie_ld():
             "inLanguage": "it", "author": {"@id": SITE + "/#riccardo-benotti"}, "about": LEONE_LD}
 
 
-def _pagina(title, desc, path, body, graph, og_type='website', img=None, extra=''):
+def _pagina(title, desc, path, body, graph, og_type='website', img=None, extra='', body_cls=''):
     page = head('it', title, desc, path, og_type=og_type,
                 jsonld={"@context": "https://schema.org", "@graph": graph}, extra=extra)
     if img:
         page = page.replace(f'{SITE}/img/og.jpg', f'{SITE}/img/{img}').replace(
             '<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n', '')
+    if body_cls:
+        page = page.replace('<body>\n', f'<body class="{body_cls}">\n', 1)
     write(path, page + nav('it', False, '/en/') + body + footer('it') + '</body>\n</html>\n')
 
 
