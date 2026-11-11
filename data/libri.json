@@ -83,7 +83,7 @@
      "https://www.libraccio.it/ebook/9788892230675/1.html"
     ]
    ],
-   "stampa_titolo": "Il libro sulla stampa",
+   "stampa_titolo": "Tra gli articoli…",
    "stampa": [
     [
      "SIR, 2 marzo 2021",
@@ -94,6 +94,71 @@
      "SIR, 2 marzo 2021",
      "Card. Bassetti: i preti italiani morti per Covid sono il volto bello della Chiesa amica",
      "https://www.agensir.it/chiesa/2021/03/02/card-bassetti-i-preti-italiani-morti-per-covid-sono-il-volto-bello-della-chiesa-amica/"
+    ],
+    [
+     "In Terris, 2 marzo 2021",
+     "Oltre 200 preti morti per Covid in Italia. Bassetti: “Il volto bello della Chiesa”",
+     "https://www.interris.it/chiesa-cattolica/covid-preti-morti-bassetti-chiesa/"
+    ],
+    [
+     "Famiglia Cristiana, 3 marzo 2021",
+     "Oltre 200 preti morti di Covid in 9 mesi, la strage silenziosa",
+     "https://www.famigliacristiana.it/chiesa/oltre-200-preti-morti-di-covid-in-9-mesi-la-strage-silenziosa-jf3qt4vl"
+    ],
+    [
+     "ToscanaOggi, 3 marzo 2021",
+     "In libreria dal 5 marzo “Covid-19: preti in prima linea”",
+     "https://www.toscanaoggi.it/in-libreria-dal-5-marzo-covid-19-preti-in-prima-linea/"
+    ],
+    [
+     "Chiesa di Milano, 3 marzo 2021",
+     "Bassetti: preti morti per Covid, volto bello della Chiesa amica",
+     "https://www.chiesadimilano.it/news/chiesa-diocesi/bassetti-preti-morti-per-covid-volto-bello-della-chiesa-amica-444500.html"
+    ],
+    [
+     "Aleteia, 3 marzo 2021",
+     "Prete morto per Covid: lo aveva “profetizzato” in una sua poesia",
+     "https://it.aleteia.org/2021/03/03/prete-morte-per-covid-lo-aveva-profetizzato-in-una-poesia/"
+    ],
+    [
+     "Avvenire, 4 marzo 2021",
+     "Covid, il sacrificio dei sacerdoti: un libro per ricordarli",
+     "https://www.avvenire.it/chiesa/chiesa-italiana/covid-il-sacrificio-dei-sacerdoti-un-libro-per-ricordarli_50104"
+    ],
+    [
+     "RomaSette, 8 marzo 2021",
+     "Sacerdoti morti per il coronavirus: l’omaggio a 206 vite",
+     "https://www.romasette.it/sacerdoti-morti-per-il-coronavirus-lomaggio-a-206-vite/"
+    ],
+    [
+     "ACI Stampa, 9 marzo 2021",
+     "Covid, le straordinarie storie dei sacerdoti italiani vittime della pandemia",
+     "https://www.acistampa.com/story/16480/covid-le-straordinarie-storie-dei-sacerdoti-italiani-vittime-della-pandemia-16480"
+    ],
+    [
+     "La Voce e il Tempo, 11 marzo 2021",
+     "Covid-19, preti in prima linea",
+     "https://vocetempo.it/covid-19-preti-in-prima-linea/"
+    ],
+    [
+     "La Vita del Popolo, 12 marzo 2021",
+     "Il libro: Preti in prima linea",
+     "https://www.lavitadelpopolo.it/cultura-e-spettacoli/il-libro-preti-in-prima-linea-KFVP120684"
+    ],
+    [
+     "Santi e Beati, marzo 2021",
+     "Riccardo Benotti, Covid-19: preti in prima linea (scheda bibliografica)",
+     "https://www.santiebeati.it/dettaglio/99110"
+    ],
+    [
+     "Tv2000, 18 marzo 2021",
+     "L’Ora Solare: Riccardo Benotti sui preti morti durante la pandemia",
+     "https://www.tv2000.it/orasolare/video/lora-solare-18-marzo-2021/"
+    ],
+    [
+     "Il Fatto Quotidiano, 20 marzo 2021",
+     "Covid, molti preti sono mancati ma hanno offerto un’immagine autentica di vocazione",
+     "https://www.ilfattoquotidiano.it/2021/03/20/covid-molti-preti-sono-mancati-ma-hanno-offerto-unimmagine-autentica-di-vocazione/6138057/"
     ]
    ],
    "parole": [
@@ -113,8 +178,8 @@
    "isbn_fmt": "978-88-209-9730-4",
    "wikidata": "Q141757042",
    "cover": "cover-vita-religiosa.webp",
-   "cover_w": 200,
-   "cover_h": 297,
+   "cover_w": 480,
+   "cover_h": 714,
    "tema": "vita-religiosa",
    "etichetta": "Libri · Libreria Editrice Vaticana · 2016",
    "descrizione": "Viaggio nella vita religiosa (LEV, 2016) di Riccardo Benotti: quattordici conversazioni con i superiori generali di istituti religiosi, dai Benedettini ai Gesuiti. Prefazione di fra Timothy Radcliffe.",
@@ -218,12 +283,32 @@
      "https://viaggionellavitareligiosa.wordpress.com/"
     ]
    ],
-   "stampa_titolo": "Il libro in televisione",
+   "stampa_titolo": "Tra gli articoli…",
    "stampa": [
+    [
+     "Famiglia Cristiana, 27 gennaio 2016",
+     "I religiosi come papa Francesco: ecco come stanno cambiando",
+     "https://www.famigliacristiana.it/articolo/i-religiosi-come-papa-francesco-ecco-come-stanno-cambiando.aspx"
+    ],
+    [
+     "Tv2000, 29 gennaio 2016",
+     "Siamo Noi: ospite Riccardo Benotti con «Viaggio nella vita religiosa»",
+     "https://www.tv2000.it/blog/2016/01/29/siamo-noi-dal-lunedi-al-venerdi-alle-15-20-su-tv2000/"
+    ],
+    [
+     "Zenit, 4 febbraio 2016",
+     "La vita consacrata non fa notizia solo quando è infedele (presentazione del libro, a firma dell’autore)",
+     "https://it.zenit.org/2016/02/04/la-vita-consacrata-non-fa-notizia-solo-quando-e-infedele/"
+    ],
     [
      "Tg2 Costume e società, 4 aprile 2016",
      "Il servizio dedicato al libro",
      "https://www.youtube.com/watch?v=27dl6HbfgT4"
+    ],
+    [
+     "Messaggi Don Orione, 31 ottobre 2022",
+     "Il rischio del secolarismo della carità. Intervista a don Flavio Peloso (ripresa dal libro)",
+     "https://messaggidonorione.it/articoli/1556/il-rischio-del-secolarismo-della-carita-intervista-a-don-flavio-peloso-riccardo-benotti"
     ]
    ],
    "parole": [
@@ -243,8 +328,8 @@
    "isbn_fmt": "978-88-548-2293-1",
    "wikidata": "Q141757043",
    "cover": "cover-new-journalism.webp",
-   "cover_w": 200,
-   "cover_h": 300,
+   "cover_w": 480,
+   "cover_h": 723,
    "tema": "new-journalism",
    "etichetta": "Libri · Aracne · 2009",
    "descrizione": "Viaggio nel New Journalism americano (Aracne, 2009) di Riccardo Benotti: da un articolo di Gay Talese su Esquire, la stagione del giornalismo narrativo statunitense, i suoi autori e le sue tecniche.",
