@@ -20,13 +20,15 @@ def libro_ld(l, altri):
     if l.get('isbn_ebook'):
         edizioni.append({"@type": "Book", "bookFormat": "https://schema.org/EBook", "isbn": l['isbn_ebook'],
                          "publisher": {"@type": "Organization", "name": l['editore']}, "datePublished": l['anno']})
-    libro = {"@type": "Book", "@id": url + "#libro", "name": l['titolo'] + '. ' + l['sottotitolo'],
-             "alternativeHeadline": l['sottotitolo'], "author": autore, "inLanguage": "it",
+    libro = {"@type": "Book", "@id": url + "#libro", "name": l['titolo'] + ('. ' + l['sottotitolo'] if l['sottotitolo'] else ''),
+             "author": autore, "inLanguage": "it",
              "publisher": {"@type": "Organization", "name": l['editore']}, "datePublished": l['anno'],
              "isbn": l['isbn'], "numberOfPages": l['pagine'], "bookFormat": "https://schema.org/Paperback",
              "image": SITE + '/img/' + l['cover'], "description": l['descrizione'], "url": url,
              "mainEntityOfPage": url, "workExample": edizioni, "keywords": ', '.join(l.get('parole', [])),
              "sameAs": "https://www.wikidata.org/wiki/" + l['wikidata'], "isPartOf": {"@id": SITE + "/#sito"}}
+    if l['sottotitolo']:
+        libro["alternativeHeadline"] = l['sottotitolo']
     if contributi:
         libro["contributor"] = contributi
     return libro
@@ -66,7 +68,7 @@ def libri():
         li = ''.join(f'<li><a href="{u}">{e(t)}</a></li>' for t, u in l['dove'])
         sez += f'\n    <section class="lp-sez"><h2 class="label">Dove trovarlo</h2><ul class="lp-link">{li}</ul></section>'
         isbn_ed = f'<div><dt>ISBN</dt><dd>{l["isbn_fmt"]} (cartaceo)' + (f'<br>{l["isbn_ebook_fmt"]} (ebook)' if l.get('isbn_ebook') else '') + '</dd></div>'
-        pref = ''.join(f'<div><dt>{e(a)}</dt><dd>{e(b)}</dd></div>' for a, b in l['voci']) if l['tema'] != 'covid' else ''
+        pref = ''.join(f'<div><dt>{e(a)}</dt><dd>{e(b)}</dd></div>' for a, b in l.get('voci', [])) if l['tema'] != 'covid' else ''
         sez += f'''
     <section class="lp-sez"><h2 class="label">Dati del volume</h2>
       <dl class="lp-dl"><div><dt>Autore</dt><dd><a href="/">Riccardo Benotti</a></dd></div>{pref}<div><dt>Editore</dt><dd>{e(l["editore"])}</dd></div><div><dt>Anno</dt><dd>{l["anno"]}</dd></div><div><dt>Pagine</dt><dd>{l["pagine"]}</dd></div>{isbn_ed}</dl></section>'''
@@ -82,7 +84,7 @@ def libri():
         <figure class="lp-cover"><img src="/img/{l["cover"]}" width="{l["cover_w"]}" height="{l["cover_h"]}" alt="Copertina di {e(l["titolo"])}" fetchpriority="high"></figure>
         <div class="lp-testa">
           <span class="label">{e(l["etichetta"])}</span>
-          <h1>{e(l["titolo"])}<span class="sub">{e(l["sottotitolo"])}</span></h1>
+          <h1>{e(l["titolo"])}{('<span class="sub">' + e(l["sottotitolo"]) + '</span>') if l["sottotitolo"] else ''}</h1>
           <p class="lp-lead">{e(l["lead"])}</p>
           <div class="dati lp-dati">{dati}</div>
         </div>

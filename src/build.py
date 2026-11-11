@@ -326,7 +326,7 @@ BOOKS = [
 ]
 
 
-URL_LIBRI = {'9788892223813': SITE + '/libri/covid-19-preti-in-prima-linea/', '9788820997304': SITE + '/libri/viaggio-nella-vita-religiosa/'}
+URL_LIBRI = {'9788892223813': SITE + '/libri/covid-19-preti-in-prima-linea/', '9788820997304': SITE + '/libri/viaggio-nella-vita-religiosa/', '9788854822931': SITE + '/libri/viaggio-nel-new-journalism-americano/'}
 
 
 def ld_home():
