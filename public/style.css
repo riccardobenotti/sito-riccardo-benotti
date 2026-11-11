@@ -544,3 +544,8 @@ body.lp-body-new-journalism {
   .lp-vita-religiosa .lp-testa h1 { font-size: clamp(2.1rem, 9.5vw, 2.8rem); }
   .lp-new-journalism .lp-testa h1 { font-size: clamp(1.7rem, 7.8vw, 2.3rem); }
 }
+
+/* Copertine dei libri cliccabili: leggero sollevamento al passaggio */
+.libro .cover a img { transition: transform .2s ease, box-shadow .2s ease; }
+.libro .cover a:hover img, .libro .cover a:focus-visible img { transform: translateY(-3px); }
+@media (prefers-reduced-motion: reduce) { .libro .cover a img { transition: none; } .libro .cover a:hover img, .libro .cover a:focus-visible img { transform: none; } }
