@@ -1,0 +1,237 @@
+{
+ "libri": [
+  {
+   "slug": "covid-19-preti-in-prima-linea",
+   "titolo": "Covid-19: preti in prima linea",
+   "sottotitolo": "Storie stra-ordinarie di chi ha dato la vita e di chi non si è arreso",
+   "editore": "Edizioni San Paolo",
+   "anno": "2021",
+   "pagine": 464,
+   "isbn": "9788892223813",
+   "isbn_fmt": "978-88-922-2381-3",
+   "isbn_ebook": "9788892230675",
+   "isbn_ebook_fmt": "978-88-922-3067-5",
+   "wikidata": "Q141757041",
+   "cover": "cover-covid19.webp",
+   "cover_w": 300,
+   "cover_h": 431,
+   "tema": "covid",
+   "etichetta": "Libri · San Paolo · 2021",
+   "descrizione": "Covid-19: preti in prima linea (San Paolo, 2021) di Riccardo Benotti: le storie dei sacerdoti italiani nella pandemia e il ricordo dei 206 preti diocesani morti nel 2020. Presentazione del card. Bassetti, prefazione del card. De Donatis.",
+   "lead": "Sono i «pastori con l’odore delle pecore» di cui parla papa Francesco: sacerdoti che, nella pandemia, hanno vissuto il ministero con spirito di servizio e dedizione al prossimo. Il libro racconta chi ha dato la vita e chi, pur colpito, non si è arreso, e ricorda uno per uno i sacerdoti diocesani italiani morti per il Covid-19.",
+   "corpo": [
+    "Al centro ci sono i <b>206 sacerdoti diocesani</b> morti tra il 1° marzo e il 30 novembre 2020. Di ciascuno il volume racconta la vita umana e pastorale e lo restituisce a chi lo ha conosciuto.",
+    "Accanto ai profili, il libro dà voce a chi ha continuato il proprio ministero durante la pandemia, in contesti molto diversi tra loro."
+   ],
+   "struttura_titolo": "Come è fatto",
+   "struttura": [
+    [
+     "Prima parte",
+     "Quattro storie di sacerdoti morti durante la prima ondata e quattro testimonianze di preti che hanno continuato a servire."
+    ],
+    [
+     "Seconda parte",
+     "I profili biografici di tutti i 206 sacerdoti diocesani morti fra marzo e novembre 2020."
+    ]
+   ],
+   "cifre_titolo": "I numeri raccolti nel libro",
+   "cifre_nota": "Dati dal 1° marzo al 30 novembre 2020, come presentati da Riccardo Benotti in un articolo del SIR del 2 marzo 2021.",
+   "cifre": [
+    [
+     "206",
+     "sacerdoti diocesani morti per cause dirette e indirette del Covid-19"
+    ],
+    [
+     "64 su 225",
+     "diocesi italiane colpite da almeno un lutto"
+    ],
+    [
+     "80%",
+     "dei decessi al Nord; la Lombardia da sola il 38%"
+    ],
+    [
+     "99",
+     "i morti di marzo 2020, quasi la metà del totale; a novembre sono stati 68"
+    ],
+    [
+     "82 anni",
+     "l’età media; ma più di 40 avevano 75 anni o meno e quattro meno di 50"
+    ],
+    [
+     "+60%",
+     "i decessi di sacerdoti tra marzo e maggio 2020 rispetto al 2019 (da 194 a 310)"
+    ]
+   ],
+   "voci_titolo": "Chi lo presenta",
+   "voci": [
+    [
+     "Presentazione",
+     "card. Gualtiero Bassetti, allora presidente della Conferenza episcopale italiana"
+    ],
+    [
+     "Prefazione",
+     "card. Angelo De Donatis, allora cardinale vicario di Sua Santità per la diocesi di Roma"
+    ]
+   ],
+   "dove": [
+    [
+     "Scheda dell’editore, Edizioni San Paolo",
+     "https://www.edizionisanpaolo.it/varie_1/narrativa/le-vele_1/libro/covid-19-preti-in-prima-linea.aspx"
+    ],
+    [
+     "Edizione digitale (ebook) su Libraccio",
+     "https://www.libraccio.it/ebook/9788892230675/1.html"
+    ]
+   ],
+   "stampa_titolo": "Il libro sulla stampa",
+   "stampa": [
+    [
+     "SIR, 2 marzo 2021",
+     "Oltre 200 preti morti di Covid-19 nei primi 9 mesi. Il Nord più colpito, 60% di decessi in più del 2019",
+     "https://www.agensir.it/chiesa/2021/03/02/oltre-200-preti-morti-di-covid-19-nei-primi-9-mesi-il-nord-piu-colpito-60-di-decessi-in-piu-del-2019/"
+    ],
+    [
+     "SIR, 2 marzo 2021",
+     "Card. Bassetti: i preti italiani morti per Covid sono il volto bello della Chiesa amica",
+     "https://www.agensir.it/chiesa/2021/03/02/card-bassetti-i-preti-italiani-morti-per-covid-sono-il-volto-bello-della-chiesa-amica/"
+    ]
+   ],
+   "parole": [
+    "preti morti di Covid",
+    "sacerdoti e pandemia",
+    "Covid-19 e Chiesa italiana"
+   ]
+  },
+  {
+   "slug": "viaggio-nella-vita-religiosa",
+   "titolo": "Viaggio nella vita religiosa",
+   "sottotitolo": "Interviste e incontri",
+   "editore": "Libreria Editrice Vaticana",
+   "anno": "2016",
+   "pagine": 232,
+   "isbn": "9788820997304",
+   "isbn_fmt": "978-88-209-9730-4",
+   "wikidata": "Q141757042",
+   "cover": "cover-vita-religiosa.webp",
+   "cover_w": 200,
+   "cover_h": 297,
+   "tema": "vita-religiosa",
+   "etichetta": "Libri · Libreria Editrice Vaticana · 2016",
+   "descrizione": "Viaggio nella vita religiosa (LEV, 2016) di Riccardo Benotti: quattordici conversazioni con i superiori generali di istituti religiosi, dai Benedettini ai Gesuiti. Prefazione di fra Timothy Radcliffe.",
+   "lead": "Quattordici conversazioni con i superiori generali di altrettante realtà della vita consacrata, raccolte alla chiusura dell’Anno della vita consacrata voluto da papa Francesco. Ognuno racconta sé stesso, il proprio istituto e il cammino che la Chiesa gli chiede.",
+   "corpo": [
+    "Gli incontri toccano anche i temi più delicati: gli abusi, il clericalismo, la gestione del denaro, l’omosessualità tra i religiosi, la crisi delle vocazioni, il rapporto con l’islam, il ruolo dei laici. Il volume dedica spazio anche a un momento delicato attraversato dai Francescani.",
+    "La prefazione è di fra Timothy Radcliffe, già maestro dell’Ordine dei Predicatori, che paragona la vita religiosa a una foresta pluviale: forme di vita diverse che si completano a vicenda, senza farsi concorrenza."
+   ],
+   "intervistati_titolo": "Gli intervistati",
+   "intervistati_nota": "Incarichi al momento delle interviste, come indicati nel libro.",
+   "intervistati": [
+    [
+     "Notker Wolf",
+     "Benedettini",
+     "abate primate della Confederazione benedettina"
+    ],
+    [
+     "Fernando Millán Romeral",
+     "Carmelitani",
+     "priore generale"
+    ],
+    [
+     "Mauro-Giuseppe Lepori",
+     "Cistercensi",
+     "abate generale"
+    ],
+    [
+     "Michael Anthony Perry",
+     "Frati minori",
+     "ministro generale"
+    ],
+    [
+     "Bruno Cadoré",
+     "Domenicani",
+     "maestro dell’Ordine dei Frati Predicatori"
+    ],
+    [
+     "Jesús Etayo Arrondo",
+     "Fatebenefratelli",
+     "superiore generale"
+    ],
+    [
+     "Antoine Kerhuel",
+     "Gesuiti",
+     "consigliere generale"
+    ],
+    [
+     "Emili Turú Rofes",
+     "Fratelli Maristi",
+     "superiore generale"
+    ],
+    [
+     "Ángel Fernández Artime",
+     "Salesiani",
+     "rettor maggiore"
+    ],
+    [
+     "Heinz Kulüke",
+     "Verbiti",
+     "superiore generale"
+    ],
+    [
+     "Flavio Peloso",
+     "Orionini",
+     "superiore generale"
+    ],
+    [
+     "Valdir José De Castro",
+     "Paolini",
+     "superiore generale della Società San Paolo"
+    ],
+    [
+     "Eduardo Robles Gil Orvañanos",
+     "Legionari di Cristo",
+     "direttore generale"
+    ],
+    [
+     "David Kinnear Glenday",
+     "Unione superiori generali",
+     "segretario generale"
+    ]
+   ],
+   "voci_titolo": "Prefazione",
+   "voci": [
+    [
+     "Prefazione",
+     "fra Timothy Radcliffe, già maestro dell’Ordine dei Predicatori"
+    ]
+   ],
+   "dove": [
+    [
+     "Catalogo SBN, biblioteche italiane che lo possiedono",
+     "https://opac.sbn.it/bid/UM10163501"
+    ],
+    [
+     "Scheda sulla Libreria del Santo",
+     "https://www.libreriadelsanto.it/libri/9788820997304/viaggio-nella-vita-religiosa.html"
+    ],
+    [
+     "Il blog del libro, con le interviste ai singoli superiori",
+     "https://viaggionellavitareligiosa.wordpress.com/"
+    ]
+   ],
+   "stampa_titolo": "Il libro in televisione",
+   "stampa": [
+    [
+     "Tg2 Costume e società, 4 aprile 2016",
+     "Il servizio dedicato al libro",
+     "https://www.youtube.com/watch?v=27dl6HbfgT4"
+    ]
+   ],
+   "parole": [
+    "superiori generali",
+    "Anno della vita consacrata",
+    "interviste ai superiori generali"
+   ]
+  }
+ ],
+ "aggiornato": "2026-11-11"
+}

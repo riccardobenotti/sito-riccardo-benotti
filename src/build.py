@@ -326,6 +326,9 @@ BOOKS = [
 ]
 
 
+URL_LIBRI = {'9788892223813': SITE + '/libri/covid-19-preti-in-prima-linea/', '9788820997304': SITE + '/libri/viaggio-nella-vita-religiosa/'}
+
+
 def ld_home():
     import datetime
     from zoneinfo import ZoneInfo
@@ -347,6 +350,8 @@ def ld_home():
             libro["image"] = SITE + "/img/cover-governare-patrimonio.webp"
             libro["bookFormat"] = "https://schema.org/Paperback"
             libro["url"] = "https://www.governareilpatrimonio.it/"
+        if isbn in URL_LIBRI:
+            libro["url"] = URL_LIBRI[isbn]
         g.append(libro)
     g.append({"@type": "Thesis", "name": "Intelligenza artificiale e giornalismo. Un'indagine sui pro e contro di una possibile implementazione di sistemi IA nelle redazioni cattoliche della CEI e della Santa Sede",
               "author": {"@id": SITE + "/#riccardo-benotti"}, "datePublished": "2025-12-17", "inLanguage": "it",
@@ -441,6 +446,7 @@ def main():
     urls += archivio(puntate)
     urls += temi(puntate, TEMI)
     urls += viaggi(puntate)
+    urls += libri()
 
     # crediti delle immagini (licenza e acquisizione per i metadati immagine)
     body = '''<div class="wrap"><main class="pagina"><span class="label gold">Note</span>
@@ -506,6 +512,7 @@ def main():
 exec((SRC / 'archivio.py').read_text())
 exec((SRC / 'temi.py').read_text())
 exec((SRC / 'viaggi.py').read_text())
+exec((SRC / 'libri.py').read_text())
 
 
 if __name__ == '__main__':

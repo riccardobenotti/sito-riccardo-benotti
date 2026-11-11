@@ -78,6 +78,7 @@ PAIRS = [
     ('<p>Testimonianze di sacerdoti negli anni della pandemia e il ricordo dei preti diocesani italiani morti in quel periodo. Presentazione del cardinale Gualtiero Bassetti, prefazione del cardinale Angelo De Donatis.</p>',
      '<p>Accounts from priests during the pandemic years, and a memorial to the Italian diocesan priests who died in that period. Introduced by Cardinal Gualtiero Bassetti, with a preface by Cardinal Angelo De Donatis.</p>'),
     ('<span>464 pagine</span>', '<span>464 pages</span>'),
+    ('>Scheda del libro<', '>Book page (in Italian)<'),
     ('Scheda dell’editore', 'Publisher’s page'),
     ('<p>Incontri con quattordici superiori generali, usciti per la chiusura dell’Anno della vita consacrata: i carismi della Chiesa raccontati da chi li guida.</p>',
      '<p>Conversations with fourteen superiors general, published for the close of the Year of Consecrated Life: the charisms of the Church described by those who lead them.</p>'),

@@ -462,3 +462,55 @@ time:has(> .bandiera) { white-space: nowrap; }
   article[data-paese] > header .paese-nome::before { content: none; }
   .puntata[data-paese] .corpo::before { display: none; }
 }
+
+/* Pagine dei libri (/libri/<slug>/): fascia d'apertura nei colori della copertina, poi testo, dati e collegamenti */
+.lp { --bk-band: #E8DEC8; --bk-ink: #1F2A3D; --bk-soft: #5B5547; --bk-acc: #2F628F; --bk-line: rgba(31,42,61,.16); --bk-shadow: rgba(60,45,20,.5); }
+.lp-covid { --bk-band: #E7DCC4; --bk-ink: #1F2A3D; --bk-soft: #5A5446; --bk-acc: #2F628F; --bk-hl: #2F628F; --bk-line: rgba(31,42,61,.16); }
+.lp-vita-religiosa { --bk-band: #2B2017; --bk-ink: #F5ECD8; --bk-soft: #CDBF9F; --bk-acc: #8A5A12; --bk-hl: #E7B92E; --bk-line: rgba(231,185,46,.28); --bk-shadow: rgba(0,0,0,.6); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .lp-covid { --bk-band: #262116; --bk-ink: #F0EADB; --bk-soft: #BDB39A; --bk-acc: #9CC3E6; --bk-hl: #A9C6E0; --bk-line: rgba(240,234,219,.18); }
+  :root:not([data-theme="light"]) .lp-vita-religiosa { --bk-band: #1C150F; --bk-acc: #E7B92E; }
+}
+:root[data-theme="dark"] .lp-covid { --bk-band: #262116; --bk-ink: #F0EADB; --bk-soft: #BDB39A; --bk-acc: #9CC3E6; --bk-hl: #A9C6E0; --bk-line: rgba(240,234,219,.18); }
+:root[data-theme="dark"] .lp-vita-religiosa { --bk-band: #1C150F; --bk-acc: #E7B92E; }
+.lp-fascia { background: var(--bk-band); color: var(--bk-ink); border-bottom: 1px solid var(--bk-line); }
+.lp-fascia a { color: var(--bk-ink); text-decoration-color: var(--bk-hl, var(--bk-acc)); }
+.lp-fascia .briciole { padding-top: 1.4rem; color: var(--bk-soft); }
+.lp-fascia .briciole a { color: var(--bk-soft); }
+.lp-fascia .briciole [aria-current] { color: var(--bk-ink); }
+.lp-hero { display: grid; grid-template-columns: minmax(11rem, 17rem) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: center; padding: 2rem 0 3.4rem; }
+.lp-cover { margin: 0; }
+.lp-cover img { display: block; width: 100%; height: auto; border-radius: 2px 5px 5px 2px; box-shadow: 0 2px 4px rgba(0,0,0,.2), 0 22px 40px -18px var(--bk-shadow); }
+.lp-testa .label { color: var(--bk-soft); }
+.lp-testa h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.08; margin: 0.7rem 0 1.1rem; text-wrap: balance; color: var(--bk-ink); }
+.lp-vita-religiosa .lp-testa h1 { color: var(--bk-hl); }
+.lp-testa h1 .sub { display: block; margin-top: 0.7rem; font-style: italic; font-weight: 400; font-size: 0.42em; line-height: 1.3; color: var(--bk-ink); opacity: .86; }
+.lp-lead { font-size: 1.15rem; line-height: 1.6; max-width: 54ch; margin: 0; }
+.lp-dati { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin-top: 1.2rem; font-size: 0.95rem; color: var(--bk-soft); font-variant-numeric: tabular-nums; }
+.lp-corpo { max-width: 46rem; margin: 0 auto; padding: 3rem 0 5rem; }
+.lp-sez { margin: 0 0 2.4rem; padding-block: 0; border-top: 0; }
+.lp-sez > .label { display: block; margin: 0 0 0.9rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); color: var(--bk-acc); }
+.lp-testo { margin-bottom: 2.4rem; }
+.lp-testo p { margin: 0 0 1.1rem; }
+.lp-corpo a { color: var(--bk-acc); }
+.lp-dl { margin: 0; display: grid; gap: 0.9rem 2rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.lp-dl div { min-width: 0; }
+.lp-dl dt { font-family: var(--body); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+.lp-dl dd { margin: 0.15rem 0 0; font-size: 1.05rem; line-height: 1.5; font-variant-numeric: tabular-nums; }
+.lp-cifre { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem 2rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.lp-cifre li { border-left: 3px solid var(--bk-acc); padding-left: 1rem; }
+.lp-cifre strong { display: block; font-family: var(--display); font-weight: 500; font-size: 2.3rem; line-height: 1.05; color: var(--bk-acc); font-variant-numeric: lining-nums; }
+.lp-cifre span { display: block; margin-top: 0.3rem; font-size: 1rem; line-height: 1.45; color: var(--ink-soft); }
+.lp-nota { margin: 1.2rem 0 0; font-size: 0.92rem; color: var(--ink-soft); }
+.lp-intervistati { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem 2rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.lp-intervistati strong { display: block; font-family: var(--display); font-weight: 500; font-size: 1.2rem; line-height: 1.25; }
+.lp-intervistati span { display: block; font-size: 0.95rem; line-height: 1.4; color: var(--ink-soft); }
+.lp-link { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
+.lp-link li { line-height: 1.45; }
+.lp-link .label { display: block; margin-bottom: 0.1rem; }
+.lp-sez .ultima-p { margin-top: 1.4rem; }
+@media (max-width: 720px) {
+  .lp-hero { grid-template-columns: minmax(0, 1fr); gap: 1.8rem; padding: 1.6rem 0 2.6rem; justify-items: start; }
+  .lp-cover { width: min(58%, 15rem); }
+  .lp-testa h1 { font-size: clamp(2rem, 9vw, 2.6rem); }
+}
