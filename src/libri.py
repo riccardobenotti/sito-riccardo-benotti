@@ -65,6 +65,9 @@ def libri():
         if l.get('stampa'):
             li = ''.join(f'<li><span class="label">{e(a)}</span> <a href="{u}">{e(t)}</a></li>' for a, t, u in l['stampa'])
             sez += f'\n    <section class="lp-sez"><h2 class="label">{e(l["stampa_titolo"])}</h2><ul class="lp-link">{li}</ul></section>'
+        if l.get('citazioni'):
+            li = ''.join(f'<li><span class="label">{e(a)}</span> <a href="{u}">{e(t)}</a></li>' for a, t, u in l['citazioni'])
+            sez += f'\n    <section class="lp-sez"><h2 class="label">{e(l["citazioni_titolo"])}</h2><ul class="lp-link">{li}</ul><p class="lp-nota">{e(l["citazioni_nota"])}</p></section>'
         li = ''.join(f'<li><a href="{u}">{e(t)}</a></li>' for t, u in l['dove'])
         sez += f'\n    <section class="lp-sez"><h2 class="label">Dove trovarlo</h2><ul class="lp-link">{li}</ul></section>'
         isbn_ed = f'<div><dt>ISBN</dt><dd>{l["isbn_fmt"]} (cartaceo)' + (f'<br>{l["isbn_ebook_fmt"]} (ebook)' if l.get('isbn_ebook') else '') + '</dd></div>'

@@ -84,7 +84,7 @@ PAIRS = [
      '<p>Conversations with fourteen superiors general, published for the close of the Year of Consecrated Life: the charisms of the Church described by those who lead them.</p>'),
     ('<span>232 pagine</span><span>Prefazione di Timothy Radcliffe</span>', '<span>232 pages</span><span>Preface by Timothy Radcliffe</span>'),
     ('Catalogo SBN</a><a href="https://viaggionellavitareligiosa.wordpress.com/">Il blog del libro</a>', 'Italian national library catalogue</a><a href="https://viaggionellavitareligiosa.wordpress.com/">The book’s blog</a>'),
-    ('<p>Un percorso nella stagione del giornalismo narrativo statunitense, i suoi autori e le sue tecniche.</p>', '<p>A journey through the era of American narrative journalism, its authors and its techniques.</p>'),
+    ('<p>Un percorso nella stagione del giornalismo narrativo statunitense, i suoi autori e le sue tecniche. Citato in tesi di dottorato e articoli scientifici.</p>', '<p>A journey through the era of American narrative journalism, its authors and its techniques. Cited in doctoral theses and scholarly articles.</p>'),
     ('<span>143 pagine</span>', '<span>143 pages</span>'),
     ('">Catalogo SBN</a></div>', '">Italian national library catalogue</a></div>'),
     # scritti
