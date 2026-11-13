@@ -176,14 +176,16 @@ def home_items(puntate):
         testa = (f'<time class="mono" datetime="{p["data"]}">{data_it(p["data"])}</time>{nome_paese(p)}'
                  f'<h3><a class="tit" href="{p["url"]}">{p["titolo_html"]}</a></h3>')
         if k == 0:
-            corpo = (f'<div class="testo">{p["paras"][0]}</div>'
-                     f'<details><summary>Continua a leggere</summary><div class="testo">{"".join(p["paras"][1:])}</div>'
-                     f'{fonti_html(p)}{meta_html(p)}</details>')
-        else:
-            corpo = (f'<details><summary>Leggi la puntata</summary><div class="testo">{"".join(p["paras"])}</div>'
-                     f'{fonti_html(p)}{meta_html(p)}</details>')
-        cls = 'puntata ultima' if k == 0 else 'puntata'
-        out.append(f'\n      <li class="{cls}"{attr_paese(p)}>\n        <div class="corpo">{testa}{corpo}</div>\n        {figura(p, lazy=k > 0, grande=k == 0)}\n      </li>')
+            # puntata del giorno: titolo e foto in alto, sommario sotto a tutta larghezza (righe lunghe)
+            seguito = (f'<div class="testo">{p["paras"][0]}</div>'
+                       f'<details><summary>Continua a leggere</summary><div class="testo">{"".join(p["paras"][1:])}</div>'
+                       f'{fonti_html(p)}{meta_html(p)}</details>')
+            out.append(f'\n      <li class="puntata ultima"{attr_paese(p)}>\n        <div class="corpo">{testa}</div>\n        '
+                       f'{figura(p, lazy=False, grande=True)}\n        <div class="seguito">{seguito}</div>\n      </li>')
+            continue
+        corpo = (f'<details><summary>Leggi la puntata</summary><div class="testo">{"".join(p["paras"])}</div>'
+                 f'{fonti_html(p)}{meta_html(p)}</details>')
+        out.append(f'\n      <li class="puntata"{attr_paese(p)}>\n        <div class="corpo">{testa}{corpo}</div>\n        {figura(p, lazy=True)}\n      </li>')
     return ''.join(out) + '\n    '
 
 
