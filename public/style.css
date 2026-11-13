@@ -444,23 +444,16 @@ footer .crediti a { color: var(--band-soft); text-decoration-color: var(--band-s
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 22%, transparent), 0 1px 2px -1px color-mix(in srgb, var(--ink) 35%, transparent); }
 time:has(> .bandiera) { white-space: nowrap; }
 
-/* Viaggi all'estero: filetto e cornice nei colori del paese (home e pagina della puntata) */
-[data-paese] { --passe: var(--paper); }
-.filo-sec [data-paese] { --passe: var(--paper-alt); }
+/* Viaggi all'estero: filetto nei colori del paese (home e pagina della puntata) */
 .puntata .paese-nome { font-weight: 700; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
 .paese-nome::before { content: " \00b7  "; }
 /* filetto sopra la data, con l'orientamento vero della bandiera */
 .puntata[data-paese] .corpo::before, article[data-paese] > header::before {
   content: ""; display: block; height: 9px; border-radius: 2px; background: var(--bn); margin-bottom: 1rem;
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 20%, transparent); }
-/* cornice a righe sottili attorno alla foto */
-[data-paese] .foto, [data-paese] .foto-grande { padding: var(--cp); }
-[data-paese] .foto img, [data-paese] .foto-grande img { border-radius: 3px; box-shadow: var(--cornice); }
-[data-paese] .foto-grande figcaption { margin-left: calc(var(--cp) * -1); }
 @media (max-width: 600px) {
   article[data-paese] > header .paese-nome { display: block; margin-top: 0.3rem; }
   article[data-paese] > header .paese-nome::before { content: none; }
-  .puntata[data-paese] .corpo::before { display: none; }
 }
 
 /* Pagine dei libri (/libri/<slug>/): tutta la pagina nei colori e nello stile della copertina. I colori del sito (carta, inchiostro, filetti, accento, fascia del piede) sono ridefiniti sul body, così anche menu e piede li seguono */

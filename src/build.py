@@ -48,7 +48,7 @@ def bandiera(p, lingua='it'):
     return f'<img class="bandiera" src="/img/bandiere/{c}.svg" width="18" height="12" alt="{nome}" title="{nome}">'
 
 
-# Colori del paese: bande della bandiera ('v' = bande affiancate, 'h' = bande sovrapposte) e colori di accento per la cornice.
+# Colori del paese: bande della bandiera ('v' = bande affiancate, 'h' = bande sovrapposte).
 FASCE = {'uy': ('h', [('#FFFFFF', 1), ('#0038A8', 1)] * 4 + [('#FFFFFF', 1)]),
          'ar': ('h', [('#74ACDF', 1), ('#FFFFFF', 1), ('#74ACDF', 1)]),
          'pe': ('v', [('#D91023', 1), ('#FFFFFF', 1), ('#D91023', 1)]),
@@ -60,9 +60,6 @@ FASCE = {'uy': ('h', [('#FFFFFF', 1), ('#0038A8', 1)] * 4 + [('#FFFFFF', 1)]),
          'ao': ('h', [('#CC092F', 1), ('#000000', 1)]),
          'gq': ('h', [('#3E9A00', 1), ('#FFFFFF', 1), ('#E32118', 1)]),
          'it': ('v', [('#009246', 1), ('#FFFFFF', 1), ('#CE2B37', 1)])}
-ACCENTI = {'uy': ['#0038A8', '#FCD116'], 'ar': ['#74ACDF', '#F6B40E'], 'pe': ['#D91023', '#D91023'], 'fr': ['#002654', '#CE1126'],
-           'es': ['#AA151B', '#F1BF00'], 'mc': ['#CE1126', '#CE1126'], 'dz': ['#006233', '#D21034'],
-           'cm': ['#007A5E', '#CE1126', '#FCD116'], 'ao': ['#CC092F', '#000000'], 'gq': ['#3E9A00', '#E32118'], 'it': ['#009246', '#CE2B37']}
 
 
 def fascia(c):
@@ -77,33 +74,11 @@ def fascia(c):
     return f'linear-gradient({90 if verso == "v" else 180}deg, ' + ', '.join(st) + ')'
 
 
-# Paesi la cui cornice riprende le bande della bandiera, senza stacchi: dall'interno verso l'esterno.
-CORNICE_BANDE = {'ar': ['#74ACDF', '#FFFFFF', '#74ACDF'], 'pe': ['#D91023', '#FFFFFF', '#D91023']}
-
-
-def cornice(c):
-    """Righe sottili concentriche (ombre) attorno alla foto: un colore del paese per riga. Restituisce (box-shadow, ingombro in px).
-    Per i paesi in CORNICE_BANDE le bande sono contigue, come nella bandiera."""
-    if c in CORNICE_BANDE:
-        sh, r = ['0 0 0 3px var(--passe)'], 3
-        for col in CORNICE_BANDE[c]:
-            r += 3
-            sh.append(f'0 0 0 {r}px {col}')
-        return ', '.join(sh), r
-    sh, r = ['0 0 0 4px var(--passe)'], 4
-    for col in ACCENTI[c]:
-        sh.append(f'0 0 0 {r + 2}px {col}')
-        sh.append(f'0 0 0 {r + 5}px var(--passe)')
-        r += 5
-    return ', '.join(sh[:-1]), r - 3
-
-
 def attr_paese(p):
     c = p.get('paese')
     if not c:
         return ''
-    ombra, ing = cornice(c)
-    return f' data-paese="{c}" style="--bn:{fascia(c)};--cornice:{ombra};--cp:{ing}px"'
+    return f' data-paese="{c}" style="--bn:{fascia(c)}"'
 
 
 def nome_paese(p):
