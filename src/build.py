@@ -78,7 +78,7 @@ def fascia(c):
 
 
 # Paesi la cui cornice riprende le bande della bandiera, senza stacchi: dall'interno verso l'esterno.
-CORNICE_BANDE = {'ar': ['#74ACDF', '#FFFFFF', '#74ACDF']}
+CORNICE_BANDE = {'ar': ['#74ACDF', '#FFFFFF', '#74ACDF'], 'pe': ['#D91023', '#FFFFFF', '#D91023']}
 
 
 def cornice(c):
