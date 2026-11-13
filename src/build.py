@@ -154,13 +154,19 @@ def fuoco(p):
     return ' style="object-position:50% 22%"' if h > w * 0.8 else ''
 
 
-def figura(p, cls='foto', lazy=True):
+def figura(p, cls='foto', lazy=True, grande=False):
     if not p.get('foto'):
         return ''
     from PIL import Image
     w, h = Image.open(PUB / 'img' / 'filo' / p['foto']).size
     alt = html.escape(p.get('alt') or ('Foto della puntata del ' + data_it(p['data']) + ': ' + p['titolo_txt'])[:180])
-    return (f'<figure class="{cls}"><img src="/img/filo/{p["foto"]}" width="{w}" height="{h}" alt="{alt}"'
+    srcset = ''
+    if grande:  # puntata del giorno in home: foto larga, con la versione a 1200 px per gli schermi nitidi
+        g = p['foto'].rsplit('.', 1)[0] + '-1200.webp'
+        if (PUB / 'img' / 'filo' / g).exists():
+            gw = Image.open(PUB / 'img' / 'filo' / g).size[0]
+            srcset = f' srcset="/img/filo/{p["foto"]} {w}w, /img/filo/{g} {gw}w" sizes="(max-width: 760px) 100vw, 32rem"'
+    return (f'<figure class="{cls}"><img src="/img/filo/{p["foto"]}"{srcset} width="{w}" height="{h}" alt="{alt}"'
             + fuoco(p) + (' loading="lazy"' if lazy else '') + '></figure>')
 
 
@@ -177,7 +183,7 @@ def home_items(puntate):
             corpo = (f'<details><summary>Leggi la puntata</summary><div class="testo">{"".join(p["paras"])}</div>'
                      f'{fonti_html(p)}{meta_html(p)}</details>')
         cls = 'puntata ultima' if k == 0 else 'puntata'
-        out.append(f'\n      <li class="{cls}"{attr_paese(p)}>\n        <div class="corpo">{testa}{corpo}</div>\n        {figura(p, lazy=k > 0)}\n      </li>')
+        out.append(f'\n      <li class="{cls}"{attr_paese(p)}>\n        <div class="corpo">{testa}{corpo}</div>\n        {figura(p, lazy=k > 0, grande=k == 0)}\n      </li>')
     return ''.join(out) + '\n    '
 
 
