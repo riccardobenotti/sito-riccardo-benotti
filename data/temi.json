@@ -206,7 +206,7 @@
   "slug": "intelligenza-artificiale",
   "nome": "Intelligenza artificiale",
   "tipo": "tema",
-  "rx": "(?i:intelligenza artificiale)|\\bIA\\b",
+  "rx": "(?i:intelligenza artificiale)|\\bIA\\b|(?i:nuove tecnologie)|programmi informatici",
   "qid": "Q11660"
  },
  {
