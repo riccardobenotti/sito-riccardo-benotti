@@ -339,7 +339,7 @@
   "slug": "cura-del-creato",
   "nome": "Cura del creato",
   "tipo": "tema",
-  "rx": "\\bcreato\\b|ambiental|\\bclima|Laudato si|ecologi",
+  "rx": "\\bcreato\\b|ambiental|\\bclima|Laudato si|ecologi|inquinare la creazione|violenza fatta alla terra|(?i:deforestazione)",
   "qid": "Q7150"
  },
  {
