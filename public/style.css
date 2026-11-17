@@ -213,15 +213,21 @@ footer li span { display: block; font-size: 0.88rem; color: var(--band-soft); }
 
 /* Foto del filo */
 .puntata { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 15rem); gap: 0.4rem 2rem; align-items: start; }
-.puntata.ultima { grid-template-columns: minmax(0, 1fr) minmax(0, min(44%, 32rem)); }
-.puntata.ultima .seguito { grid-column: 1 / -1; min-width: 0; }
-.puntata.ultima .seguito .testo p { max-width: 100ch; }
+/* Puntata del giorno: la foto sta a destra, titolo e sommario le scorrono accanto e poi sotto, a tutta larghezza */
+.puntata.ultima { display: flow-root; }
+.puntata.ultima .foto { float: right; width: min(44%, 32rem); margin: 0.35rem 0 1rem 2rem; }
+.puntata.ultima .testo { display: block; margin-top: 0.8rem; }
+.puntata.ultima .testo p { max-width: none; margin: 0 0 0.85rem; text-wrap: pretty; }
+.puntata.ultima .testo p:last-child { margin-bottom: 0; }
+.puntata.ultima[data-paese] .corpo::before { width: calc(100% - min(44%, 32rem) - 2rem); }
 .puntata .corpo { min-width: 0; }
 .puntata .foto { margin: 0.35rem 0 0; }
 .puntata .foto img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 4px; }
 @media (max-width: 760px) {
   .puntata, .puntata.ultima { grid-template-columns: minmax(0, 1fr); }
   .puntata .foto { order: -1; margin: 0.2rem 0 0.6rem; }
+  .puntata.ultima .foto { float: none; width: auto; margin: 0.2rem 0 0.6rem; }
+  .puntata.ultima[data-paese] .corpo::before { width: auto; }
 }
 
 

@@ -176,12 +176,16 @@ def home_items(puntate):
         testa = (f'<time class="mono" datetime="{p["data"]}">{data_it(p["data"])}</time>{nome_paese(p)}'
                  f'<h3><a class="tit" href="{p["url"]}">{p["titolo_html"]}</a></h3>')
         if k == 0:
-            # puntata del giorno: titolo e foto in alto, sommario sotto a tutta larghezza (righe lunghe)
-            seguito = (f'<div class="testo">{p["paras"][0]}</div>'
-                       f'<details><summary>Continua a leggere</summary><div class="testo">{"".join(p["paras"][1:])}</div>'
+            # puntata del giorno: in home un sommario di sintesi (campo "sintesi", scritto a mano, senza grassetti).
+            # Se manca, l'attacco della puntata senza grassetti. "Continua a leggere" apre la puntata intera.
+            sint = (f'<p>{html.escape(typo(p["sintesi"]), quote=False)}</p>' if p.get('sintesi')
+                    else re.sub(r'</?(?:b|i)>', '', p['paras'][0]))
+            seguito = (f'<div class="testo">{sint}</div>'
+                       f'<details><summary>Continua a leggere</summary><div class="testo">{"".join(p["paras"])}</div>'
                        f'{fonti_html(p)}{meta_html(p)}</details>')
-            out.append(f'\n      <li class="puntata ultima"{attr_paese(p)}>\n        <div class="corpo">{testa}</div>\n        '
-                       f'{figura(p, lazy=False, grande=True)}\n        <div class="seguito">{seguito}</div>\n      </li>')
+            # la foto va per prima nel markup: il titolo e il sommario le scorrono accanto e poi sotto (float)
+            out.append(f'\n      <li class="puntata ultima"{attr_paese(p)}>\n        {figura(p, lazy=False, grande=True)}\n        '
+                       f'<div class="corpo">{testa}</div>\n        <div class="seguito">{seguito}</div>\n      </li>')
             continue
         corpo = (f'<details><summary>Leggi la puntata</summary><div class="testo">{"".join(p["paras"])}</div>'
                  f'{fonti_html(p)}{meta_html(p)}</details>')
