@@ -215,7 +215,7 @@ footer li span { display: block; font-size: 0.88rem; color: var(--band-soft); }
 .puntata { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 15rem); gap: 0.4rem 2rem; align-items: start; }
 /* Puntata del giorno: la foto sta a destra, titolo e sommario le scorrono accanto e poi sotto, a tutta larghezza */
 .puntata.ultima { display: flow-root; }
-.puntata.ultima .foto { float: right; width: min(44%, 32rem); margin: 0.35rem 0 1rem 2rem; }
+.puntata.ultima .foto { float: right; width: min(44%, 32rem); margin: 0.35rem 0 0.5rem 2rem; }
 .puntata.ultima .testo { display: block; margin-top: 0.8rem; }
 .puntata.ultima .testo p { max-width: none; margin: 0 0 0.85rem; text-wrap: pretty; }
 .puntata.ultima .testo p:last-child { margin-bottom: 0; }
