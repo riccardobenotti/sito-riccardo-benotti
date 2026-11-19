@@ -45,7 +45,7 @@
   "slug": "san-francesco-d-assisi",
   "nome": "Assisi e san Francesco",
   "tipo": "luogo",
-  "rx": "San Francesco|Francesco d['’]Assisi|Assisi|Porziuncola",
+  "rx": "San Francesco|Francesco d['’]Assisi|(?<!Roma e )Assisi|Porziuncola",
   "qid": "Q676555"
  },
  {
