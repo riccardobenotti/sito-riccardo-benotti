@@ -332,7 +332,7 @@
   "slug": "santi-e-beati",
   "nome": "Santi, beati e venerabili",
   "tipo": "tema",
-  "rx": "canonizz|beatificaz|venerabil|Cause dei Santi|nuovi santi|Rosa da Lima|Martín de Porres|Toribio de Mogrovejo|Juan Macías|Francisco Solano|reliquiari",
+  "rx": "canonizz|beatificaz|venerabil|Cause dei Santi|nuovi santi|Rosa da Lima|Martín de Porres|Toribio de Mogrovejo|Juan Macías|Francisco Solano|reliquiari|(?i:cause dei santi)|virtù eroiche",
   "qid": "Q43115"
  },
  {
