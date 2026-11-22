@@ -147,6 +147,7 @@ PAIRS = [
     ('<h3 class="label gold sub-h">Relazioni e corsi</h3>', '<h3 class="label gold sub-h">Talks and courses</h3>'),
     ('Alcuni tra gli interventi a convegni, corsi e incontri di formazione.', 'A selection of conference papers, courses and training sessions.'),
     ('AI4Peace 2026, Roma, sessione “AI and Democratic Institutions”.', 'AI4Peace 2026, Rome, “AI and Democratic Institutions” session.'),
+    ('Convegno internazionale “Digital Religion V: Interfaces of Discourse, Society, and Politics”, Università di Łódź (Polonia), 20 novembre 2026, sessione “Religious Authority in Digital Environments”. Intervento online.', 'International conference “Digital Religion V: Interfaces of Discourse, Society, and Politics”, University of Łódź (Poland), 20 November 2026, “Religious Authority in Digital Environments” session. Online presentation.'),
     ('<span class="label tipo">Relazione</span>', '<span class="label tipo">Talk</span>'),
     ('Incontro nazionale dei direttori degli uffici catechistici diocesani e delle équipe, “Edificati dalla comunità”, Roma. Tavola rotonda con don Andrea Ciucci e Stefano Pasta.',
      'National meeting of Italian diocesan catechetical directors, “Edificati dalla comunità”, Rome. Round table with Fr Andrea Ciucci and Stefano Pasta.'),
