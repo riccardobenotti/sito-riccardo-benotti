@@ -385,6 +385,13 @@
   "qid": "Q467"
  },
  {
+  "slug": "giornata-mondiale-della-gioventu",
+  "nome": "Giornata mondiale della gioventù",
+  "tipo": "evento",
+  "rx": "Giornat[ae] [Mm]ondial[ei] della [Gg]ioventù|\\bGmg\\b|\\bGMG\\b|Seul",
+  "qid": "Q273039"
+ },
+ {
   "slug": "curia-romana",
   "nome": "Curia romana",
   "tipo": "tema",
@@ -431,12 +438,5 @@
   "tipo": "tema",
   "rx": "\\bguerr[ae]\\b",
   "qid": "Q198"
- },
- {
-  "slug": "giornata-mondiale-della-gioventu",
-  "nome": "Giornata mondiale della gioventù",
-  "tipo": "evento",
-  "rx": "Giornat[ae] [Mm]ondial[ei] della [Gg]ioventù|\\bGmg\\b|\\bGMG\\b|Seul",
-  "qid": "Q273039"
  }
 ]
