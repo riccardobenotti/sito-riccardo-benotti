@@ -252,6 +252,20 @@
   "qid": "Q665037"
  },
  {
+  "slug": "dialogo-interreligioso",
+  "nome": "Dialogo interreligioso",
+  "tipo": "tema",
+  "rx": "musulman|\\bislam|\\bebrei\\b|ebraic|rabbin|interreligios",
+  "qid": "Q1304214"
+ },
+ {
+  "slug": "sport",
+  "nome": "Sport",
+  "tipo": "tema",
+  "rx": "\\bsport\\b|atlet|Olimpiad|basket|Milano-Cortina",
+  "qid": "Q349"
+ },
+ {
   "slug": "europa",
   "nome": "Europa",
   "tipo": "luogo",
@@ -364,13 +378,6 @@
   "qid": "Q156112"
  },
  {
-  "slug": "dialogo-interreligioso",
-  "nome": "Dialogo interreligioso",
-  "tipo": "tema",
-  "rx": "musulman|\\bislam|\\bebrei\\b|ebraic|rabbin|interreligios",
-  "qid": "Q1304214"
- },
- {
   "slug": "carcere",
   "nome": "Carcere e detenuti",
   "tipo": "tema",
@@ -424,13 +431,6 @@
   "nome": "Terremoti e ricostruzione",
   "tipo": "tema",
   "rx": "terremot|sisma|sismic|ricostruzion"
- },
- {
-  "slug": "sport",
-  "nome": "Sport",
-  "tipo": "tema",
-  "rx": "\\bsport\\b|atlet|Olimpiad|basket|Milano-Cortina",
-  "qid": "Q349"
  },
  {
   "slug": "guerra",
