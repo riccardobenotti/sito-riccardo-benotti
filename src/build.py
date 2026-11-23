@@ -289,7 +289,7 @@ def person_ld():
         "homeLocation": {"@type": "Place", "name": "Roma"},
         "nationality": {"@type": "Country", "name": "Italia"},
         "knowsLanguage": ["it", "en"],
-        "knowsAbout": ["Santa Sede", "Chiesa cattolica", "Giornalismo", "Intelligenza artificiale", "Comunicazione ecclesiale", "Vita religiosa"],
+        "knowsAbout": ["Santa Sede", "Chiesa cattolica", "Giornalismo", "Intelligenza artificiale", "Comunicazione ecclesiale", "Vita religiosa", "Disabilità e accessibilità"],
         "identifier": [
             {"@type": "PropertyValue", "propertyID": "ORCID", "value": "0009-0000-5747-2592", "url": "https://orcid.org/0009-0000-5747-2592"},
             {"@type": "PropertyValue", "propertyID": "VIAF", "value": "86365863", "url": "https://viaf.org/viaf/86365863"},

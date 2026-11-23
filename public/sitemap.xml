@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://riccardobenotti.it/</loc><lastmod>2026-11-22</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
-  <url><loc>https://riccardobenotti.it/en/</loc><lastmod>2026-11-22</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
+  <url><loc>https://riccardobenotti.it/</loc><lastmod>2026-11-23</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
+  <url><loc>https://riccardobenotti.it/en/</loc><lastmod>2026-11-23</lastmod><xhtml:link rel="alternate" hreflang="it" href="https://riccardobenotti.it/"/><xhtml:link rel="alternate" hreflang="en" href="https://riccardobenotti.it/en/"/></url>
   <url><loc>https://riccardobenotti.it/filo/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/11/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://riccardobenotti.it/filo/2026/10/</loc><lastmod>2026-10-31</lastmod></url>
@@ -337,5 +337,5 @@
   <url><loc>https://riccardobenotti.it/libri/covid-19-preti-in-prima-linea/</loc><lastmod>2026-11-11</lastmod><image:image><image:loc>https://riccardobenotti.it/img/cover-covid19.webp</image:loc></image:image></url>
   <url><loc>https://riccardobenotti.it/libri/viaggio-nella-vita-religiosa/</loc><lastmod>2026-11-11</lastmod><image:image><image:loc>https://riccardobenotti.it/img/cover-vita-religiosa.webp</image:loc></image:image></url>
   <url><loc>https://riccardobenotti.it/libri/viaggio-nel-new-journalism-americano/</loc><lastmod>2026-11-11</lastmod><image:image><image:loc>https://riccardobenotti.it/img/cover-new-journalism.webp</image:loc></image:image></url>
-  <url><loc>https://riccardobenotti.it/crediti/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://riccardobenotti.it/crediti/</loc><lastmod>2026-11-23</lastmod></url>
 </urlset>
