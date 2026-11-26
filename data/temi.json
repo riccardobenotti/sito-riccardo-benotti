@@ -311,7 +311,7 @@
   "slug": "famiglia",
   "nome": "Famiglia",
   "tipo": "tema",
-  "rx": "\\bfamigli[ae]\\b",
+  "rx": "\\bfamigli[ae]\\b(?! umana)",
   "qid": "Q8436"
  },
  {
