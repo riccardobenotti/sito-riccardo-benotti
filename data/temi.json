@@ -101,7 +101,7 @@
   "slug": "francia",
   "nome": "Francia",
   "tipo": "luogo",
-  "rx": "Francia|Parigi|Lourdes|Metz|Macron|Notre-Dame|Stade de France",
+  "rx": "Francia|Parigi|Lourdes(?! romana)|Metz|Macron|Notre-Dame|Stade de France",
   "qid": "Q142"
  },
  {
@@ -248,7 +248,7 @@
   "slug": "diocesi-di-roma",
   "nome": "Diocesi di Roma",
   "tipo": "luogo",
-  "rx": "diocesi di Roma|Laterano|[Vv]icario di Roma|parrocchi[ae] (?:di Roma|romane)",
+  "rx": "diocesi di Roma|Laterano|[Vv]icario di Roma|parrocchi[ae] (?:di Roma|romane)|Sant.Andrea delle Fratte",
   "qid": "Q665037"
  },
  {
