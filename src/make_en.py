@@ -73,6 +73,7 @@ PAIRS = [
     ('<span class="label gold uscita">In libreria dal 4 dicembre 2026</span>', '<span class="label gold uscita">In bookshops from 4 December 2026</span>'),
     ('<div class="dati"><span>320 pagine</span>', '<div class="dati"><span>320 pages</span>'),
     ('">Il sito del libro</a>', '">The book’s website</a>'),
+    ('">MF Milano Finanza, 27 novembre 2026</a>', '">MF Milano Finanza, 27 November 2026</a>'),
     ('LAS · in produzione', 'LAS · in production'),
     ('alt="Copertina di Covid-19: preti in prima linea"', 'alt="Cover of Covid-19: preti in prima linea"'),
     ('alt="Copertina di Viaggio nella vita religiosa"', 'alt="Cover of Viaggio nella vita religiosa"'),
