@@ -16,6 +16,7 @@
   --ink-soft: #56637A;
   --rule: #D8E0EA;
   --gold: #4A6890;
+  --rosso: #B3262D;
   --band: #1B2336;
   --band-ink: #EEF2F7;
   --band-soft: #A5BDD5;
@@ -24,12 +25,12 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #10151F; --paper-alt: #182131; --ink: #E8EDF4; --ink-soft: #9DABC0; --rule: #263044; --gold: #A5BDD5;
+    --paper: #10151F; --paper-alt: #182131; --ink: #E8EDF4; --ink-soft: #9DABC0; --rule: #263044; --gold: #A5BDD5; --rosso: #F0827C;
     --band: #0A0E16; --band-ink: #E8EDF4; --band-soft: #9AB4CD; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #10151F; --paper-alt: #182131; --ink: #E8EDF4; --ink-soft: #9DABC0; --rule: #263044; --gold: #A5BDD5;
+  --paper: #10151F; --paper-alt: #182131; --ink: #E8EDF4; --ink-soft: #9DABC0; --rule: #263044; --gold: #A5BDD5; --rosso: #F0827C;
   --band: #0A0E16; --band-ink: #E8EDF4; --band-soft: #9AB4CD; color-scheme: dark;
 }
 
@@ -168,7 +169,8 @@ h2.big { font-family: var(--display); font-weight: 500; font-size: clamp(1.9rem,
 .libro p { margin: 0; max-width: 62ch; font-size: 1.05rem; }
 .libro .dati { margin-top: 0.7rem; display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; font-size: 0.92rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
 .libro .dati a { color: var(--gold); font-weight: 600; }
-.libro .rassegna { margin: 0.9rem 0 0; font-size: 0.95rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 0.2rem; }
+.libro .rassegna { margin: 1rem 0 0; padding-left: 0.85rem; border-left: 3px solid var(--rosso); font-size: 0.95rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 0.2rem; }
+.libro .rassegna .label { color: var(--rosso); }
 .libro .rassegna a { color: var(--gold); font-weight: 600; line-height: 1.4; }
 .libro .rassegna .fonte { font-size: 0.88rem; }
 .arrivo { margin-bottom: 2.5rem; background: var(--paper-alt); border-color: transparent; padding: 1.5rem 1.6rem; border: 1px solid var(--rule); border-radius: 6px; display: grid; gap: 1.2rem; }
